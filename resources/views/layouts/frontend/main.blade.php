@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <a class="whistleblower" href="#" >WHISTLEBLOWER</a>
     @include('layouts.frontend.header')
     <section>
         @include('layouts.frontend.slider')

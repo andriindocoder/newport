@@ -1,10 +1,15 @@
+<style>
+        .nav-top {
+            margin-top: 35px;
+        }
+    </style>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
             <div class="logo-box">
                 <a href="index.html">
                     <img src="{{ asset('frontend-asset/images/logo.png') }}" />
-                    <span><big>Otoritas pelabuhan tanjung priok</big><small>direktorat jenderal perhubungan laut<br/>kementrian perhubungan republik indonesia</small></span>
+                    <span><big style="font-size: 15px">Kantor Otoritas Pelabuhan Utama Tanjung Priok</big><small>direktorat jenderal perhubungan laut<br/>kementerian perhubungan republik indonesia</small></span>
                 </a>
             </div>
         </div>

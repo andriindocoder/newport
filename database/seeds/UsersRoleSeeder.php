@@ -80,6 +80,7 @@ class UsersRoleSeeder extends Seeder
             $superadmin->name = "superadmin";
             $superadmin->email = "superadmin@oppriok.dephub.go.id";
             $superadmin->password = bcrypt('123456');
+            $superadmin->nama_instansi = "Super Administrator";
             $superadmin->slug = "superadmin";
             $superadmin->bio = "superadmin";
             $superadmin->role_id = 1;
@@ -90,6 +91,7 @@ class UsersRoleSeeder extends Seeder
             $adminKeuangan->name = "adminkeuangan";
             $adminKeuangan->email = "adminkeuangan@oppriok.dephub.go.id";
             $adminKeuangan->password = bcrypt('123456');
+            $adminKeuangan->nama_instansi = "OP Tanjung Priok";
             $adminKeuangan->slug = "adminkeuangan";
             $adminKeuangan->bio = "adminkeuangan";
             $adminKeuangan->role_id = 2;
@@ -100,6 +102,7 @@ class UsersRoleSeeder extends Seeder
             $adminKepegawaian->name = "adminkepegawaian";
             $adminKepegawaian->email = "adminkepegawaian@oppriok.dephub.go.id";
             $adminKepegawaian->password = bcrypt('123456');
+            $adminKepegawaian->nama_instansi = "OP Tanjung Priok";
             $adminKepegawaian->slug = "adminkepegawaian";
             $adminKepegawaian->bio = "adminkepegawaian";
             $adminKepegawaian->role_id = 3;
@@ -110,6 +113,7 @@ class UsersRoleSeeder extends Seeder
             $adminHumas->name = "adminhumas";
             $adminHumas->email = "adminhumas@oppriok.dephub.go.id";
             $adminHumas->password = bcrypt('123456');
+            $adminHumas->nama_instansi = "OP Tanjung Priok";
             $adminHumas->slug = "adminhumas";
             $adminHumas->bio = "adminhumas";
             $adminHumas->role_id = 4;
@@ -120,6 +124,7 @@ class UsersRoleSeeder extends Seeder
             $adminRenpro->name = "adminrenpro";
             $adminRenpro->email = "adminrenpro@oppriok.dephub.go.id";
             $adminRenpro->password = bcrypt('123456');
+            $adminRenpro->nama_instansi = "OP Tanjung Priok";
             $adminRenpro->slug = "adminrenpro";
             $adminRenpro->bio = "adminrenpro";
             $adminRenpro->role_id = 5;
@@ -130,6 +135,7 @@ class UsersRoleSeeder extends Seeder
             $adminDesain->name = "admindesain";
             $adminDesain->email = "admindesain@oppriok.dephub.go.id";
             $adminDesain->password = bcrypt('123456');
+            $adminDesain->nama_instansi = "OP Tanjung Priok";
             $adminDesain->slug = "admindesain";
             $adminDesain->bio = "admindesain";
             $adminDesain->role_id = 6;
@@ -140,6 +146,7 @@ class UsersRoleSeeder extends Seeder
             $adminTarif->name = "admintarif";
             $adminTarif->email = "admintarif@oppriok.dephub.go.id";
             $adminTarif->password = bcrypt('123456');
+            $adminTarif->nama_instansi = "OP Tanjung Priok";
             $adminTarif->slug = "admintarif";
             $adminTarif->bio = "admintarif";
             $adminTarif->role_id = 7;
@@ -150,6 +157,7 @@ class UsersRoleSeeder extends Seeder
             $adminLala->name = "adminlala";
             $adminLala->email = "adminlala@oppriok.dephub.go.id";
             $adminLala->password = bcrypt('123456');
+            $adminLala->nama_instansi = "OP Tanjung Priok";
             $adminLala->slug = "adminlala";
             $adminLala->bio = "adminlala";
             $adminLala->role_id = 8;
@@ -160,6 +168,7 @@ class UsersRoleSeeder extends Seeder
             $adminFasilitas->name = "adminfasilitas";
             $adminFasilitas->email = "adminfasilitas@oppriok.dephub.go.id";
             $adminFasilitas->password = bcrypt('123456');
+            $adminFasilitas->nama_instansi = "OP Tanjung Priok";
             $adminFasilitas->slug = "adminfasilitas";
             $adminFasilitas->bio = "adminfasilitas";
             $adminFasilitas->role_id = 9;
@@ -170,6 +179,7 @@ class UsersRoleSeeder extends Seeder
             $adminBimus->name = "adminbimus";
             $adminBimus->email = "adminbimus@oppriok.dephub.go.id";
             $adminBimus->password = bcrypt('123456');
+            $adminBimus->nama_instansi = "OP Tanjung Priok";
             $adminBimus->slug = "adminbimus";
             $adminBimus->bio = "adminbimus";
             $adminBimus->role_id = 10;

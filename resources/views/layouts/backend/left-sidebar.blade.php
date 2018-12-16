@@ -1,327 +1,689 @@
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar elevation-4 sidebar-light-info">
+  <aside class="main-sidebar sidebar-dark-success elevation-4">
         <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link bg-info">
-        <img src="{{ asset('backend-asset/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
-        <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-            <img src="{{ asset('backend-asset/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+        <a href="{{ route('home') }}" class="brand-link bg-success">
+          <img src="{{ asset('frontend-asset/images/logo.png') }}" alt="{{ config('app.name') }}" class="brand-image"
+               style="opacity: .8">
+          <span class="brand-text font-weight">Portal OP Priok</span>
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="{{ asset('backend-asset/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">{{ ucwords(Auth::user()->name) }}</a>
+             <p><span class="text-success"><em>{{ Auth::user()->name }}</em></span></p>
+            </div>
+          </div>
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item">
+                <a href="{{ route('home') }}" class="nav-link active">
+                  <i class="nav-icon fa fa-dashboard"></i>
+                  <p>
+                    Dashboard
+                  </p>
+                </a>
+              </li>
+              @role(['superadmin','humas'])
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-pie-chart"></i>
+                  <p>
+                    Statistik
+                    <i class="right fa fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/charts/chartjs.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>ChartJS</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/charts/flot.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Flot</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/charts/inline.html" class="nav-link">
+                      <i class="fa fa-circle-o nav-icon"></i>
+                      <p>Inline</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              @endrole
+              @role(['superadmin'])
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-book"></i>
+                  <p>Peraturan
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="fa fa-circle-o text-primary nav-icon"></i>
+                      <p>List Peraturan</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="fa fa-circle-o text-success nav-icon"></i>
+                      <p>Tambah Peraturan</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              @endrole
+              @role(['humas','superadmin'])
+              <li class="nav-header">PENGATURAN BERITA</li>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-edit"></i>
+                    <p>
+                      Berita
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>List Berita</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Tambah Berita</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-warning nav-icon"></i>
+                        <p>Kategori Berita</p>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
+              <li class="nav-header">GALERI FOTO DAN VIDEO</li>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-image"></i>
+                    <p>
+                      Galeri Foto
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>List Foto</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-warning nav-icon"></i>
+                        <p>Kategori Foto</p>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
+    
+              <li class="nav-header">PENGATURAN PROFIL</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-university"></i>
+                  <p>Profil OP</p>
+                </a>
+              </li>
+    
+              <li class="nav-header">WHISTLEBLOWING DAN PPID</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-bullhorn"></i>
+                  <p>Whistleblowing</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-bullhorn"></i>
+                  <p>PPID</p>
+                </a>
+              </li>
+    
+              <li class="nav-header">TAMPILAN KEGIATAN</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Profil PPID</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Informasi Publik</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Program dan Kegiatan</p>
+                </a>
+              </li>  
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Data dan Informasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Kinerja</p>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Tarif PNBP</p>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Indeks Kepuasan Masyarakat</p>
+                </a>
+              </li>         
+              @endrole
+              @role(['superadmin'])
+              <li class="nav-header">PELAPORAN DAN STATISTIK</li>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-file-pdf-o"></i>
+                    <p>
+                      Laporan Keuangan
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>List Berita</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Tambah Berita</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              
+              
+              <li class="nav-header">PENGATURAN MODUL</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul PMKU</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Perijinan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Jenis Usaha</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Tarif</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Jadwal</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Pelaporan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Modul Pengaduan</p>
+                </a>
+              </li>
+              @endrole
+    
+              @role(['superadmin','humas'])
+              <li class="nav-header">PENGATURAN</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-th"></i>
+                  <p>Menu</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-tv"></i>
+                  <p>Tampilan</p>
+                </a>
+              </li>
+    
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-link"></i>
+                  <p>Link Terkait</p>
+                </a>
+              </li>
+              @endrole
+    
+              @role(['superadmin'])
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-users"></i>
+                  <p>Manajemen User</p>
+                </a>
+              </li>
+              @endrole
+    
+              {{-- Role Adminlala --}}
+              @role(['lala'])
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Pelayanan AP</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Bunker Laut</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>PBM</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-folder-open"></i>
+                    <p>Laporan LK3</p>
+                  </a>
+              </li>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-folder-open"></i>
+                <p>Bongkar Muat Barang</p>
+              </a>
+            </li>
+    
+              <li class="nav-header">REKOMENDASI</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Cabang AP</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Cabang SIUPKK</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>SIUP PBM</p>
+                </a>
+              </li>
+              @endrole
+    
+              {{-- Role adminbimus --}}
+              @role(['bimus'])
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Pelayanan JPT</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Rekomendasi JPT</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>LAB</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Laporan Kinerja</p>
+                </a>
+              </li>
+              @endrole
+    
+              {{-- Role adminfasilitas --}} 
+              @role(['fasilitas'])
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Input Data Fasilitas</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Pelayanan Supplier</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Bunker Darat</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Docking</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Fumigasi</p>
+                </a>
+              </li>
+              @endrole
+    
+              {{-- Role Admindesain --}}
+              @role(['desain'])
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Kerja Keruk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Laporan Pengerukan</p>
+                </a>
+              </li>
+              <li class="nav-header">SURAT IZIN KERJA KERUK</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Rekomendasi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-folder-open"></i>
+                  <p>Surat Izin</p>
+                </a>
+              </li>
+              @endrole
+              
+              @role(['superadmin'])
+              <li class="nav-header">MENU BIDANG</li>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-user"></i>
+                    <p>
+                      Admin Bimus
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-folder-open"></i>
+                        <p>Pelayanan JPT</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-folder-open"></i>
+                        <p>Rekomendasi JPT</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-folder-open"></i>
+                        <p>LAB</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-folder-open"></i>
+                        <p>Laporan Kinerja</p>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Desain
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Kerja Keruk</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Laporan Pengerukan</p>
+                    </a>
+                  </li>
+                  <li class="nav-header">SURAT IZIN KERJA KERUK</li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Rekomendasi</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Surat Izin</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Fasilitas
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Pelayanan Supplier</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Bunker Darat</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Docking</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Fumigasi</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Kepegawaian
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Keuangan
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Lala
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Pelayanan AP</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Bunker Laut</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>PBM</p>
+                    </a>
+                  </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-folder-open"></i>
+                        <p>Laporan LK3</p>
+                      </a>
+                  </li>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-folder-open"></i>
+                    <p>Bongkar Muat Barang</p>
+                  </a>
+                </li>
+        
+                  <li class="nav-header">REKOMENDASI</li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Cabang AP</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>Cabang SIUPKK</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="nav-icon fa fa-folder-open"></i>
+                      <p>SIUP PBM</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Renpro
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  
+                </ul>
+              </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Admin Tarif
+                    <i class="fa fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  
+                </ul>
+              </li>
+              @endrole
+    
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
         </div>
-        <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-        </div>
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-                with font-awesome or any other icon font library -->
-            <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-                <i class="nav-icon fa fa-dashboard"></i>
-                <p>
-                Dashboard
-                <i class="right fa fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Dashboard v1</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Dashboard v2</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Dashboard v3</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-                <i class="nav-icon fa fa-th"></i>
-                <p>
-                Widgets
-                <span class="right badge badge-danger">New</span>
-                </p>
-            </a>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-pie-chart"></i>
-                <p>
-                Charts
-                <i class="right fa fa-angle-left"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ChartJS</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Flot</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/charts/inline.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inline</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-tree"></i>
-                <p>
-                UI Elements
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>General</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Icons</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Buttons</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/UI/sliders.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Sliders</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-edit"></i>
-                <p>
-                Forms
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>General Elements</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Advanced Elements</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/forms/editors.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Editors</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-table"></i>
-                <p>
-                Tables
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Simple Tables</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Data Tables</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-header">EXAMPLES</li>
-            <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
-                <i class="nav-icon fa fa-calendar"></i>
-                <p>
-                Calendar
-                <span class="badge badge-info right">2</span>
-                </p>
-            </a>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-envelope-o"></i>
-                <p>
-                Mailbox
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Inbox</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Compose</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Read</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-book"></i>
-                <p>
-                Pages
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Invoice</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Profile</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/login.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Login</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/register.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Register</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/lockscreen.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Lockscreen</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-plus-square-o"></i>
-                <p>
-                Extras
-                <i class="fa fa-angle-left right"></i>
-                </p>
-            </a>
-            <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="pages/examples/404.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 404</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/500.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Error 500</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="pages/examples/blank.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Blank Page</p>
-                </a>
-                </li>
-                <li class="nav-item">
-                <a href="starter.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>Starter Page</p>
-                </a>
-                </li>
-            </ul>
-            </li>
-            <li class="nav-header">MISCELLANEOUS</li>
-            <li class="nav-item">
-            <a href="https://adminlte.io/docs" class="nav-link">
-                <i class="nav-icon fa fa-file"></i>
-                <p>Documentation</p>
-            </a>
-            </li>
-            <li class="nav-header">LABELS</li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-danger"></i>
-                <p class="text">Important</p>
-            </a>
-            </li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-warning"></i>
-                <p>Warning</p>
-            </a>
-            </li>
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-                <i class="nav-icon fa fa-circle-o text-info"></i>
-                <p>Informational</p>
-            </a>
-            </li>
-        </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-    </aside>
+        <!-- /.sidebar -->
+      </aside>

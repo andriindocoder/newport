@@ -14,6 +14,7 @@
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.7",
+        "santigarcor/laratrust": "^5.0",
         "yajra/laravel-datatables-oracle": "^8.13"
     },
     "require-dev": {
@@ -41,6 +42,10 @@
         "classmap": [
             "database/seeds",
             "database/factories"
+        ],
+        "files": [
+            "app/Helpers/paging.php",
+            "app/Helpers/slug.php"
         ]
     },
     "autoload-dev": {

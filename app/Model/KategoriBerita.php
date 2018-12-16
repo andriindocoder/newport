@@ -16,6 +16,10 @@ class KategoriBerita extends Model
         return $query->where("status_aktif","=",1);
     }
 
+    public function scopeLatest($query){
+        return $query->orderBy("id DESC");
+    }
+
     public function getRouteKeyName(){
         return 'slug';
     }

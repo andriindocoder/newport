@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="function-box">
-                    <span><i class="fa fa-pencil"></i></span>
+                    <span><i class="fa fa-edit"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/profil-ppid">PPID</a></h5>
                         <p>
@@ -174,7 +174,104 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <label class="content-label">Fasilitas Pelabuhan</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-box">
+                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
+                    <div class="desc">
+                        <div class="detail">
+                            <h5>Otoritas Pelabuhan</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="img-box">
+                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
+                    <div class="desc">
+                        <div class="detail">
+                            <h5>Tata Usaha</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="img-box">
+                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
+                    <div class="desc">
+                        <div class="detail">
+                            <h5>Fasilitas Pelabuhan</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <a href="#">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-box bg-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col">
                 <label class="content-label">Berita Pilihan</label>
+            </div>
+        </div>
+        <div class="row">
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/kapal-kemanusiaan-dengan-750-ton-bantuan-siap-berlayar-ke-sulteng">Kapal Kemanusiaan dengan 750 Ton Bantuan Siap Berlayar ke Sulteng</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 19 Oct 2018 09:47:36</small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/kemenhub-akan-siapkan-bus-ke-pelabuhan-tanjung-priok">Kemenhub Akan Siapkan Bus Ke Pelabuhan Tanjung Priok</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 27 Aug 2018 10:09:16</small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/tingkatkan-keselamatan-pelayaran-kemenhub-berikan-pelatihan-pada-masyarakat-di-selayar-dan-bira">Tingkatkan Keselamatan Pelayaran, Kemenhub Berikan Pelatihan pada Masyarakat di Selayar dan Bira</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 14 Aug 2018 12:01:42</small>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<div class="content-box">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <label class="content-label">Galeri Foto</label>
             </div>
         </div>
         <div class="row">
@@ -218,6 +315,50 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <label class="content-label">Galeri Video</label>
+            </div>
+        </div>
+        <div class="row">
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/kapal-kemanusiaan-dengan-750-ton-bantuan-siap-berlayar-ke-sulteng">Kapal Kemanusiaan dengan 750 Ton Bantuan Siap Berlayar ke Sulteng</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 19 Oct 2018 09:47:36</small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/kemenhub-akan-siapkan-bus-ke-pelabuhan-tanjung-priok">Kemenhub Akan Siapkan Bus Ke Pelabuhan Tanjung Priok</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 27 Aug 2018 10:09:16</small>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-md-4">
+                <div class="news-box">
+                    <div class="img-box">
+                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                    </div>
+                    <div class="desc">
+                        <h5><a href="http://localhost:1234/berita/tingkatkan-keselamatan-pelayaran-kemenhub-berikan-pelatihan-pada-masyarakat-di-selayar-dan-bira">Tingkatkan Keselamatan Pelayaran, Kemenhub Berikan Pelatihan pada Masyarakat di Selayar dan Bira</a></h5>
+                        <small><i class="fa fa-clock-o"></i> 14 Aug 2018 12:01:42</small>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</div>
+<div class="content-box">
+    <div class="container">
+        <div class="row">
+            <div class="col">
                 <label class="content-label">Aplikasi dan Layanan Online</label>
             </div>
         </div>
@@ -236,4 +377,5 @@
         </div>
     </div>
 </div>
+
 @endsection

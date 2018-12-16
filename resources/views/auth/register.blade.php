@@ -16,14 +16,14 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="nama_perusahaan" class="col-md-4 col-form-label text-md-right">{{ __('Nama Perusahaan') }}</label>
+                            <label for="nama_instansi" class="col-md-4 col-form-label text-md-right">{{ __('Nama Perusahaan') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nama_perusahaan" type="text" class="form-control{{ $errors->has('nama_perusahaan') ? ' is-invalid' : '' }}" name="nama_perusahaan" value="{{ old('nama_perusahaan') }}" required autofocus>
+                                <input id="nama_instansi" type="text" class="form-control{{ $errors->has('nama_instansi') ? ' is-invalid' : '' }}" name="nama_instansi" value="{{ old('nama_instansi') }}" required autofocus>
 
-                                @if ($errors->has('nama_perusahaan'))
+                                @if ($errors->has('nama_instansi'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('nama_perusahaan') }}</strong>
+                                        <strong>{{ $errors->first('nama_instansi') }}</strong>
                                     </span>
                                 @endif
                             </div>

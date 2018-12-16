@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Role;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -49,9 +50,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'nama_instansi' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
         ]);
     }
 
@@ -63,10 +65,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $role = Role::where("name","=","perusahaan")->first();
+        $data['bio'] = 'Perusahaan';
+        $data['role_id'] = $role->id;
+        $data['slug'] = slugify($data['name']);
+
+
         return User::create([
+            'nama_instansi' => $data['nama_instansi'],
             'name' => $data['name'],
             'email' => $data['email'],
+            'slug' => $data['slug'],
+            'bio' => $data['bio'],
+            'role_id' => $data['role_id'],
             'password' => Hash::make($data['password']),
-        ]);
+        ])->attachRole($role);
     }
 }

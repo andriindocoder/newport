@@ -1,0 +1,7 @@
+.news-header a:hover {
+	text-decoration: none;
+	color: #393484;
+}
+.news-header a {
+	color: #000;
+}

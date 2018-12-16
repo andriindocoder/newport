@@ -24,5 +24,6 @@
     </div>
 <!-- ./wrapper -->
   @include('layouts.backend.script')
+  @yield('script')
 </body>
 </html>

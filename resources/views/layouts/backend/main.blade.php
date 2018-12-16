@@ -10,8 +10,6 @@
 
     @include('layouts.backend.left-sidebar')
 
-    @include('layouts.backend.breadcrumb')
-
     @yield('content')
     
     @include('layouts.backend.footer')
@@ -24,6 +22,6 @@
     </div>
 <!-- ./wrapper -->
   @include('layouts.backend.script')
-  @yield('script')
+
 </body>
 </html>

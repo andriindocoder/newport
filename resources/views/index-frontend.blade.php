@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-pencil"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/profil-ppid">PPID</a></h5>
                         <p>
@@ -92,7 +92,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-map-o"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/informasi-publik">informasi publik</a></h5>
                         <p>
@@ -103,7 +103,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-anchor"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/program-dan-kegiatan">Program Dan Kegiatan</a></h5>
                         <p>
@@ -114,7 +114,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-info-circle"></i></span>
                     <div class="desc">
                     <h5><a href="http://localhost:1234/data-dan-informasi">Data Dan Informasi</a></h5>
                         <p>
@@ -125,7 +125,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-line-chart"></i></span>
                     <div class="desc">
                     <h5><a href="http://localhost:1234/kinerja">Kinerja Kantor Otoritas Pelabuhan Tanjung Priok</a></h5>
                         <p>
@@ -136,18 +136,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/ppid">Permohonan Informasi</a></h5>
-                        <p>
-                            Formulir untuk pengajuan permohonan informasi secara online
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-balance-scale"></i></span>
+                    <span><i class="fa fa-balance-scale"></i></span>
                     <div class="desc">
                         <h5><a href="http://jdih.dephub.go.id/" target="_blank">Informasi Hukum</a></h5>
                         <p>
@@ -158,7 +147,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-credit-card"></i></span>
+                    <span><i class="fa fa-credit-card"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/tarif-pnbp">Tarif PNBP</a></h5>
                         <p>
@@ -169,7 +158,7 @@
             </div>
             <div class="col-md-4">
                 <div class="function-box">
-                    <span class="icon-hex"><i class="fa fa-user"></i></span>
+                    <span><i class="fa fa-smile-o"></i></span>
                     <div class="desc">
                         <h5><a href="http://localhost:1234/indeks-kepuasan-masyarakat">Indeks Kepuasan Masyarakat</a></h5>
                         <p>

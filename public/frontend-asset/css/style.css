@@ -792,7 +792,6 @@ header {
 .navbar-menu ul ul li.active>a::before {
     content: "";
     position: absolute;
-    background: url("../images/hover-hr.png") no-repeat 0 0 transparent;
     width: 25px;
     height: 6px;
     left: 0;

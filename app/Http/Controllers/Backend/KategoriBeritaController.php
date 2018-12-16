@@ -57,7 +57,7 @@ class KategoriBeritaController extends Controller
         $kategoriBerita = KategoriBerita::find($id);
         $kategoriBerita->update($request->all());
         Session::flash("flash_notification", [
-            "level" => "success",
+            "level" => "warning",
             "message" => "$kategoriBerita->title berhasil diubah."
         ]);
         return redirect()->route('kategori-berita.index');
@@ -72,7 +72,7 @@ class KategoriBeritaController extends Controller
         $data->delete();
 
         Session::flash("flash_notification", [
-            "level" => "success",
+            "level" => "warning",
             "message" => "$data->title berhasil dihapus."
         ]);
         return redirect()->route('kategori-berita.index');

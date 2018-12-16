@@ -136,10 +136,10 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                    <a href="{{ route('kategori-foto.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-warning nav-icon"></i>
                         <p>Kategori Foto</p>
-                      </a>
+                    </a>
                     </li>
                   </ul>
               </li>

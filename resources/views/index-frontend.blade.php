@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Grafik Kepelabuhanan</label>
+                <label class="content-label">{!! $judulgrafik ? $judulgrafik->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -36,7 +36,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Kegiatan Otoritas</label>
+                <label class="content-label">{!! $judulkegiatanotoritas ? $judulkegiatanotoritas->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -135,7 +135,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Fasilitas Pelabuhan</label>
+                <label class="content-label">{!! $judulfasilitaspelabuhan ? $judulfasilitaspelabuhan->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -188,7 +188,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Berita Pilihan</label>
+                <label class="content-label">{!! $berita ? $berita->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -232,7 +232,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Galeri Foto</label>
+                <label class="content-label">{!! $judulgalerifoto ? $judulgalerifoto->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -276,7 +276,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Galeri Video</label>
+                <label class="content-label">{!! $judulgalerivideo ? $judulgalerivideo->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">
@@ -320,7 +320,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">Aplikasi dan Layanan Online</label>
+                <label class="content-label">{!! $judullinkterkait ? $judullinkterkait->konten : '' !!}</label>
             </div>
         </div>
         <div class="row">

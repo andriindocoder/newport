@@ -23,7 +23,8 @@
                                 {!! Form::model($tampilanDepan,[
                                     'url'       => route('tampilan-depan.update', $tampilanDepan->id),
                                     'method'    => 'put',
-                                    'class'     => 'form-horizontal' 
+                                    'class'     => 'form-horizontal',
+                                    'files'     => true, 
                                 ]) !!}
                                 
                                 @include('backend.tampilan-depan._form')

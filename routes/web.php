@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index-frontend');
-});
+Route::get('/',[
+    'uses' => 'Frontend\TampilanDepanController@index',
+    'as'    => 'tampilan-depan.index'
+]);
 
 Auth::routes();
 

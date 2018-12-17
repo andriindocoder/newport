@@ -22,7 +22,8 @@
                                 {!! Form::open([
                                     'url'       => route('tampilan-depan.store'),
                                     'method'    => 'post',
-                                    'class'     => 'form-horizontal' 
+                                    'class'     => 'form-horizontal',
+                                    'files'     => true, 
                                 ]) !!}
                                 
                                 @include('backend.tampilan-depan._form')

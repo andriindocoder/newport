@@ -38,6 +38,11 @@ class TampilanDepanController extends Controller
         $this->validate($request, ['kode_tampilan' => 'required']);
         $data = $request->all();
         $data['slug'] = slugify($data['kode_tampilan']);
+        $data['create_id'] = Auth::user()->id;
+        if($request->hasFile('foto')){
+            $path = $request->file('foto')->store('slider');
+            $data['foto'] = $path;
+        }
         $tampilanDepan = TampilanDepan::create($data);
         Session::flash("flash_notification", [
             "level" => "success",

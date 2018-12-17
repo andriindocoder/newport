@@ -15,6 +15,7 @@
     </section>
     @include('layouts.frontend.footer')
     @include('layouts.frontend.script')
+    @yield('script')
 </body>
 
 </html>

@@ -31,4 +31,20 @@ class TampilanDepanController extends Controller
         return view('frontend.berita.single', compact('berita','kats','news','populer'));
 
     }
+
+    public function category(KategoriBerita $category){
+        $categoryName = $category->title;
+        $kats = KategoriBerita::all();
+
+        $populer = Berita::orderBy('view_count','DESC')
+                ->filter(request('term'))
+                ->limit(3)
+                ->get();
+
+        $news = $category
+                ->berita()
+                ->simplePaginate($this->limit);
+
+      return view('berita.index', compact('kats','news','categoryName','populer'));
+    }
 }

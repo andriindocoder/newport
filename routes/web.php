@@ -45,3 +45,8 @@ Route::get('/berita/{post}',[
 	'uses' => 'Frontend\TampilanDepanController@show',
 	'as' => 'berita.show',
 ]);
+
+Route::get('/kategori/{category}', [
+    'uses' => 'Frontend\TampilanDepanController@category',
+    'as' => 'berita.kategori',
+]);

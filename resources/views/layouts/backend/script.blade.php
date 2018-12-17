@@ -33,5 +33,6 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('backend-asset/dist/js/adminlte.js') }}"></script>
 <script src="{{ asset('backend-asset/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('js/selectize.min.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="{{ asset('backend-asset/js/custom.js') }}"></script>

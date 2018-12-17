@@ -100,13 +100,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ route('berita.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>List Berita</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                    <a href="{{ route('berita.create') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Tambah Berita</p>
                       </a>

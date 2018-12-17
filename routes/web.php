@@ -24,6 +24,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
     Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
     Route::resource('kategori-foto', 'Backend\KategoriFotoController');
     Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
+    Route::resource('berita', 'Backend\BeritaController');
 });
 
 Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
@@ -38,4 +39,9 @@ Route::get('/dwelling-time',[
 Route::get('/dwelling-time-per-hari',[
     'uses' => 'Backend\DwellingTimeController@perDay',
     'as' => 'dwelling-time.day'
+]);
+
+Route::get('/berita/{post}',[
+	'uses' => 'Frontend\TampilanDepanController@show',
+	'as' => 'berita.show',
 ]);

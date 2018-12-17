@@ -24,3 +24,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" href="{{ asset('css/selectize.bootstrap3.css') }}">
+
+  <link rel="stylesheet" href="{{ asset('css/selectize.css') }}">

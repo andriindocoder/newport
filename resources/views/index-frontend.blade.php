@@ -192,40 +192,20 @@
             </div>
         </div>
         <div class="row">
-                        <div class="col-md-4">
+            @foreach($beritas as $berita)
+            <div class="col-md-4">
                 <div class="news-box">
                     <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                        <img src="{{ url($berita->image) }}" width="100%" />
                     </div>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kapal-kemanusiaan-dengan-750-ton-bantuan-siap-berlayar-ke-sulteng">Kapal Kemanusiaan dengan 750 Ton Bantuan Siap Berlayar ke Sulteng</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 19 Oct 2018 09:47:36</small>
+                        <h5><a href="{{ route('berita.show', $berita->slug) }}">{{ $berita->title }}</a></h5>
+                        <small><i class="fa fa-clock-o"></i> {{ date('d M Y H:i:s',strtotime($berita->created_at)) }}</small>
                     </div>
                 </div>
             </div>
-                        <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
-                    </div>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kemenhub-akan-siapkan-bus-ke-pelabuhan-tanjung-priok">Kemenhub Akan Siapkan Bus Ke Pelabuhan Tanjung Priok</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 27 Aug 2018 10:09:16</small>
-                    </div>
-                </div>
-            </div>
-                        <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
-                    </div>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/tingkatkan-keselamatan-pelayaran-kemenhub-berikan-pelatihan-pada-masyarakat-di-selayar-dan-bira">Tingkatkan Keselamatan Pelayaran, Kemenhub Berikan Pelatihan pada Masyarakat di Selayar dan Bira</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 14 Aug 2018 12:01:42</small>
-                    </div>
-                </div>
-            </div>
-                    </div>
+            @endforeach
+        </div>
     </div>
 </div>
 <div class="content-box">

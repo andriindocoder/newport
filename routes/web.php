@@ -28,3 +28,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
 Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
 Route::get('kategori-foto-data', ['as'=>'kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
+
+Route::get('/dwelling-time',[
+    'uses' => 'Backend\DwellingTimeController@fetchData',
+    'as' => 'dwelling-time.fetch'
+]);

@@ -33,4 +33,8 @@ class DwellingTimeController extends Controller
             }
         }
     }
+
+    public function perDay(){
+        return view('frontend.dwelling-time.chart-per-day');
+    }
 }

@@ -33,3 +33,8 @@ Route::get('/dwelling-time',[
     'uses' => 'Backend\DwellingTimeController@fetchData',
     'as' => 'dwelling-time.fetch'
 ]);
+
+Route::get('/dwelling-time-per-hari',[
+    'uses' => 'Backend\DwellingTimeController@perDay',
+    'as' => 'dwelling-time.day'
+]);

@@ -5,7 +5,7 @@
                 <div class="navbar-header">
                     <nav class="navbar-menu">
                         <ul class="navbar-nav">
-                            <li class="active"><a href="index.html">beranda</a></li>
+                        <li class="active"><a href="{{ url('/') }}">beranda</a></li>
                             <li><a href="profil.html">profil</a></li>
                             <li><a href="#">berita</a></li>
                             <li><a href="#">galeri</a>

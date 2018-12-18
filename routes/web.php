@@ -28,11 +28,21 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
     Route::resource('kategori-foto', 'Backend\KategoriFotoController');
     Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
     Route::resource('berita', 'Backend\BeritaController');
+    Route::resource('link-terkait', 'Backend\LinkTerkaitController');
+    Route::put('link-terkait/restore/{id}',[
+        'uses' => 'Backend\LinkTerkaitController@restore',
+        'as' => 'link-terkait.restore'
+    ]);
+    Route::delete('link-terkait/force-destroy/{id}',[
+        'uses' => 'Backend\LinkTerkaitController@forceDestroy',
+        'as' => 'link-terkait.force-destroy'
+    ]);
 });
 
 Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
 Route::get('kategori-foto-data', ['as'=>'kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
+
 
 /*-------------------enf of backend-------------*/
 

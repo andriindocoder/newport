@@ -299,7 +299,7 @@
               </li>
     
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('link-terkait.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-link"></i>
                   <p>Link Terkait</p>
                 </a>

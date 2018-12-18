@@ -140,44 +140,30 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="img-box">
-                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
-                    <div class="desc">
-                        <div class="detail">
-                            <h5>Otoritas Pelabuhan</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <a href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="img-box">
-                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
-                    <div class="desc">
-                        <div class="detail">
-                            <h5>Tata Usaha</h5>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <a href="#">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="img-box">
                     <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
                     <div class="desc">
                         <div class="detail">
                             <h5>Fasilitas Pelabuhan</h5>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Pelabuhan Utama Tanjung Priok memiliki berbagai fasilitas yang bersifat kelas dunia  ...
                             </p>
-                            <a href="#">read more</a>
+                            <a href="#">selanjutnya</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="img-box">
+                    <img width="100%" src="{{ asset('frontend-asset/images/news-detail1.jpg') }}" />
+                    <div class="desc">
+                        <div class="detail">
+                            <h5>Fasilitas Dermaga</h5>
+                            <p>
+                                Pelabuhan Utama Tanjung Priok memiliki berbagai dermaga yang masing-masing dilengkapi dengan fasilitas ...
+                            </p>
+                            <a href="#">selanjutnya</a>
                         </div>
                     </div>
                 </div>
@@ -217,40 +203,20 @@
             </div>
         </div>
         <div class="row">
-                        <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
-                    </div>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kapal-kemanusiaan-dengan-750-ton-bantuan-siap-berlayar-ke-sulteng">Kapal Kemanusiaan dengan 750 Ton Bantuan Siap Berlayar ke Sulteng</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 19 Oct 2018 09:47:36</small>
-                    </div>
-                </div>
-            </div>
-                        <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
-                    </div>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kemenhub-akan-siapkan-bus-ke-pelabuhan-tanjung-priok">Kemenhub Akan Siapkan Bus Ke Pelabuhan Tanjung Priok</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 27 Aug 2018 10:09:16</small>
+            @foreach($gallerys as $gallery)
+                <div class="col-md-4 gambar">
+                    <div class="news-box" data-kategori="{{ $gallery->kategoriFoto->slug }}">
+                        <div class="img-box">
+                            <a class="gallery-image-link" href="{{ url($gallery->namafile) }}" data-fancybox="gallery-set" data-caption="{{ $gallery->caption }}"><img src="{{ url($gallery->namafile) }}" width="350px" height="180px" /></a>
+                        </div>
+                        <div class="desc">
+                            <h5><a href="#">{{ $gallery->title }}</a></h5>
+                            <small><i class="fa fa-clock-o"></i> {{ date('d M Y H:i:s', strtotime($gallery->created_at)) }}</small>
+                        </div>
                     </div>
                 </div>
-            </div>
-                        <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
-                    </div>
-                    <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/tingkatkan-keselamatan-pelayaran-kemenhub-berikan-pelatihan-pada-masyarakat-di-selayar-dan-bira">Tingkatkan Keselamatan Pelayaran, Kemenhub Berikan Pelatihan pada Masyarakat di Selayar dan Bira</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 14 Aug 2018 12:01:42</small>
-                    </div>
-                </div>
-            </div>
-                    </div>
+            @endforeach
+        </div>
     </div>
 </div>
 <div class="content-box bg-grey">
@@ -261,36 +227,33 @@
             </div>
         </div>
         <div class="row">
-                        <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="news-box">
                     <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                        <iframe width="350" height="180" src="https://www.youtube.com/embed/WNZ5X0a7IHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kapal-kemanusiaan-dengan-750-ton-bantuan-siap-berlayar-ke-sulteng">Kapal Kemanusiaan dengan 750 Ton Bantuan Siap Berlayar ke Sulteng</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 19 Oct 2018 09:47:36</small>
+                        <h5><a href="#">Kapal Peti Kemas 'Raksasa' Tiba di Pelabuhan Tanjung Priok</a></h5>
                     </div>
                 </div>
             </div>
-                        <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="news-box">
                     <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                        <iframe width="350" height="180" src="https://www.youtube.com/embed/kDVDk0zox6U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/kemenhub-akan-siapkan-bus-ke-pelabuhan-tanjung-priok">Kemenhub Akan Siapkan Bus Ke Pelabuhan Tanjung Priok</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 27 Aug 2018 10:09:16</small>
+                        <h5><a href="#">Tanjung Priok Menjadi Pelabuhan Internasional, Saingi Pelabuhan Singapura</a></h5>
                     </div>
                 </div>
             </div>
-                        <div class="col-md-4">
+            <div class="col-md-4">
                 <div class="news-box">
                     <div class="img-box">
-                        <img src="http://localhost:1234/gambar-berita/2018/08/RIq2DfKabizjN39uU731oZZwscQKI6t1B5dwJqwn.jpeg" width="100%" />
+                        <iframe width="350" height="180" src="https://www.youtube.com/embed/UJt8GhIXtW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/berita/tingkatkan-keselamatan-pelayaran-kemenhub-berikan-pelatihan-pada-masyarakat-di-selayar-dan-bira">Tingkatkan Keselamatan Pelayaran, Kemenhub Berikan Pelatihan pada Masyarakat di Selayar dan Bira</a></h5>
-                        <small><i class="fa fa-clock-o"></i> 14 Aug 2018 12:01:42</small>
+                        <h5><a href="#">Bagaimana Sesuatu Bekerja - Episode Pelabuhan Tanjung Priok</a></h5>
                     </div>
                 </div>
             </div>

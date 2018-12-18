@@ -70,7 +70,7 @@ class LinkTerkaitController extends BackendController
     public function store(LinkTerkaitStoreRequest $request)
     {
         $data = $request->all();
-        $data['created_id'] = Auth::user()->id;
+        $data['create_id'] = Auth::user()->id;
         $data['created_at'] = Carbon::now();
         $bulan = date('m');
         $tahun = date('Y');

@@ -6,7 +6,7 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- general form elements -->
-            <div class="card card-success">
+            <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title"><i class="fa fa-th"></i> Tambah Link Terkait</h3>
               </div>
@@ -47,7 +47,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>  {{ $linkTerkait->exists ? 'Update' : 'Save'}}</button>
+                  <button type="submit" class="btn btn-info"><i class="fa fa-save"></i>  {{ $linkTerkait->exists ? 'Update' : 'Save'}}</button>
                   <a href="{{ route('link-terkait.index') }}" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
                 </div>
             </div>

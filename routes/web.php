@@ -37,6 +37,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
         'uses' => 'Backend\LinkTerkaitController@forceDestroy',
         'as' => 'link-terkait.force-destroy'
     ]);
+    Route::resource('galeri-foto', 'Backend\GaleriFotoController');
+    Route::put('galeri-foto/restore/{id}',[
+        'uses' => 'Backend\GaleriFotoController@restore',
+        'as' => 'galeri-foto.restore'
+    ]);
+    Route::delete('galeri-foto/force-destroy/{id}',[
+        'uses' => 'Backend\GaleriFotoController@forceDestroy',
+        'as' => 'galeri-foto.force-destroy'
+    ]);
 });
 
 Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);

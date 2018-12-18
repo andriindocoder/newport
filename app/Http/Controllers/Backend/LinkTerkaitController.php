@@ -36,14 +36,14 @@ class LinkTerkaitController extends BackendController
         $perPage = $this->limit;
 
         if(($status = $request->get('status')) && $status == 'trash'){
-            $linkTerkaits = LinkTerkait::onlyTrashed()->paginate($perPage);
+            $linkTerkaits = LinkTerkait::onlyTrashed()->latest()->paginate($perPage);
             $linkTerkaitsCount = LinkTerkait::onlyTrashed()->count();
             $onlyTrashed = TRUE;
         }elseif($status == 'active'){
             $linkTerkaits = LinkTerkait::active()->paginate($perPage);
             $linkTerkaitsCount = LinkTerkait::active()->count();
         }else{
-            $linkTerkaits = LinkTerkait::paginate($perPage);
+            $linkTerkaits = LinkTerkait::latest()->paginate($perPage);
             $linkTerkaitsCount = LinkTerkait::count();
         }
 

@@ -14,4 +14,8 @@ class LinkTerkait extends Model
     public function scopeActive($query){
     	return $query->where("status_aktif","=",1);
     }
+
+    public function scopeLatest($query){
+    	return $query->orderBy('ID desc');
+    }
 }

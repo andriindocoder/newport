@@ -1,7 +1,8 @@
 @extends('layouts.frontend.main')
 @section('pageTitle','Beranda')
 @section('content')
-
+@include('layouts.frontend.slider')
+@include('layouts.frontend.contact')
 <style>
   .flex-container{
     display: flex;

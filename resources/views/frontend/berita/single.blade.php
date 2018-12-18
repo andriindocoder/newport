@@ -1,10 +1,10 @@
 @extends('layouts.frontend.main')
 
-@section('title', $berita->title)
+@section('pageTitle', $berita->title)
 @section('content')
     <section>
         <div class="content-header">
-            <img src="{{ asset('portal-frontend/images/bg-header1.jpg') }}" />
+            <img src="{{ asset('frontend-asset/images/head.png') }}" />
             <div class="container">
                 <div class="row">
                     <div class="col">
@@ -51,15 +51,7 @@
                                 @endif
                                 {!! htmlspecialchars_decode(stripslashes($berita->body))!!}
                             </article>
-                            <div class="social-box right">
-                                <ul class="list">
-                                    <li>share</li>
-                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-plus"></i></a></li>
-                                </ul>
-                            </div>
+                            <div class="sharethis-inline-share-buttons"></div>
                         </div>
                         <hr>
                     </div>
@@ -80,4 +72,14 @@
             </div>
         </div>
     </section>
+@endsection
+@section('script')
+    <script>
+        $(function(){
+            $("ul.list>li a").on('click',function(){
+                $('li').removeClass();
+                $(this).parent().addClass('active');
+            });
+        });
+    </script>
 @endsection

@@ -11,6 +11,7 @@
 |
 */
 
+/*-----------------index-----------------------*/
 Route::get('/',[
     'uses' => 'Frontend\TampilanDepanController@index',
     'as'    => 'tampilan-depan.index'
@@ -19,7 +20,9 @@ Route::get('/',[
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/*--------------------end of index-------------*/
 
+/*-------------------backend-------------------*/
 Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
     Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
     Route::resource('kategori-foto', 'Backend\KategoriFotoController');
@@ -31,6 +34,19 @@ Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backen
 Route::get('kategori-foto-data', ['as'=>'kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
 
+/*-------------------enf of backend-------------*/
+
+/*-------------------frontend-------------------*/
+Route::resource('berita', 'Frontend\BeritaController');
+Route::get('/kategori-berita/{category}', [
+    'uses' => 'Frontend\BeritaController@category',
+    'as' => 'berita.kategori',
+]);
+
+/*-------------------enf of frontend-------------*/
+
+
+/*-------------------system----------------------*/
 Route::get('/dwelling-time',[
     'uses' => 'Backend\DwellingTimeController@fetchData',
     'as' => 'dwelling-time.fetch'
@@ -40,13 +56,4 @@ Route::get('/dwelling-time-per-hari',[
     'uses' => 'Backend\DwellingTimeController@perDay',
     'as' => 'dwelling-time.day'
 ]);
-
-Route::get('/berita/{post}',[
-	'uses' => 'Frontend\TampilanDepanController@show',
-	'as' => 'berita.show',
-]);
-
-Route::get('/kategori/{category}', [
-    'uses' => 'Frontend\TampilanDepanController@category',
-    'as' => 'berita.kategori',
-]);
+/*-------------------end of system---------------*/

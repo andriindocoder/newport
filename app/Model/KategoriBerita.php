@@ -23,4 +23,8 @@ class KategoriBerita extends Model
     public function getRouteKeyName(){
         return 'slug';
     }
+
+    public function berita(){
+        return $this->hasMany(Berita::class,'category_id');
+    }
 }

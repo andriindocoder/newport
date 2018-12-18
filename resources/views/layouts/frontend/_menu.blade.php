@@ -6,8 +6,8 @@
                     <nav class="navbar-menu">
                         <ul class="navbar-nav">
                         <li class="active"><a href="{{ url('/') }}">beranda</a></li>
-                            <li><a href="profil.html">profil</a></li>
-                            <li><a href="#">berita</a></li>
+                            <li><a href="#">profil</a></li>
+                            <li><a href="{{ route('berita.index') }}">berita</a></li>
                             <li><a href="#">galeri</a>
                                 <ul>
                                     <li><a href="#">Galeri Foto</a></li>

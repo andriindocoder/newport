@@ -12,16 +12,6 @@
 */
 
 /*-----------------index-----------------------*/
-Route::get('/',[
-    'uses' => 'Frontend\TampilanDepanController@index',
-    'as'    => 'tampilan-depan.index'
-]);
-
-Route::get('/index-frontend',[
-    'uses' => 'Frontend\TampilanDepanController@index',
-    'as'    => 'tampilan-depan.index'
-]);
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -61,12 +51,34 @@ Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\
 /*-------------------enf of backend-------------*/
 
 /*-------------------frontend-------------------*/
+Route::get('/',[
+    'uses' => 'Frontend\TampilanDepanController@index',
+    'as'    => 'tampilan-depan.index'
+]);
+
 Route::resource('berita', 'Frontend\BeritaController');
 Route::get('/kategori-berita/{category}', [
     'uses' => 'Frontend\BeritaController@category',
     'as' => 'berita.kategori',
 ]);
 
+Route::get('/profil/sejarah',[
+	'uses' 	=> 'Frontend\ProfilController@sejarah',
+	'as' 	=> 'profil.sejarah',
+]);
+Route::get('/profil/struktur',[
+	'uses' 	=> 'Frontend\ProfilController@struktur',
+	'as' 	=> 'profil.struktur',
+]);
+Route::get('/profil/visi-misi',[
+	'uses' 	=> 'Frontend\ProfilController@visimisi',
+	'as' 	=> 'profil.visimisi',
+]);
+Route::get('/profil/tupoksi',[
+	'uses' 	=> 'Frontend\ProfilController@tupoksi',
+	'as' 	=> 'profil.tupoksi',
+]);
+Route::resource('profil', 'Frontend\ProfilController');
 /*-------------------enf of frontend-------------*/
 
 

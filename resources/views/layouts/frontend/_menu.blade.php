@@ -25,7 +25,9 @@
                                     <li><a href="#">Fumigasi</a></li>
                                 </ul>
                             </li>
+                            @role('perusahaan')
                             <li><a href="#">pelaporan</a></li>
+                            @endrole
                         </ul>
                     </nav>
                 </div>

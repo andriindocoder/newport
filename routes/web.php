@@ -17,6 +17,11 @@ Route::get('/',[
     'as'    => 'tampilan-depan.index'
 ]);
 
+Route::get('/index-frontend',[
+    'uses' => 'Frontend\TampilanDepanController@index',
+    'as'    => 'tampilan-depan.index'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

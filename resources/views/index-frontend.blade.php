@@ -211,7 +211,6 @@
                         </div>
                         <div class="desc">
                             <h5><a href="#">{{ $gallery->title }}</a></h5>
-                            <small><i class="fa fa-clock-o"></i> {{ date('d M Y H:i:s', strtotime($gallery->created_at)) }}</small>
                         </div>
                     </div>
                 </div>

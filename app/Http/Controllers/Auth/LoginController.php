@@ -27,7 +27,7 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $this->performLogout($request);
-        return redirect('/home');
+        return redirect('/index-frontend');
     }
 
     /**
@@ -39,7 +39,7 @@ class LoginController extends Controller
         if(Auth::user()->role_id != '11'){
             return '/home';
         }else{
-            return '/';
+            return '/index-frontend';
         }
     }
 

@@ -79,6 +79,13 @@ Route::get('/profil/tupoksi',[
 	'as' 	=> 'profil.tupoksi',
 ]);
 Route::resource('profil', 'Frontend\ProfilController');
+
+Route::get('/galeri-foto',[
+    'uses'  => 'Frontend\TampilanDepanController@galeriFoto',
+    'as'    => 'galeri-foto', 
+]);
+
+Route::resource('pengaduan', 'Frontend\PengaduanController');
 /*-------------------enf of frontend-------------*/
 
 

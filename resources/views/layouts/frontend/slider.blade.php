@@ -10,18 +10,7 @@
         <div id="slider-home">
             <div class="slide">
                 <img src="{{ url($slidesatu->foto) }}" height="100%" />
-                <div class="container">
-                    <div class="row slide-content">
-                        <div class="col-sm-9">
-                            <div class="desc" data-animation="fadeInUpBig" data-delay="0.5s">
-                                <h1>{!! $judulslidesatu ? $judulslidesatu->konten : ''  !!}</h1>
-                                <p>
-                                    {!! $slidesatu ? $slidesatu->konten : '' !!}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="slide">
                 <img src="{{ url($slidedua->foto) }}" height="100%" />

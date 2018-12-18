@@ -10,7 +10,7 @@
                             <li><a href="{{ route('berita.index') }}">berita</a></li>
                             <li><a href="#">galeri</a>
                                 <ul>
-                                    <li><a href="#">Galeri Foto</a></li>
+                                    <li><a href="{{ route('galeri-foto') }}">Galeri Foto</a></li>
                                     <li><a href="#">Galeri Video</a></li>
                                 </ul>
                             </li>

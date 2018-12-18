@@ -20,4 +20,11 @@ class TampilanDepanController extends Controller
 
         return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos'));
     }
+
+    public function galeriFoto(){
+        $gallerys = GaleriFoto::orderBy('id','DESC')->get();
+        $kategoriFotos = KategoriFoto::get();
+
+        return view('frontend.galeri-foto.index', compact('gallerys','kategoriFotos'));
+    }
 }

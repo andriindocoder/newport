@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <a class="whistleblower" href="#" >WHISTLEBLOWER</a>
+    <a class="whistleblower" href="{{ route('pengaduan.create') }}" >WHISTLEBLOWER</a>
     @include('layouts.frontend.header')
     <section>
         @yield('content')

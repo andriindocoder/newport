@@ -130,7 +130,7 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ route('galeri-foto.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>List Foto</p>
                       </a>

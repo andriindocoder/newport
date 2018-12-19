@@ -92,6 +92,11 @@ Route::get('/registrasi',[
     'as'    => 'registrasi' 
 ]);
 
+Route::get('/registrasi-cek-tipe-perusahaan',[
+    'uses'  => 'Frontend\RegistrasiController@tipePerusahaan',
+    'as'    => 'registrasi.tipe-perusahaan'
+]);
+
 Route::post('/registrasi-cek-tipe-perusahaan',[
     'uses'  => 'Frontend\RegistrasiController@tipePerusahaan',
     'as'    => 'registrasi.tipe-perusahaan'

@@ -242,7 +242,7 @@
                                     </div>
                                     <div class="form-group {{ $errors->has('wilayah_id') ? 'has-error' : ''}} m-input">
                                         <label>Wilayah Domisili Kantor <sup>*</sup></label>
-                                        {!! Form::select('wilayah_id',['1'=>1],null,['class'=>'selectpicker','title' => 'Domisili Kantor ...','id'=>'nama-wilayah-id','data-live-search'=>'true']) !!}
+                                        {!! Form::select('wilayah_id',App\Model\Wilayah::pluck('nama_wilayah','id'),null,['class'=>'selectpicker','title' => 'Domisili Kantor ...','id'=>'nama-wilayah-id','data-live-search'=>'true']) !!}
                                         @if($errors->has('wilayah_id'))
                                         <span class="help-block badge badge-danger">{{ $errors->first('wilayah_id') }}</span>
                                         @endif

@@ -86,6 +86,13 @@ Route::get('/galeri-foto',[
 ]);
 
 Route::resource('pengaduan', 'Frontend\PengaduanController');
+
+Route::group(['middleware'=>['auth']], function(){
+	Route::get('/rekomendasi',[
+		'uses' 	=> 'Frontend\PelayananController@rekomendasi',
+		'as' 	=> 'pelayanan.rekomendasi',
+    ]);
+});
 /*-------------------enf of frontend-------------*/
 
 

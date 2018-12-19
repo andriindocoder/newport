@@ -30,7 +30,7 @@
                         @csrf
                     </form>
                     @endif
-                    <li><a href="{{ route('register') }}" class="btn btn-outline-light"><span>Daftar</span><i class="fa fa-pencil"></i></a></li>
+                    <li><a href="{{ route('registrasi') }}" class="btn btn-outline-light"><span>Daftar</span><i class="fa fa-pencil"></i></a></li>
                     
                 </ul>
             </div>

@@ -87,6 +87,36 @@ Route::get('/galeri-foto',[
 
 Route::resource('pengaduan', 'Frontend\PengaduanController');
 
+Route::get('/registrasi',[
+    'uses'  => 'Frontend\RegistrasiController@index',
+    'as'    => 'registrasi' 
+]);
+
+Route::post('/registrasi-cek-tipe-perusahaan',[
+    'uses'  => 'Frontend\RegistrasiController@tipePerusahaan',
+    'as'    => 'registrasi.tipe-perusahaan'
+]);
+
+Route::post('/registrasi-pmku',[
+    'uses'  => 'Frontend\RegistrasiController@pmku',
+    'as'    => 'registrasi.pmku'
+]);
+
+Route::post('/registrasi-pmku-save',[
+    'uses'  => 'Frontend\RegistrasiController@store',
+    'as'    => 'registrasi.store'
+]);
+
+Route::post('/registrasi-pmku-cek-siupkk',[
+	'uses'  => 'Frontend\RegistrasiController@cekSiupkk',
+	'as'	=> 'registrasi.cek-siupkk' 
+]);
+
+Route::get('/registrasi-pmku-cek-nib',[
+	'uses'  => 'Frontend\RegistrasiController@cekNib',
+	'as'	=> 'registrasi.cek-nib' 
+]);
+
 Route::group(['middleware'=>['auth']], function(){
 	Route::get('/rekomendasi',[
 		'uses' 	=> 'Frontend\PelayananController@rekomendasi',

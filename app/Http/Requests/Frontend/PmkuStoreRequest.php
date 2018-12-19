@@ -35,9 +35,9 @@ class PmkuStoreRequest extends FormRequest
         $atribut = ucwords(':attribute');
 
         return [
-            'required'                  => $atribut . ' tidak boleh kosong.',
-            'email'                     => ':attribute harus berupa email yang valid.', 
-            'name.required'   => 'username tidak boleh kosong.',
+            'required'          => $atribut . ' tidak boleh kosong.',
+            'email'             => ':attribute harus berupa email yang valid.', 
+            'name.required'     => 'username tidak boleh kosong.',
             'name.alpha_dash'   => 'username tidak boleh ada spasi.',
         ];
     }

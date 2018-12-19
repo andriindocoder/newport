@@ -15,6 +15,9 @@ class TableWilayah extends Migration
     {
         Schema::create('wilayah', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('kode_wilayah',10);
+            $table->string('nama_wilayah',100);
+            
             $table->integer('create_id')->nullable();
             $table->integer('update_id')->nullable();
             $table->integer('delete_id')->nullable();

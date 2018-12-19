@@ -19,7 +19,7 @@ class TampilanDepanController extends Controller
         $kategoriFotos = KategoriFoto::get();
 
         return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos'));
-    }
+    } 
 
     public function galeriFoto(){
         $gallerys = GaleriFoto::orderBy('id','DESC')->get();

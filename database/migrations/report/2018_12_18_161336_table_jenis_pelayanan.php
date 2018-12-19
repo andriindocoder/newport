@@ -15,8 +15,8 @@ class TableJenisPelayanan extends Migration
     {
         Schema::create('jenis_pelayanan', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_pelayanan');
-            $table->string('nama_pelayanan');
+            $table->string('kode');
+            $table->string('nama');
             $table->text('keterangan');
             $table->integer('create_id')->nullable();
             $table->integer('update_id')->nullable();

@@ -15,6 +15,7 @@ class TablePmku extends Migration
     {
         Schema::create('pmku', function (Blueprint $table) {
             $table->increments('id');
+            
             $table->integer('create_id')->nullable();
             $table->integer('update_id')->nullable();
             $table->integer('delete_id')->nullable();

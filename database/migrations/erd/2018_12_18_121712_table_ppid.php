@@ -31,9 +31,12 @@ class TablePpid extends Migration
             $table->integer('status_ppid')->default(1);
             $table->text('balasan')->nullable();
             $table->string('file_balasan')->nullable();
+            $table->integer('create_id')->nullable();
+            $table->integer('update_id')->nullable();
+            $table->integer('delete_id')->nullable();
             $table->softDeletes();
-            $table->tinyInteger('status_aktif')->default(1);
             $table->timestamps();
+            $table->tinyInteger('status_aktif')->default(1);
         });
     }
 

@@ -13,6 +13,9 @@
 
 /*-----------------index-----------------------*/
 Auth::routes();
+Route::match(['get', 'post'], 'register', function(){
+    return redirect('/');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 /*--------------------end of index-------------*/
@@ -92,12 +95,12 @@ Route::get('/registrasi',[
     'as'    => 'registrasi' 
 ]);
 
-Route::get('/registrasi-cek-tipe-perusahaan',[
+Route::get('/registrasi-perusahaan',[
     'uses'  => 'Frontend\RegistrasiController@tipePerusahaan',
     'as'    => 'registrasi.tipe-perusahaan'
 ]);
 
-Route::post('/registrasi-cek-tipe-perusahaan',[
+Route::post('/registrasi-perusahaan',[
     'uses'  => 'Frontend\RegistrasiController@tipePerusahaan',
     'as'    => 'registrasi.tipe-perusahaan'
 ]);

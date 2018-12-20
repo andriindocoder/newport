@@ -18,7 +18,6 @@
     font-size: 22px;
   }
 </style>
-
 <div class="content-box">
     <div class="container">
         <div class="row">

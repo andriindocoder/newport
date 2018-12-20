@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Role;
-use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -64,15 +63,12 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create($permintaan)
+    protected function create(array $data)
     {
-        $data = $permintaan->all();
         $role = Role::where("name","=","perusahaan")->first();
         $data['bio'] = 'Perusahaan';
         $data['role_id'] = $role->id;
         $data['slug'] = slugify($data['name']);
-        $data['nama_instansi'] = 'PT Nganu';
-        $data['email'] = 'shanjus@gmail.com';
 
 
         return User::create([

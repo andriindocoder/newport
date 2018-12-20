@@ -43,7 +43,7 @@
             </div>
             <div class="form-group {{ $errors->has('jenis_usaha_id') ? 'has-error' : ''}} m-input">
                 <label>Bidang Usaha <sup>*</sup></label>
-                {!! Form::select('jenis_usaha_id',['1'=>1],null,['class'=>'selectpicker','title' => 'Pilih Jenis Usaha ...','id'=>'jenis-usaha-id','data-live-search'=>'true']) !!}
+                {!! Form::select('jenis_usaha_id',App\Model\JenisUsaha::pluck('jenis_usaha','id'),null,['class'=>'selectpicker','title' => 'Pilih Jenis Usaha ...','id'=>'jenis-usaha-id','data-live-search'=>'true']) !!}
                 @if($errors->has('jenis_usaha_id'))
                 <span class="help-block badge badge-danger">{{ $errors->first('jenis_usaha_id') }}</span>
                 @endif

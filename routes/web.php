@@ -90,6 +90,31 @@ Route::get('/galeri-foto',[
 
 Route::resource('pengaduan', 'Frontend\PengaduanController');
 
+Route::get('/ppid',[
+    'uses'  => 'Frontend\PpidController@index',
+    'as'    => 'ppid'
+]);
+
+Route::post('/ppid',[
+    'uses'  => 'Frontend\PpidController@store',
+    'as'    => 'ppid.store'
+]);
+
+Route::get('/ppid/form',[
+	'uses' 	=> 'Frontend\PpidController@form',
+	'as' 	=> 'ppid.form',
+]);
+
+Route::get('/ppid/dasar-hukum',[
+	'uses' 	=> 'Frontend\PpidController@dasarHukum',
+	'as' 	=> 'ppid.dasar-hukum',
+]);
+
+Route::get('/ppid/profil',[
+	'uses' 	=> 'Frontend\PpidController@profil',
+	'as' 	=> 'ppid.profil',
+]);
+
 Route::get('/registrasi',[
     'uses'  => 'Frontend\RegistrasiController@index',
     'as'    => 'registrasi' 

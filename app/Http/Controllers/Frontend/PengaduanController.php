@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Mail;
 class PengaduanController extends Controller
 {
     public function index(){
-        return view('frontend.pengaduan.create');
+        $pengaduan = new Pengaduan();
+        return view('frontend.pengaduan.create',compact('pengaduan'));
     }
 
     public function create(){

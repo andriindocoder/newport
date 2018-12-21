@@ -44,7 +44,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-edit"></i></span>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/profil-ppid">PPID</a></h5>
+                        <h5><a href="{{ route('ppid') }}">PPID</a></h5>
                         <p>
                             Profil Pejabat Pengelola Informasi dan Dokumentasi (PPID) Kantor Otoritas Pelabuhan Tanjung Priok dan Formulir pengajuan permohonan informasi secara online.
                         </p>

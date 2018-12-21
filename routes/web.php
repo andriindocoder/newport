@@ -157,6 +157,14 @@ Route::group(['middleware'=>['auth']], function(){
 		'uses' 	=> 'Frontend\PelayananController@rekomendasi',
 		'as' 	=> 'pelayanan.rekomendasi',
     ]);
+    Route::get('/docking',[
+        'uses'  => 'Frontend\PelayananController@docking',
+        'as'    => 'pelayanan.docking',
+    ]);
+    Route::post('/docking',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
 });
 /*-------------------enf of frontend-------------*/
 

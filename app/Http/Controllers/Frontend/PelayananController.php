@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Pelayanan;
 
 class PelayananController extends Controller
 {
@@ -29,6 +30,17 @@ class PelayananController extends Controller
 
     public function rekomendasi(){
         return view('frontend.pelayanan.rekomendasi');
+    }
+
+    public function docking(){
+        $docking = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        return view('frontend.pelayanan.docking',compact('docking','listBadanUsaha','listTempatKantor'));
+    }
+
+    public function store(){
+
     }
 
 }

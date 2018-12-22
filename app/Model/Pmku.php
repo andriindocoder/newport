@@ -4,6 +4,8 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Model\Wilayah;
+use App\Model\JenisUsaha;
 
 class Pmku extends Model
 {
@@ -19,5 +21,13 @@ class Pmku extends Model
 
     public function scopeLatest($query){
     	return $query->orderBy("id DESC");
+    }
+
+    public function wilayah(){
+        return $this->belongsTo(Wilayah::class);
+    }
+
+    public function jenisUsaha(){
+        return $this->belongsTo(JenisUsaha::class);
     }
 }

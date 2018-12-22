@@ -20,14 +20,14 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
 
     public function tipePerusahaan(Request $request){
         $listBadanUsaha = [
-            '1' => 'PT',
-            '2' => 'Perusahaan Perorangan',
-            '3' => 'Firma',
-            '4' => 'CV',
-            '5' => 'Koperasi',
-            '6' => 'PD',
-            '7' => 'Perum',
-            '8' => 'Persero',
+            'PT' => 'PT',
+            'Perusahaan Perorangan' => 'Perusahaan Perorangan',
+            'Firma' => 'Firma',
+            'CV' => 'CV',
+            'Koperasi' => 'Koperasi',
+            'PD' => 'PD',
+            'Perum' => 'Perum',
+            'Persero' => 'Persero',
         ];
     
         $listTempatKantor = [
@@ -83,8 +83,6 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
         $data['role_id'] = $role->id;
         $data['slug'] = slugify($data['name']);
         $data['nama_instansi'] = $data['nama_perusahaan'];
-        $data['jenis_usaha_id'] = 1;
-        $data['wilayah_id'] = 1;
         
         $user = User::create([
             'nama_instansi' => $data['nama_instansi'],

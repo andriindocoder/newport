@@ -19,36 +19,39 @@ Route::match(['get', 'post'], 'register', function(){
 
 Route::get('/home',[
     'uses'  => 'HomeController@index',
-    'as'    => 'home' 
+    'as'    => 'home' ,
+    'middleware' => ['role:superadmin|keuangan|kepegawaian|humas|renpro|desain|tarif|lala|fasilitas|bimus']
 ]);
 /*--------------------end of index-------------*/
 
 /*-------------------backend-------------------*/
 Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
-    Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
-    Route::resource('kategori-foto', 'Backend\KategoriFotoController');
-    Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
-    Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
-    Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
-    Route::resource('berita', 'Backend\BeritaController');
-    Route::resource('link-terkait', 'Backend\LinkTerkaitController');
-    Route::put('link-terkait/restore/{id}',[
-        'uses' => 'Backend\LinkTerkaitController@restore',
-        'as' => 'link-terkait.restore'
-    ]);
-    Route::delete('link-terkait/force-destroy/{id}',[
-        'uses' => 'Backend\LinkTerkaitController@forceDestroy',
-        'as' => 'link-terkait.force-destroy'
-    ]);
-    Route::resource('galeri-foto', 'Backend\GaleriFotoController');
-    Route::put('galeri-foto/restore/{id}',[
-        'uses' => 'Backend\GaleriFotoController@restore',
-        'as' => 'galeri-foto.restore'
-    ]);
-    Route::delete('galeri-foto/force-destroy/{id}',[
-        'uses' => 'Backend\GaleriFotoController@forceDestroy',
-        'as' => 'galeri-foto.force-destroy'
-    ]);
+    Route::group(['middleware'=>['role:superadmin|humas']], function(){
+        Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
+        Route::resource('kategori-foto', 'Backend\KategoriFotoController');
+        Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
+        Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
+        Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
+        Route::resource('berita', 'Backend\BeritaController');
+        Route::resource('link-terkait', 'Backend\LinkTerkaitController');
+        Route::put('link-terkait/restore/{id}',[
+            'uses' => 'Backend\LinkTerkaitController@restore',
+            'as' => 'link-terkait.restore'
+        ]);
+        Route::delete('link-terkait/force-destroy/{id}',[
+            'uses' => 'Backend\LinkTerkaitController@forceDestroy',
+            'as' => 'link-terkait.force-destroy'
+        ]);
+        Route::resource('galeri-foto', 'Backend\GaleriFotoController');
+        Route::put('galeri-foto/restore/{id}',[
+            'uses' => 'Backend\GaleriFotoController@restore',
+            'as' => 'galeri-foto.restore'
+        ]);
+        Route::delete('galeri-foto/force-destroy/{id}',[
+            'uses' => 'Backend\GaleriFotoController@forceDestroy',
+            'as' => 'galeri-foto.force-destroy'
+        ]);
+    });
 });
 
 Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);

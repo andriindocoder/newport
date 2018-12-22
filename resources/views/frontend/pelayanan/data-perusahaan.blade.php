@@ -61,25 +61,26 @@
     <div class="col-md-6">
         <div class="form-group {{ $errors->has('file_npwp') ? 'has-error' : ''}} m-input">
             <label>NPWP Perusahaan <sup>*</sup></label><br>
-            <button class="btn btn-secondary btn-sm"><i class="fa fa-search"></i> Lihat File NPWP</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalNPWP" data-ktp= "{{ url(Auth::user() ? Auth::user()->pmku->file_npwp : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File NPWP Perusahaan
+            </button>
         </div>
         <div class="form-group {{ $errors->has('file_struktur') ? 'has-error' : ''}} m-input">
             <label>Upload Dokumen Struktur Organisasi Perusahaan <sup>*</sup></label><br>
-            <button class="btn btn-secondary btn-sm"><i class="fa fa-search"></i> Lihat File Struktur Organisasi Perusahaan</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalStruktur" data-struktur= "{{ url(Auth::user() ? Auth::user()->pmku->file_struktur : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Struktur Organisasi Perusahaan</button>
         </div>
         <div class="form-group {{ $errors->has('file_akta') ? 'has-error' : ''}} m-input">
             <label>Upload Dokumen Akta SIUP KUM HAM <sup>*</sup></label><br>
-            <button class="btn btn-secondary btn-sm"><i class="fa fa-search"></i> Lihat File Dokumen Akta SIUP KUM HAM</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalAkta" data-akta= "{{ url(Auth::user() ? Auth::user()->pmku->file_akta : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Dokumen Akta SIUP KUM HAM</button>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group {{ $errors->has('file_siup') ? 'has-error' : ''}} m-input">
             <label>Upload Dokumen SIUP <sup>*</sup></label><br>
-            <button class="btn btn-secondary btn-sm"><i class="fa fa-search"></i> Lihat File Dokumen SIUP</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalSIUP" data-siup= "{{ url(Auth::user() ? Auth::user()->pmku->file_siup : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Dokumen SIUP</button>
         </div>
         <div class="form-group {{ $errors->has('file_domisili') ? 'has-error' : ''}} m-input">
             <label>Upload Dokumen Surat Keterangan Domisili <sup>*</sup></label><br>
-            <button class="btn btn-secondary btn-sm"><i class="fa fa-search"></i> Lihat File Surat Keterangan Domisili</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalDomisili" data-domisili= "{{ url(Auth::user() ? Auth::user()->pmku->file_domisili : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Surat Keterangan Domisili</button>
         </div>
     </div>
 </div>
@@ -131,15 +132,23 @@
         </div>
         <div class="form-group {{ $errors->has('file_ktp') ? 'has-error' : ''}} m-input">
             <label>Upload KTP Penanggung Jawab <sup>*</sup></label><br>
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#exampleModal" data-ktp= "{{ url(Auth::user() ? Auth::user()->pmku->file_ktp : 'empty.jpg') }}">
-                    <i class="fa fa-search"></i> Lihat File KTP Penanggung Jawab
+            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalKTP" data-ktp= "{{ url(Auth::user() ? Auth::user()->pmku->file_ktp : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File KTP Penanggung Jawab
             </button>
         </div>
     </div>
     <div class="col-md-6">
             <div class="form-group {{ $errors->has('tempat_kantor') ? 'has-error' : ''}} m-input">
                 <label>Tempat Kantor / Pemilik Usaha <sup>*</sup></label>
-                {!! Form::select('tempat_kantor',$listTempatKantor,null,['class'=>'selectpicker','title' => 'Pilih Kantor Pusat / Cabang ...','id'=>'tempat-kantor','data-live-search'=>'true']) !!}
+                <?php
+                    if(Auth::user()->pmku->tempat_kantor == 1){
+                        $kantor = 'Kantor Pusat';
+                    }else{
+                        $kantor = 'Kantor Cabang';
+                    }
+                ?>
+
+                {!! Form::text('tempat_kantor', null, ['class'=> 'form-control','placeholder'=>$kantor,'disabled']) !!}
+
                 @if($errors->has('tempat_kantor'))
                 <span class="help-block badge badge-danger">{{ $errors->first('tempat_kantor') }}</span>
                 @endif
@@ -173,5 +182,9 @@
         </div>
     </div>
 </div>
-@include('frontend.pelayanan.dashscript')
 @include('frontend.pelayanan.modal-ktp')
+@include('frontend.pelayanan.modal-npwp')
+@include('frontend.pelayanan.modal-struktur')
+@include('frontend.pelayanan.modal-siup')
+@include('frontend.pelayanan.modal-akta')
+@include('frontend.pelayanan.modal-domisili')

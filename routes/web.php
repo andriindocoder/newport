@@ -25,6 +25,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
     Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
     Route::resource('kategori-foto', 'Backend\KategoriFotoController');
     Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
+    Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
     Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
     Route::resource('berita', 'Backend\BeritaController');
     Route::resource('link-terkait', 'Backend\LinkTerkaitController');
@@ -51,6 +52,7 @@ Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backen
 Route::get('kategori-foto-data', ['as'=>'kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
 Route::get('jenis-usaha-data', ['as'=>'jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
+Route::get('jenis-pelayanan-data', ['as'=>'jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);
 
 
 /*-------------------enf of backend-------------*/

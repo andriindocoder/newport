@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laratrust\Traits\LaratrustUserTrait;
 use App\Model\Berita;
+use App\Model\Pmku;
 
 class User extends Authenticatable
 {
@@ -33,6 +34,10 @@ class User extends Authenticatable
 
     public function posts(){
         return $this->hasMany(Berita::class,'author_id');
+    }
+
+    public function pmku(){
+        return $this->hasOne(Pmku::class,'create_id');
     }
   
     public function getRouteKeyName(){

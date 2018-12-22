@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Pelayanan;
+use Auth;
 
 class PelayananController extends Controller
 {
@@ -36,7 +37,8 @@ class PelayananController extends Controller
         $docking = new Pelayanan();
         $listBadanUsaha = $this->listBadanUsaha();
         $listTempatKantor = $this->listTempatKantor();
-        return view('frontend.pelayanan.docking',compact('docking','listBadanUsaha','listTempatKantor'));
+        $user = Auth::user();
+        return view('frontend.pelayanan.docking',compact('docking','listBadanUsaha','listTempatKantor','user'));
     }
 
     public function store(){

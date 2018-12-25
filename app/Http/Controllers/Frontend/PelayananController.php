@@ -42,6 +42,14 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.docking',compact('docking','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function fumigasi(){
+        $fumigasi = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.fumigasi',compact('fumigasi','listBadanUsaha','listTempatKantor','user'));
+    }
+
     public function store(Request $request){
         $bulan = date('m');
         $tahun = date('Y');
@@ -54,10 +62,10 @@ class PelayananController extends Controller
         $data['pmku_id'] = $user->pmku->id;
         $jenisPelayananId = \App\Model\JenisPelayanan::where('kode_pelayanan','=',$jenisPelayanan)->first();
         $data['jenis_pelayanan_id'] = $jenisPelayananId->id;
-
         Pelayanan::create($data);
-        
-        return redirect("/docking")->with('message','Permintaan Pelayanan Docking Berhasil Dikirim ke Otoritas Pelabuhan Tanjung Priok. Mohon menunggu response melalui email.');
+
+
+        return redirect('/'.$jenisPelayananId->slug)->with('message','Permintaan Pelayanan Nomor ' . $data["no_pelayanan"]. ' Berhasil Dikirim ke Otoritas Pelabuhan Tanjung Priok. Mohon menunggu response melalui email.');
     }
 
 }

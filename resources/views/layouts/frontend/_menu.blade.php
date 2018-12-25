@@ -22,7 +22,7 @@
                                     <li><a href="#">Pelayanan Supplier</a></li>
                                     <li><a href="#">Bunker Darat</a></li>
                                     <li><a href="{{ route('pelayanan.docking') }}">Docking</a></li>
-                                    <li><a href="#">Fumigasi</a></li>
+                                    <li><a href="{{ route('pelayanan.fumigasi') }}">Fumigasi</a></li>
                                 </ul>
                             </li>
                             @role('perusahaan')

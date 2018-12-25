@@ -173,6 +173,14 @@ Route::group(['middleware'=>['auth']], function(){
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);
+    Route::get('/fumigasi',[
+        'uses'  => 'Frontend\PelayananController@fumigasi',
+        'as'    => 'pelayanan.fumigasi',
+    ]);
+    Route::post('/fumigasi',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
 });
 /*-------------------enf of frontend-------------*/
 

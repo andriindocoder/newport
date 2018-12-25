@@ -181,6 +181,22 @@ Route::group(['middleware'=>['auth']], function(){
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);
+    Route::get('/bunker-darat',[
+        'uses'  => 'Frontend\PelayananController@bunkerDarat',
+        'as'    => 'pelayanan.bunker-darat',
+    ]);
+    Route::post('/bunker-darat',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
+    Route::get('/pelayanan-supplier',[
+        'uses'  => 'Frontend\PelayananController@pelayananSupplier',
+        'as'    => 'pelayanan.pelayanan-supplier',
+    ]);
+    Route::post('/pelayanan-supplier',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
 });
 /*-------------------enf of frontend-------------*/
 

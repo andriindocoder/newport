@@ -50,6 +50,22 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.fumigasi',compact('fumigasi','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function bunkerDarat(){
+        $bunkerDarat = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.bunker-darat',compact('bunkerDarat','listBadanUsaha','listTempatKantor','user'));
+    }
+
+    public function pelayananSupplier(){
+        $pelayananSupplier = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.pelayanan-supplier',compact('pelayananSupplier','listBadanUsaha','listTempatKantor','user'));
+    }
+
     public function store(Request $request){
         $bulan = date('m');
         $tahun = date('Y');

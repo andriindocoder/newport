@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Pelayanan;
 use Auth;
+use Carbon\Carbon;
 
 class PelayananController extends Controller
 {
@@ -41,8 +42,22 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.docking',compact('docking','listBadanUsaha','listTempatKantor','user'));
     }
 
-    public function store(){
+    public function store(Request $request){
+        $bulan = date('m');
+        $tahun = date('Y');
+        $jenisPelayanan = $request->get('jenis_pelayanan');
+        $user = Auth::user();
+        $data = $request->all();
+        $data['no_pelayanan'] = $tahun.$bulan.$jenisPelayanan.'_'.time();
+        $data['create_id'] = $user->id;
+        $data['created_at'] = Carbon::now();
+        $data['pmku_id'] = $user->pmku->id;
+        $jenisPelayananId = \App\Model\JenisPelayanan::where('kode_pelayanan','=',$jenisPelayanan)->first();
+        $data['jenis_pelayanan_id'] = $jenisPelayananId->id;
 
+        Pelayanan::create($data);
+        
+        return redirect("/docking")->with('message','Permintaan Pelayanan Docking Berhasil Dikirim ke Otoritas Pelabuhan Tanjung Priok. Mohon menunggu response melalui email.');
     }
 
 }

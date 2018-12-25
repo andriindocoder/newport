@@ -49,19 +49,20 @@
                                                   </div>
                     
                                         </div>
-                                    </div>
-                                    
+									</div>
+									{{ Form::hidden('jenis_pelayanan', 'DCKG') }}
+									<small><sup>*</sup> <i>Tidak boleh kosong</i></small>
+									<div class="btn-box">
+										<button type="submit" class="btn btn-blue"><span>Send Form</span></button>
+										<a href="{{ url('/') }}" class="btn btn-warning"> Cancel</a>
+									</div>
+                                    {!! Form::close() !!}
                                     @include('frontend.pelayanan.data-perusahaan')
 
-	                            <small><sup>*</sup> <i>Tidak boleh kosong</i></small>
-	                            <div class="btn-box">
-	                                <button type="submit" class="btn btn-blue"><span>Send Form</span></button>
-	                                <a href="{{ url('/') }}" class="btn btn-warning"> Cancel</a>
-								</div>
 	                    </div>
 	                </div>
 	            </div>
-			    {!! Form::close() !!}
+			    
                 </div>
 	    </div>
 	</section>

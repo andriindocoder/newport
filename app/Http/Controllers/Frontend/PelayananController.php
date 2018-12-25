@@ -66,6 +66,30 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.pelayanan-supplier',compact('pelayananSupplier','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function rekomendasiCabangAp(){
+        $rekomendasiCabangAp = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.rekomendasi-cabang-ap',compact('rekomendasiCabangAp','listBadanUsaha','listTempatKantor','user'));
+    }
+
+    public function rekomendasiSiupPbm(){
+        $rekomendasiSiupPbm = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.rekomendasi-siup-pbm',compact('rekomendasiSiupPbm','listBadanUsaha','listTempatKantor','user'));
+    }
+
+    public function rekomendasiCabangSiupkk(){
+        $rekomendasiCabangSiupkk = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.rekomendasi-cabang-siupkk',compact('rekomendasiCabangSiupkk','listBadanUsaha','listTempatKantor','user'));
+    }
+
     public function store(Request $request){
         $bulan = date('m');
         $tahun = date('Y');

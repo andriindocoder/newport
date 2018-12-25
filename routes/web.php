@@ -197,6 +197,30 @@ Route::group(['middleware'=>['auth']], function(){
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);
+    Route::get('/rekomendasi-cabang-ap',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiCabangAp',
+        'as'    => 'pelayanan.rekomendasi-cabang-ap',
+    ]);
+    Route::post('/rekomendasi-cabang-ap',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
+    Route::get('/rekomendasi-cabang-siupkk',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiCabangSiupkk',
+        'as'    => 'pelayanan.rekomendasi-cabang-siupkk',
+    ]);
+    Route::post('/rekomendasi-cabang-siupkk',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
+    Route::get('/rekomendasi-siup-pbm',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiSiupPbm',
+        'as'    => 'pelayanan.rekomendasi-siup-pbm',
+    ]);
+    Route::post('/rekomendasi-siup-pbm',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
 });
 /*-------------------enf of frontend-------------*/
 

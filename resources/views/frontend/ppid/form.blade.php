@@ -172,8 +172,8 @@
                 <div class="sidebar-list">
                     <div class="sidebar-box sidebar-nav">
                         <ul class="list">
-                            <li class="active"><a href="#formulir-ppid">Formulir Permohonan Informasi</a></li>
                             <li><a href="#profil-ppid">Profil PPID</a></li>
+                            <li class="active"><a href="#formulir-ppid">Formulir Permohonan Informasi</a></li>
                             <li><a href="#dasar-hukum-ppid">Dasar Hukum</a></li>
                         </ul>
                     </div>

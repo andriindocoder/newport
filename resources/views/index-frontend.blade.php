@@ -55,7 +55,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-map-o"></i></span>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/informasi-publik">informasi publik</a></h5>
+                        <h5><a href="#">informasi publik</a></h5>
                         <p>
                             Informasi berkala, informasi serta merta dan informasi setiap saat.
                         </p>
@@ -66,7 +66,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-anchor"></i></span>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/program-dan-kegiatan">Program Dan Kegiatan</a></h5>
+                        <h5><a href="#">Program Dan Kegiatan</a></h5>
                         <p>
                             Program-progam dan kegiatan yang tertuang dalam Renstra maupun kegiatan lainnya.
                         </p>
@@ -77,7 +77,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-info-circle"></i></span>
                     <div class="desc">
-                    <h5><a href="http://localhost:1234/data-dan-informasi">Data Dan Informasi</a></h5>
+                    <h5><a href="#">Data Dan Informasi</a></h5>
                         <p>
                             Data dan informasi seperti data penumpang maupun sarana dan prasarana, LHKPN dll...
                         </p>
@@ -88,7 +88,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-line-chart"></i></span>
                     <div class="desc">
-                    <h5><a href="http://localhost:1234/kinerja">Kinerja Kantor Otoritas Pelabuhan Tanjung Priok</a></h5>
+                    <h5><a href="#">Kinerja Kantor Otoritas Pelabuhan Tanjung Priok</a></h5>
                         <p>
                             Pertanggungjawaban pelaksanaan kebijakan, pengukuran kinerja, LAKIP dll...
                         </p>
@@ -99,7 +99,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-balance-scale"></i></span>
                     <div class="desc">
-                        <h5><a href="http://jdih.dephub.go.id/" target="_blank">Informasi Hukum</a></h5>
+                        <h5><a href="#" target="_blank">Informasi Hukum</a></h5>
                         <p>
                         Informasi Peraturan, Perundang-undangan, dan Peraturan Kepala Kantor Otoritas Tanjung Priok
                         </p>
@@ -110,7 +110,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-credit-card"></i></span>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/tarif-pnbp">Tarif PNBP</a></h5>
+                        <h5><a href="#">Tarif PNBP</a></h5>
                         <p>
                         Informasi Tarif Penerimaan Negara Bukan Pajak (PNBP)
                         </p>
@@ -121,7 +121,7 @@
                 <div class="function-box">
                     <span><i class="fa fa-smile-o"></i></span>
                     <div class="desc">
-                        <h5><a href="http://localhost:1234/indeks-kepuasan-masyarakat">Indeks Kepuasan Masyarakat</a></h5>
+                        <h5><a href="#">Indeks Kepuasan Masyarakat</a></h5>
                         <p>
                         Informasi Indeks Kepuasan Masyarakat terhadap Kantor Otoritas Pelabuhan Tanjung Priok
                         </p>

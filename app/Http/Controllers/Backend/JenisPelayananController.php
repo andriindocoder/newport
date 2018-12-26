@@ -19,7 +19,7 @@ class JenisPelayananController extends Controller
                     'model'     => $jenisPelayanan,
                     'form_url'  => route('jenis-pelayanan.destroy', $jenisPelayanan->id),
                     'edit_url'  => route('jenis-pelayanan.edit', $jenisPelayanan->id),
-                    'confirm_message' => 'Anda yakin untuk menghapus '. $jenisPelayanan->jenis_usaha . '?'
+                    'confirm_message' => 'Anda yakin untuk menghapus '. $jenisPelayanan->nama_pelayanan . '?'
                 ]);
             })
             ->make(true);
@@ -57,7 +57,7 @@ class JenisPelayananController extends Controller
         $jenisPelayanan->update($request->all());
         Session::flash("flash_notification", [
             "level" => "warning",
-            "message" => "$jenisPelayanan->jenis_usaha berhasil diubah."
+            "message" => "$jenisPelayanan->nama_pelayanan berhasil diubah."
         ]);
         return redirect()->route('jenis-pelayanan.index');
     }

@@ -253,6 +253,14 @@
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('jenis-informasi.index') }}" class="nav-link">
+                  <i class="nav-icon fa fa-database"></i>
+                  <p>
+                    Jenis Informasi
+                  </p>
+                </a>
+              </li>
               
               
               <li class="nav-header">PENGATURAN MODUL</li>

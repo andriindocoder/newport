@@ -1,0 +1,1 @@
+Jumlah Permintaan Informasi Hardcode

@@ -1,0 +1,1 @@
+Tata Cara Keberatan Hardcode

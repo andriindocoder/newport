@@ -62,4 +62,45 @@ class PpidController extends Controller
     public function profil(){
         return view('frontend.ppid.profil');
     }
+
+    public function maklumatPelayanan(){
+        return view('frontend.ppid.maklumat-pelayanan');
+    }
+
+    public function standarLayanan(){
+        return view('frontend.ppid.standar-layanan');
+    }
+
+    public function simpulLayanan(){
+        return view('frontend.ppid.simpul-layanan');
+    }
+
+    public function jumlahPermintaanInformasi(){
+        return view('frontend.ppid.jumlah-permintaan-informasi');
+    }
+
+    public function prosedurPermohonan(){
+        return view('frontend.ppid.prosedur-permohonan');
+    }
+
+    public function tataCaraInformasi(){
+        return view('frontend.ppid.tata-cara-informasi');
+    }
+
+    public function tataCaraKeberatan(){
+        return view('frontend.ppid.tata-cara-keberatan');
+    }
+
+    public function hakKewajibanBadanPublik(){
+        return view('frontend.ppid.hak-kewajiban-badan-publik');
+    }
+
+    public function hakKewajibanPemohon(){
+        return view('frontend.ppid.hak-kewajiban-pemohon');
+    }
+
+    public function ujiCoba(){
+        return view('frontend.ppid.uji-coba');
+    }
+
 }

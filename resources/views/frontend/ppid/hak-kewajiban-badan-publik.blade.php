@@ -1,0 +1,1 @@
+Hak dan Kewajiban Badan Publik Hardcode

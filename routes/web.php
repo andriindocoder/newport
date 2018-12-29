@@ -125,6 +125,56 @@ Route::get('/ppid/profil',[
 	'as' 	=> 'ppid.profil',
 ]);
 
+Route::get('/ppid/maklumat-pelayanan',[
+    'uses'  => 'Frontend\PpidController@maklumatPelayanan',
+    'as'    => 'ppid.maklumat-pelayanan',
+]);
+
+Route::get('/ppid/standar-layanan',[
+    'uses'  => 'Frontend\PpidController@standarLayanan',
+    'as'    => 'ppid.standar-layanan',
+]);
+
+Route::get('/ppid/simpul-layanan',[
+    'uses'  => 'Frontend\PpidController@simpulLayanan',
+    'as'    => 'ppid.simpul-layanan',
+]);
+
+Route::get('/ppid/jumlah-permintaan-informasi',[
+    'uses'  => 'Frontend\PpidController@jumlahPermintaanInformasi',
+    'as'    => 'ppid.jumlah-permintaan-informasi',
+]);
+
+Route::get('/ppid/prosedur-permohonan',[
+    'uses'  => 'Frontend\PpidController@prosedurPermohonan',
+    'as'    => 'ppid.prosedur-permohonan',
+]);
+
+Route::get('/ppid/tata-cara-memperoleh-informasi-publik',[
+    'uses'  => 'Frontend\PpidController@tataCaraInformasi',
+    'as'    => 'ppid.tata-cara-memperoleh-informasi-publik',
+]);
+
+Route::get('/ppid/tata-cara-pengajuan-keberatan',[
+    'uses'  => 'Frontend\PpidController@tataCaraKeberatan',
+    'as'    => 'ppid.tata-cara-pengajuan-keberatan',
+]);
+
+Route::get('/ppid/hak-dan-kewajiban-badan-publik',[
+    'uses'  => 'Frontend\PpidController@hakKewajibanBadanPublik',
+    'as'    => 'ppid.hak-dan-kewajiban-badan-publik',
+]);
+
+Route::get('/ppid/hak-dan-kewajiban-pemohon-informasi',[
+    'uses'  => 'Frontend\PpidController@hakKewajibanPemohon',
+    'as'    => 'ppid.hak-dan-kewajiban-pemohon-informasi',
+]);
+
+Route::get('/ppid/uji-coba',[
+    'uses'  => 'Frontend\PpidController@ujiCoba',
+    'as'    => 'ppid.uji-coba',
+]);
+
 Route::get('/registrasi',[
     'uses'  => 'Frontend\RegistrasiController@index',
     'as'    => 'registrasi' 

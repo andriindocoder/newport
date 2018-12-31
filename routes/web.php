@@ -25,7 +25,7 @@ Route::get('/home',[
 /*--------------------end of index-------------*/
 
 /*-------------------backend-------------------*/
-Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
+Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], function(){
     Route::group(['middleware'=>['role:superadmin|humas']], function(){
         Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
         Route::resource('kategori-foto', 'Backend\KategoriFotoController');
@@ -43,6 +43,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
             'uses' => 'Backend\LinkTerkaitController@forceDestroy',
             'as' => 'link-terkait.force-destroy'
         ]);
+        Route::resource('informasi', 'Backend\InformasiController');
+        Route::put('informasi/restore/{id}',[
+            'uses' => 'Backend\InformasiController@restore',
+            'as' => 'informasi.restore'
+        ]);
+        Route::delete('informasi/force-destroy/{id}',[
+            'uses' => 'Backend\InformasiController@forceDestroy',
+            'as' => 'informasi.force-destroy'
+        ]);
         Route::resource('galeri-foto', 'Backend\GaleriFotoController');
         Route::put('galeri-foto/restore/{id}',[
             'uses' => 'Backend\GaleriFotoController@restore',
@@ -52,15 +61,19 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
             'uses' => 'Backend\GaleriFotoController@forceDestroy',
             'as' => 'galeri-foto.force-destroy'
         ]);
+        Route::get('info/{data}', [
+            'uses'=>'Backend\InformasiController@index',
+            'as'    => 'info.informasi',
+        ]);
     });
 });
 
-Route::get('kategori-berita-data', ['as'=>'kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
-Route::get('kategori-foto-data', ['as'=>'kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
-Route::get('tampilan-depan-data', ['as'=>'tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
-Route::get('jenis-usaha-data', ['as'=>'jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
-Route::get('jenis-pelayanan-data', ['as'=>'jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);
-Route::get('jenis-informasi-data', ['as'=>'jenis-informasi.data','uses'=>'Backend\JenisInformasiController@getData']);
+Route::get('kategori-berita-data', ['as'=>'admin.kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
+Route::get('kategori-foto-data', ['as'=>'admin.kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
+Route::get('tampilan-depan-data', ['as'=>'admin.tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
+Route::get('jenis-usaha-data', ['as'=>'admin.jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
+Route::get('jenis-pelayanan-data', ['as'=>'admin.jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);
+Route::get('jenis-informasi-data', ['as'=>'admin.jenis-informasi.data','uses'=>'Backend\JenisInformasiController@getData']);
 
 
 /*-------------------enf of backend-------------*/
@@ -74,7 +87,7 @@ Route::get('/',[
 Route::resource('berita', 'Frontend\BeritaController');
 Route::get('/kategori-berita/{category}', [
     'uses' => 'Frontend\BeritaController@category',
-    'as' => 'berita.kategori',
+    'as' => 'frontend.berita.kategori',
 ]);
 
 Route::get('/profil/sejarah',[

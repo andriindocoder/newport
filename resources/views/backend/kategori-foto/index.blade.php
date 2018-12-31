@@ -18,7 +18,7 @@
                         <div class="card border-primary mb-3 card-info">
                         <div class="card-header">Daftar Kategori Foto</div>
                         <div class="card-body">
-                        <p><a href="{{ route('kategori-foto.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Kategori Foto</a></p>
+                        <p><a href="{{ route('admin.kategori-foto.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Kategori Foto</a></p>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -44,7 +44,7 @@
         $('table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{!! route('kategori-foto.data') !!}',
+            ajax: '{!! route('admin.kategori-foto.data') !!}',
             columns: [
                 { data: 'title', name: 'title' },
                 { data: 'action', name: 'action', searchable: false, orderable: false }

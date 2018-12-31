@@ -18,8 +18,8 @@
       <td align="center">{{ $post->view_count }} kali</td>
       <td>{{ $post->date }}</td>
       <td align="center">
-        {!! Form::open(['method' => 'DELETE', 'route' => ['berita.destroy', $post->id]]) !!}
-        <a href="{{ route('berita.edit', $post->id) }}" class="btn btn-sm btn-warning btn-block" title="Edit">
+        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.berita.destroy', $post->id]]) !!}
+        <a href="{{ route('admin.berita.edit', $post->id) }}" class="btn btn-sm btn-warning btn-block" title="Edit">
           <i class="fa fa-edit text-black"></i> Edit
         </a>
           <button onclick="return confirm('Apakah Anda yakin untuk menghapus berita?')" type="submit" class="btn btn-sm btn-danger btn-block" title="Move to Trash">

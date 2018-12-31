@@ -25,7 +25,7 @@
 	              	<div class="row">
 	              		<div class="col-md-12" style="padding-left: 10px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; ">
 			                @include('backend.galeri-foto.message')
-	              			<a href="{{ route('galeri-foto.create') }}" class="btn btn-info float-left">
+	              			<a href="{{ route('admin.galeri-foto.create') }}" class="btn btn-info float-left">
 	              			  <span>
 	              			    <i class="fa fa-plus-circle"></i>
 	              			    <span>

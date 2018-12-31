@@ -20,7 +20,7 @@
                         <div class="card-header">Tambah Jenis Usaha</div>
                             <div class="card-body">
                                 {!! Form::open([
-                                    'url'       => route('jenis-usaha.store'),
+                                    'url'       => route('admin.jenis-usaha.store'),
                                     'method'    => 'post',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}

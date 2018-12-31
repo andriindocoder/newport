@@ -20,7 +20,7 @@
                         <div class="card-header">Tambah Tampilan Depan</div>
                             <div class="card-body">
                                 {!! Form::open([
-                                    'url'       => route('tampilan-depan.store'),
+                                    'url'       => route('admin.tampilan-depan.store'),
                                     'method'    => 'post',
                                     'class'     => 'form-horizontal',
                                     'files'     => true, 

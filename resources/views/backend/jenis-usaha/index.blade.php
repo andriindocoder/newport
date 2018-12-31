@@ -18,7 +18,7 @@
                         <div class="card border-primary mb-3 card-info">
                         <div class="card-header">Daftar Jenis Usaha</div>
                         <div class="card-body">
-                        <p><a href="{{ route('jenis-usaha.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Jenis Usaha</a></p>
+                        <p><a href="{{ route('admin.jenis-usaha.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Jenis Usaha</a></p>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -45,7 +45,7 @@
         $('table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{!! route('jenis-usaha.data') !!}',
+            ajax: '{!! route('admin.jenis-usaha.data') !!}',
             columns: [
                 { data: 'kode_jenis_usaha', name: 'kode_jenis_usaha' },
                 { data: 'jenis_usaha', name: 'jenis_usaha' },

@@ -21,7 +21,7 @@
                         <div class="card-header">Edit Jenis Pelayanan</div>
                             <div class="card-body">
                                 {!! Form::model($jenisPelayanan,[
-                                    'url'       => route('jenis-pelayanan.update', $jenisPelayanan->id),
+                                    'url'       => route('admin.jenis-pelayanan.update', $jenisPelayanan->id),
                                     'method'    => 'put',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}

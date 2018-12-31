@@ -17,8 +17,8 @@ class TampilanDepanController extends Controller
             ->addColumn('action', function($tampilanDepan){
                 return view('backend.datatable._action',[
                     'model'     => $tampilanDepan,
-                    'form_url'  => route('tampilan-depan.destroy', $tampilanDepan->id),
-                    'edit_url'  => route('tampilan-depan.edit', $tampilanDepan->id),
+                    'form_url'  => route('admin.tampilan-depan.destroy', $tampilanDepan->id),
+                    'edit_url'  => route('admin.tampilan-depan.edit', $tampilanDepan->id),
                     'confirm_message' => 'Anda yakin untuk menghapus '. $tampilanDepan->kode_tampilan . '?'
                 ]);
             })
@@ -48,7 +48,7 @@ class TampilanDepanController extends Controller
             "level" => "success",
             "message" => "$tampilanDepan->kode_tampilan berhasil ditambahkan."
         ]);
-        return redirect()->route('tampilan-depan.index');
+        return redirect()->route('admin.tampilan-depan.index');
     }
 
     public function edit($id){
@@ -65,7 +65,7 @@ class TampilanDepanController extends Controller
             "level" => "warning",
             "message" => "$tampilanDepan->kode_tampilan berhasil diubah."
         ]);
-        return redirect()->route('tampilan-depan.index');
+        return redirect()->route('admin.tampilan-depan.index');
     }
 
     public function destroy($id)
@@ -80,6 +80,6 @@ class TampilanDepanController extends Controller
             "level" => "warning",
             "message" => "$data->kode_tampilan berhasil dihapus."
         ]);
-        return redirect()->route('tampilan-depan.index');
+        return redirect()->route('admin.tampilan-depan.index');
     }
 }

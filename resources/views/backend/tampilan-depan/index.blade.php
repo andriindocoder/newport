@@ -19,7 +19,7 @@
                         <div class="card-header">Daftar Tampilan Depan</div>
                         <div class="card-body">
                         @role('superadmin')
-                        <p><a href="{{ route('tampilan-depan.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Tampilan Depan</a></p>
+                        <p><a href="{{ route('admin.tampilan-depan.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Tampilan Depan</a></p>
                         @endrole
                             <table class="table table-striped">
                                 <thead>
@@ -48,7 +48,7 @@
         $('table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{!! route('tampilan-depan.data') !!}',
+            ajax: '{!! route('admin.tampilan-depan.data') !!}',
             columns: [
                 { data: 'kode_tampilan', name: 'kode_tampilan' },
                 { data: 'konten', name: 'konten' },

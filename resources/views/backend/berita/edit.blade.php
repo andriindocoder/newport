@@ -11,7 +11,7 @@
 		      <div class="col-lg-12">
 		        {!! Form::model($post, [
 		            'method' => 'PUT',
-		            'route' => ['berita.update', $post->id],
+		            'route' => ['admin.berita.update', $post->id],
 		            'id' => 'berita-form',
 		            'files'=> TRUE,
 		        ]) !!}

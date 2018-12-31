@@ -54,7 +54,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info"><i class="fa fa-save"></i>  {{ $galeriFoto->exists ? 'Update' : 'Save'}}</button>
-                  <a href="{{ route('galeri-foto.index') }}" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+                  <a href="{{ route('admin.galeri-foto.index') }}" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
                 </div>
             </div>
             <!-- /.card -->

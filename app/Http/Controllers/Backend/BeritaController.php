@@ -85,7 +85,7 @@ class BeritaController extends BackendController
             "level" => "success",
             "message" => "Berita berhasil ditambahkan."
         ]);
-        return redirect()->route('berita.index');
+        return redirect()->route('admin.berita.index');
     }
 
     private function handleRequest($request){
@@ -151,7 +151,7 @@ class BeritaController extends BackendController
             "message" => "Berita berhasil diupdate."
         ]);
 
-        return redirect()->route('berita.index');
+        return redirect()->route('admin.berita.index');
     }
 
     /**

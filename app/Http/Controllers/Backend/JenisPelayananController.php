@@ -17,8 +17,8 @@ class JenisPelayananController extends Controller
             ->addColumn('action', function($jenisPelayanan){
                 return view('backend.datatable._action',[
                     'model'     => $jenisPelayanan,
-                    'form_url'  => route('jenis-pelayanan.destroy', $jenisPelayanan->id),
-                    'edit_url'  => route('jenis-pelayanan.edit', $jenisPelayanan->id),
+                    'form_url'  => route('admin.jenis-pelayanan.destroy', $jenisPelayanan->id),
+                    'edit_url'  => route('admin.jenis-pelayanan.edit', $jenisPelayanan->id),
                     'confirm_message' => 'Anda yakin untuk menghapus '. $jenisPelayanan->nama_pelayanan . '?'
                 ]);
             })
@@ -42,7 +42,7 @@ class JenisPelayananController extends Controller
             "level" => "success",
             "message" => "$jenisPelayanan->nama_pelayanan berhasil ditambahkan."
         ]);
-        return redirect()->route('jenis-pelayanan.index');
+        return redirect()->route('admin.jenis-pelayanan.index');
     }
 
     public function edit($id){
@@ -59,7 +59,7 @@ class JenisPelayananController extends Controller
             "level" => "warning",
             "message" => "$jenisPelayanan->nama_pelayanan berhasil diubah."
         ]);
-        return redirect()->route('jenis-pelayanan.index');
+        return redirect()->route('admin.jenis-pelayanan.index');
     }
 
     public function destroy($id)
@@ -74,6 +74,6 @@ class JenisPelayananController extends Controller
             "level" => "warning",
             "message" => "$data->nama_pelayanan berhasil dihapus."
         ]);
-        return redirect()->route('jenis-pelayanan.index');
+        return redirect()->route('admin.jenis-pelayanan.index');
     }
 }

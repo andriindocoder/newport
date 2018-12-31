@@ -11,7 +11,7 @@
 		      <div class="col-lg-12">
 		        {!! Form::model($post, [
 		            'method' => 'POST',
-		            'route' => 'berita.store',
+		            'route' => 'admin.berita.store',
 		            'id' => 'berita-form',
 		            'files'=> TRUE,
 

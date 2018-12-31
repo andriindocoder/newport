@@ -18,7 +18,7 @@
                         <div class="card border-primary mb-3 card-info">
                         <div class="card-header">Daftar Jenis Informasi</div>
                         <div class="card-body">
-                        <p><a href="{{ route('jenis-informasi.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Jenis Informasi</a></p>
+                        <p><a href="{{ route('admin.jenis-informasi.create') }}" class="btn btn-outline-info"><span><i class="fa fa-plus-circle"></i></span> Tambah Jenis Informasi</a></p>
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
@@ -46,7 +46,7 @@
         $('table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: '{!! route('jenis-informasi.data') !!}',
+            ajax: '{!! route('admin.jenis-informasi.data') !!}',
             columns: [
                 { data: 'kode', name: 'kode' },
                 { data: 'nama', name: 'nama' },

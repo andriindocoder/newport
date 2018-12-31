@@ -11,7 +11,7 @@
 		      <div class="col-lg-12">
 		        {!! Form::model($galeriFoto, [
 		            'method' 	=> 'PUT',
-		            'route' 	=> ['galeri-foto.update', $galeriFoto->id],
+		            'route' 	=> ['admin.galeri-foto.update', $galeriFoto->id],
 		            'id' 			=> 'galeri-foto-form'
 		        ]) !!}
 

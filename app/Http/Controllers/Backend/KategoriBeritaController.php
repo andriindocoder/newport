@@ -17,8 +17,8 @@ class KategoriBeritaController extends Controller
             ->addColumn('action', function($kategoriBerita){
                 return view('backend.datatable._action',[
                     'model'     => $kategoriBerita,
-                    'form_url'  => route('kategori-berita.destroy', $kategoriBerita->id),
-                    'edit_url'  => route('kategori-berita.edit', $kategoriBerita->id),
+                    'form_url'  => route('admin.kategori-berita.destroy', $kategoriBerita->id),
+                    'edit_url'  => route('admin.kategori-berita.edit', $kategoriBerita->id),
                     'confirm_message' => 'Anda yakin untuk menghapus '. $kategoriBerita->title . '?'
                 ]);
             })
@@ -43,7 +43,7 @@ class KategoriBeritaController extends Controller
             "level" => "success",
             "message" => "$kategoriBerita->title berhasil ditambahkan."
         ]);
-        return redirect()->route('kategori-berita.index');
+        return redirect()->route('admin.kategori-berita.index');
     }
 
     public function edit($id){
@@ -60,7 +60,7 @@ class KategoriBeritaController extends Controller
             "level" => "warning",
             "message" => "$kategoriBerita->title berhasil diubah."
         ]);
-        return redirect()->route('kategori-berita.index');
+        return redirect()->route('admin.kategori-berita.index');
     }
 
     public function destroy($id)
@@ -75,6 +75,6 @@ class KategoriBeritaController extends Controller
             "level" => "warning",
             "message" => "$data->title berhasil dihapus."
         ]);
-        return redirect()->route('kategori-berita.index');
+        return redirect()->route('admin.kategori-berita.index');
     }
 }

@@ -17,8 +17,8 @@ class JenisInformasiController extends Controller
             ->addColumn('action', function($jenisInformasi){
                 return view('backend.datatable._action',[
                     'model'     => $jenisInformasi,
-                    'form_url'  => route('jenis-informasi.destroy', $jenisInformasi->id),
-                    'edit_url'  => route('jenis-informasi.edit', $jenisInformasi->id),
+                    'form_url'  => route('admin.jenis-informasi.destroy', $jenisInformasi->id),
+                    'edit_url'  => route('admin.jenis-informasi.edit', $jenisInformasi->id),
                     'confirm_message' => 'Anda yakin untuk menghapus '. $jenisInformasi->nama . '?'
                 ]);
             })
@@ -42,7 +42,7 @@ class JenisInformasiController extends Controller
             "level" => "success",
             "message" => "$jenisInformasi->nama berhasil ditambahkan."
         ]);
-        return redirect()->route('jenis-informasi.index');
+        return redirect()->route('admin.jenis-informasi.index');
     }
 
     public function edit($id){
@@ -59,7 +59,7 @@ class JenisInformasiController extends Controller
             "level" => "warning",
             "message" => "$jenisInformasi->nama berhasil diubah."
         ]);
-        return redirect()->route('jenis-informasi.index');
+        return redirect()->route('admin.jenis-informasi.index');
     }
 
     public function destroy($id)
@@ -74,6 +74,6 @@ class JenisInformasiController extends Controller
             "level" => "warning",
             "message" => "$data->nama berhasil dihapus."
         ]);
-        return redirect()->route('jenis-informasi.index');
+        return redirect()->route('admin.jenis-informasi.index');
     }
 }

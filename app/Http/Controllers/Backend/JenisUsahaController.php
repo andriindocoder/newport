@@ -17,8 +17,8 @@ class JenisUsahaController extends Controller
             ->addColumn('action', function($jenisUsaha){
                 return view('backend.datatable._action',[
                     'model'     => $jenisUsaha,
-                    'form_url'  => route('jenis-usaha.destroy', $jenisUsaha->id),
-                    'edit_url'  => route('jenis-usaha.edit', $jenisUsaha->id),
+                    'form_url'  => route('admin.jenis-usaha.destroy', $jenisUsaha->id),
+                    'edit_url'  => route('admin.jenis-usaha.edit', $jenisUsaha->id),
                     'confirm_message' => 'Anda yakin untuk menghapus '. $jenisUsaha->jenis_usaha . '?'
                 ]);
             })
@@ -42,7 +42,7 @@ class JenisUsahaController extends Controller
             "level" => "success",
             "message" => "$jenisUsaha->jenis_usaha berhasil ditambahkan."
         ]);
-        return redirect()->route('jenis-usaha.index');
+        return redirect()->route('admin.jenis-usaha.index');
     }
 
     public function edit($id){
@@ -59,7 +59,7 @@ class JenisUsahaController extends Controller
             "level" => "warning",
             "message" => "$jenisUsaha->jenis_usaha berhasil diubah."
         ]);
-        return redirect()->route('jenis-usaha.index');
+        return redirect()->route('admin.jenis-usaha.index');
     }
 
     public function destroy($id)
@@ -74,6 +74,6 @@ class JenisUsahaController extends Controller
             "level" => "warning",
             "message" => "$data->jenis_usaha berhasil dihapus."
         ]);
-        return redirect()->route('jenis-usaha.index');
+        return redirect()->route('admin.jenis-usaha.index');
     }
 }

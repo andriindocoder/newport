@@ -14,8 +14,8 @@
       <td>{{ $linkTerkait->deskripsi }}</td>
       <td align="center"><img src="{{ url($linkTerkait->logo_instansi) }}" height="70px" /></td>
       <td align="center">
-        {!! Form::open(['method' => 'DELETE', 'route' => ['link-terkait.destroy', $linkTerkait->id]]) !!}
-        <a href="{{ route('link-terkait.edit', $linkTerkait->id) }}" class="btn btn-sm btn-warning btn-block" title="Edit">
+        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.link-terkait.destroy', $linkTerkait->id]]) !!}
+        <a href="{{ route('admin.link-terkait.edit', $linkTerkait->id) }}" class="btn btn-sm btn-warning btn-block" title="Edit">
           <i class="fa fa-edit text-black"></i> Edit
         </a>
           <button onclick="return confirm('Apakah Anda yakin untuk menghapus data?')" type="submit" class="btn btn-sm btn-danger btn-block" title="Move to Trash">

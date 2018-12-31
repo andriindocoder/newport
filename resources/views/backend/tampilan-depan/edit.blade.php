@@ -21,7 +21,7 @@
                         <div class="card-header">Edit Tampilan Depan</div>
                             <div class="card-body">
                                 {!! Form::model($tampilanDepan,[
-                                    'url'       => route('tampilan-depan.update', $tampilanDepan->id),
+                                    'url'       => route('admin.tampilan-depan.update', $tampilanDepan->id),
                                     'method'    => 'put',
                                     'class'     => 'form-horizontal',
                                     'files'     => true, 

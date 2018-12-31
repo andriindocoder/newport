@@ -20,7 +20,7 @@
                         <div class="card-header">Tambah Kategori Foto</div>
                             <div class="card-body">
                                 {!! Form::open([
-                                    'url'       => route('kategori-foto.store'),
+                                    'url'       => route('admin.kategori-foto.store'),
                                     'method'    => 'post',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}

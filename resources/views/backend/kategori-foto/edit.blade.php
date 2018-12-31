@@ -21,7 +21,7 @@
                         <div class="card-header">Edit Kategori Foto</div>
                             <div class="card-body">
                                 {!! Form::model($kategoriFoto,[
-                                    'url'       => route('kategori-foto.update', $kategoriFoto->id),
+                                    'url'       => route('admin.kategori-foto.update', $kategoriFoto->id),
                                     'method'    => 'put',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}

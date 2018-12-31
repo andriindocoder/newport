@@ -20,7 +20,7 @@
                         <div class="card-header">Tambah Kategori Berita</div>
                             <div class="card-body">
                                 {!! Form::open([
-                                    'url'       => route('kategori-berita.store'),
+                                    'url'       => route('admin.kategori-berita.store'),
                                     'method'    => 'post',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}

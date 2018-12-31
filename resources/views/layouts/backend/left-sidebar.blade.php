@@ -100,19 +100,19 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="{{ route('berita.index') }}" class="nav-link">
+                      <a href="{{ route('admin.berita.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>List Berita</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                    <a href="{{ route('berita.create') }}" class="nav-link">
+                    <a href="{{ route('admin.berita.create') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Tambah Berita</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                    <a href="{{ route('kategori-berita.index') }}" class="nav-link">
+                    <a href="{{ route('admin.kategori-berita.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-warning nav-icon"></i>
                         <p>Kategori Berita</p>
                     </a>
@@ -130,13 +130,13 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="{{ route('galeri-foto.index') }}" class="nav-link">
+                      <a href="{{ route('admin.galeri-foto.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>List Foto</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                    <a href="{{ route('kategori-foto.index') }}" class="nav-link">
+                    <a href="{{ route('admin.kategori-foto.index') }}" class="nav-link">
                         <i class="fa fa-circle-o text-warning nav-icon"></i>
                         <p>Kategori Foto</p>
                     </a>
@@ -174,37 +174,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/informasi-publik') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Informasi Publik</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/program-dan-kegiatan')}}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Program dan Kegiatan</p>
                 </a>
               </li>  
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/data-dan-informasi') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Data dan Informasi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/kinerja-kantor-otoritas-pelabuhan') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Kinerja</p>
                 </a>
               </li> 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/tarif-pnbp') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Tarif PNBP</p>
                 </a>
               </li> 
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('admin/info/indeks-kepuasan-masyarakat') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Indeks Kepuasan Masyarakat</p>
                 </a>
@@ -238,7 +238,7 @@
 
               <li class="nav-header">MASTER DATA</li>
               <li class="nav-item">
-                <a href="{{ route('jenis-usaha.index') }}" class="nav-link">
+                <a href="{{ route('admin.jenis-usaha.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-database"></i>
                   <p>
                     Jenis Usaha
@@ -246,7 +246,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('jenis-pelayanan.index') }}" class="nav-link">
+                <a href="{{ route('admin.jenis-pelayanan.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-database"></i>
                   <p>
                     Jenis Pelayanan
@@ -254,7 +254,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('jenis-informasi.index') }}" class="nav-link">
+                <a href="{{ route('admin.jenis-informasi.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-database"></i>
                   <p>
                     Jenis Informasi
@@ -277,7 +277,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('jenis-usaha.index') }}" class="nav-link">
+                <a href="{{ route('admin.jenis-usaha.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-th"></i>
                   <p>Modul Jenis Usaha</p>
                 </a>
@@ -325,7 +325,7 @@
               </li>
     
               <li class="nav-item">
-                <a href="{{ route('link-terkait.index') }}" class="nav-link">
+                <a href="{{ route('admin.link-terkait.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-link"></i>
                   <p>Link Terkait</p>
                 </a>

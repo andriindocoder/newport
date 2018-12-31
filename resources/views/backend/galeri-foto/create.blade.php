@@ -11,7 +11,7 @@
 		      <div class="col-lg-12">
 		        {!! Form::model($galeriFoto, [
 		            'method' 	=> 'POST',
-		            'route' 	=> 'galeri-foto.store',
+		            'route' 	=> 'admin.galeri-foto.store',
 		            'id'		 	=> 'galeri-foto-form',
 								'files'		=> TRUE
 		        ]) !!}

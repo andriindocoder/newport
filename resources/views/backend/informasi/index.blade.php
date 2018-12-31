@@ -1,6 +1,6 @@
 @extends('layouts.backend.main')
-@section('pageTitle','Link Terkait')
-@section('breadcrumb','Link Terkait')
+@section('pageTitle','Informasi')
+@section('breadcrumb','Informasi')
 
 @section('content')
 	<div class="content-wrapper">
@@ -13,7 +13,7 @@
 	            <div class="card card-info">
 	              <!-- /.card-header -->
 	              <div class="card-header">
-	                <h3 class="card-title">List Link Terkait</h3>
+	                <h3 class="card-title">List Informasi</h3>
 	                <div class="card-tools">
 	                  
 	                </div>
@@ -24,15 +24,17 @@
 	              <div class="card-body p-1">
 	              	<div class="row">
 	              		<div class="col-md-12" style="padding-left: 10px; padding-right: 30px; padding-top: 10px; padding-bottom: 10px; ">
-			                @include('backend.link-terkait.message')
-	              			<a href="{{ route('admin.link-terkait.create') }}" class="btn btn-info float-left">
+			                @include('backend.informasi.message')
+			                @role('superadmin')
+	              			<a href="{{ route('admin.informasi.create') }}" class="btn btn-info float-left">
 	              			  <span>
 	              			    <i class="fa fa-plus-circle"></i>
 	              			    <span>
-	              			      Tambah Link Terkait
+	              			      Tambah Informasi
 	              			    </span>
 	              			  </span>
 	              			</a>
+	              			@endrole
 	              			<div class="float-right" style="color: blue;">
 	              				<?php $links = [];?>
 	              				@foreach($statusList as $key => $value)
@@ -46,25 +48,25 @@
 	              		</div>
 	              	</div>
 
-	                @if(! $linkTerkaits->count())
+	                @if(! $informasis->count())
 	                  <div class="alert alert-danger">
 	                    Data Tidak Ditemukan
 	                  </div>
 	                @else
 	                    @if($onlyTrashed)
-	                      @include('backend.link-terkait.table-trash')
+	                      @include('backend.informasi.table-trash')
 	                    @else
-	                      @include('backend.link-terkait.table')
+	                      @include('backend.informasi.table')
 	                    @endif
 	                @endif
 	              </div>
 	              <!-- /.card-body -->
 	              <div class="card-footer clearfix">
 	                <div class="clearfix">
-	                    {{ $linkTerkaits->appends( Request::query() )->render() }}
+	                    {{ $informasis->appends( Request::query() )->render() }}
 	                  </div>
 	                  <div class="pull-right">
-	                    <small>{{ $linkTerkaitsCount }} {{ str_plural('Record', $linkTerkaitsCount)}}</small>
+	                    <small>{{ $informasisCount }} {{ str_plural('Record', $informasisCount)}}</small>
 	                  </div>
 	              </div>
 

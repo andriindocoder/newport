@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
     Route::group(['middleware'=>['role:superadmin|humas']], function(){
         Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
         Route::resource('kategori-foto', 'Backend\KategoriFotoController');
+        Route::resource('kategori-video', 'Backend\KategoriVideoController');
         Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
         Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
         Route::resource('jenis-informasi', 'Backend\JenisInformasiController');
@@ -61,6 +62,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\GaleriFotoController@forceDestroy',
             'as' => 'galeri-foto.force-destroy'
         ]);
+        Route::resource('galeri-video', 'Backend\GaleriVideoController');
+        Route::put('galeri-video/restore/{id}',[
+            'uses' => 'Backend\GaleriVideoController@restore',
+            'as' => 'galeri-video.restore'
+        ]);
+        Route::delete('galeri-video/force-destroy/{id}',[
+            'uses' => 'Backend\GaleriVideoController@forceDestroy',
+            'as' => 'galeri-video.force-destroy'
+        ]);
         Route::get('info/{data}', [
             'uses'=>'Backend\InformasiController@index',
             'as'    => 'info.informasi',
@@ -70,6 +80,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
 
 Route::get('kategori-berita-data', ['as'=>'admin.kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
 Route::get('kategori-foto-data', ['as'=>'admin.kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
+Route::get('kategori-video-data', ['as'=>'admin.kategori-video.data','uses'=>'Backend\KategoriVideoController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'admin.tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
 Route::get('jenis-usaha-data', ['as'=>'admin.jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
 Route::get('jenis-pelayanan-data', ['as'=>'admin.jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);

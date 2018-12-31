@@ -1,5 +1,5 @@
 @extends('layouts.backend.main')
-@section('breadcrumb','Tambah Kategori Foto')
+@section('breadcrumb','Tambah Kategori Video')
 @section('content')
         <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,20 +12,20 @@
             <div class="row">
                 <div class="col-md-12">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/admin/kategori-foto') }}">Pengaturan Foto</a></li>
-                            <li class="breadcrumb-item"> Kategori Foto</li>
-                            <li class="breadcrumb-item active"> Tambah Kategori Foto</li>
+                            <li class="breadcrumb-item"><a href="{{ url('/admin/kategori-video') }}">Pengaturan Video</a></li>
+                            <li class="breadcrumb-item"> Kategori Video</li>
+                            <li class="breadcrumb-item active"> Tambah Kategori Video</li>
                         </ol>
                         <div class="card border-primary mb-3 card-info">
-                        <div class="card-header">Tambah Kategori Foto</div>
+                        <div class="card-header">Tambah Kategori Video</div>
                             <div class="card-body">
                                 {!! Form::open([
-                                    'url'       => route('admin.kategori-foto.store'),
+                                    'url'       => route('admin.kategori-video.store'),
                                     'method'    => 'post',
                                     'class'     => 'form-horizontal' 
                                 ]) !!}
                                 
-                                @include('backend.kategori-foto._form')
+                                @include('backend.kategori-video._form')
             
                                 {!! Form::close() !!}
                             </div>

@@ -225,6 +225,8 @@ Route::get('/registrasi-pmku-cek-nib',[
 	'as'	=> 'registrasi.cek-nib' 
 ]);
 
+Route::get('/info/{info}','Frontend\InformasiController@index');
+
 Route::group(['middleware'=>['auth']], function(){
 	Route::get('/rekomendasi',[
 		'uses' 	=> 'Frontend\PelayananController@rekomendasi',

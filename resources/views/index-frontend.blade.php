@@ -141,7 +141,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="img-box">
-                    <img src="{{ asset('frontend-asset/images/service1.jpg') }}" />
+                    <img src="{{ asset('frontend-asset/images/alurpelayaran.jpg') }}" />
                     <div class="desc">
                         <div class="detail">
                             <h5>Fasilitas Pelabuhan</h5>
@@ -155,7 +155,7 @@
             </div>
             <div class="col-md-6">
                 <div class="img-box">
-                    <img width="100%" src="{{ asset('frontend-asset/images/news-detail1.jpg') }}" />
+                    <img width="100%" src="{{ asset('frontend-asset/images/bataspriok.jpg') }}" />
                     <div class="desc">
                         <div class="detail">
                             <h5>Fasilitas Dermaga</h5>

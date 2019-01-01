@@ -34,7 +34,6 @@
 	              			    </span>
 	              			  </span>
 	              			</a>
-	              			@endrole
 	              			<div class="float-right" style="color: blue;">
 	              				<?php $links = [];?>
 	              				@foreach($statusList as $key => $value)
@@ -45,6 +44,7 @@
 	              				@endforeach
 	              				{!! implode(' | ', $links) !!}
 	              			</div>
+	              			@endrole
 	              		</div>
 	              	</div>
 

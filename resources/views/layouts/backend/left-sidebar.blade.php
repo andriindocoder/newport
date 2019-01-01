@@ -145,7 +145,7 @@
               </li>
               <li class="nav-item has-treeview">
                   <a href="#" class="nav-link">
-                    <i class="nav-icon fa fa-image"></i>
+                    <i class="nav-icon fa fa-youtube"></i>
                     <p>
                       Galeri Video
                       <i class="fa fa-angle-left right"></i>

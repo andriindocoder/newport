@@ -77,6 +77,8 @@ class GaleriVideoController extends BackendController
         // $data = $request->all();
         $data['create_id'] = Auth::user()->id;
         $data['created_at'] = Carbon::now();
+        $linkVideo = str_replace("watch?v=","embed/",$data['link_video']);
+        $data['link_video'] = $linkVideo;
 
         GaleriVideo::create($data);
         
@@ -128,6 +130,8 @@ class GaleriVideoController extends BackendController
         $data = $request->all();
         $data['update_id'] = Auth::user()->id;
         $data['updated_at'] = Carbon::now();
+        $linkVideo = str_replace("watch?v=","embed/",$data['link_video']);
+        $data['link_video'] = $linkVideo;
 
         GaleriVideo::findOrFail($id)->update($data);
 

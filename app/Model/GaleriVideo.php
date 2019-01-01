@@ -10,7 +10,7 @@ class GaleriVideo extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'caption', 'namafile', 'extension', 'create_id', 'update_id', 'delete_id', 'status_aktif','kategori_video_id'];
+    protected $fillable = ['judul_video','link_video','create_id', 'update_id', 'delete_id', 'status_aktif','kategori_video_id'];
 
     protected $table = 'galeri_video';
     protected $dates = ['deleted_at'];

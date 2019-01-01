@@ -11,7 +11,7 @@
                             <li><a href="#">galeri</a>
                                 <ul>
                                     <li><a href="{{ route('galeri-foto') }}">Galeri Foto</a></li>
-                                    <li><a href="#">Galeri Video</a></li>
+                                    <li><a href="{{ route('galeri-video') }}">Galeri Video</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">pelayanan</a>

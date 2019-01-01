@@ -225,37 +225,19 @@
             </div>
         </div>
         <div class="row">
+            @foreach($galleryVideos as $galleryVideo)
             <div class="col-md-4">
                 <div class="news-box">
                     <div class="img-box">
-                        <iframe width="350" height="180" src="https://www.youtube.com/embed/WNZ5X0a7IHo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="350" height="180" src="{{ $galleryVideo->link_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="desc">
-                        <h5><a href="#">Kapal Peti Kemas 'Raksasa' Tiba di Pelabuhan Tanjung Priok</a></h5>
+                        <h5><a href="{{ $galleryVideo->link_video }}" target="_blank">{{ $galleryVideo->judul_video }}</a></h5>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <iframe width="350" height="180" src="https://www.youtube.com/embed/kDVDk0zox6U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="desc">
-                        <h5><a href="#">Tanjung Priok Menjadi Pelabuhan Internasional, Saingi Pelabuhan Singapura</a></h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="news-box">
-                    <div class="img-box">
-                        <iframe width="350" height="180" src="https://www.youtube.com/embed/UJt8GhIXtW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div class="desc">
-                        <h5><a href="#">Bagaimana Sesuatu Bekerja - Episode Pelabuhan Tanjung Priok</a></h5>
-                    </div>
-                </div>
-            </div>
-                    </div>
+            @endforeach
+        </div>
     </div>
 </div>
 <div class="content-box">

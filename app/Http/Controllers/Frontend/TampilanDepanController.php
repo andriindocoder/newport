@@ -9,6 +9,8 @@ use App\Model\Berita;
 use App\Model\LinkTerkait;
 use App\Model\GaleriFoto;
 use App\Model\KategoriFoto;
+use App\Model\GaleriVideo;
+use App\Model\KategoriVideo;
 
 class TampilanDepanController extends Controller
 {
@@ -18,7 +20,10 @@ class TampilanDepanController extends Controller
         $gallerys = GaleriFoto::orderBy('id','DESC')->latest()->limit(3)->get();
         $kategoriFotos = KategoriFoto::get();
 
-        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos'));
+        $galleryVideos = GaleriVideo::orderBy('id','DESC')->latest()->limit(3)->get();
+        $kategoriVideos = KategoriVideo::get();
+
+        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos'));
     }
 
     public function galeriFoto(){
@@ -26,5 +31,12 @@ class TampilanDepanController extends Controller
         $kategoriFotos = KategoriFoto::get();
 
         return view('frontend.galeri-foto.index', compact('gallerys','kategoriFotos'));
+    }
+
+    public function galeriVideo(){
+        $gallerys = GaleriVideo::orderBy('id','DESC')->get();
+        $kategoriVideos = KategoriVideo::get();
+
+        return view('frontend.galeri-video.index', compact('gallerys','kategoriVideos'));
     }
 }

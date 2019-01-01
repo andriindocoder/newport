@@ -124,6 +124,11 @@ Route::get('/galeri-foto',[
     'as'    => 'galeri-foto', 
 ]);
 
+Route::get('/galeri-video',[
+    'uses'  => 'Frontend\TampilanDepanController@galeriVideo',
+    'as'    => 'galeri-video', 
+]);
+
 Route::resource('pengaduan', 'Frontend\PengaduanController');
 
 Route::get('/ppid',[

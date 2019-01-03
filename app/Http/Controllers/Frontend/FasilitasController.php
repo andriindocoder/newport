@@ -4,39 +4,48 @@ namespace App\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Informasi;
 
 class FasilitasController extends Controller
 {
 	public function index(){
-	    return view('frontend.fasilitas.index');
+		$konten = Informasi::where('jenis_informasi_id',8)->first();
+	    return view('frontend.fasilitas.index',compact('konten'));
 	}
 
 	public function batas(){
-		return view('frontend.fasilitas.batas');
+		$konten = Informasi::where('jenis_informasi_id',8)->first();
+		return view('frontend.fasilitas.batas',compact('konten'));
 	}
 
 	public function rekapitulasi(){
-		return view('frontend.fasilitas.rekapitulasi');
+		$konten = Informasi::where('jenis_informasi_id',9)->first();
+		return view('frontend.fasilitas.rekapitulasi',compact('konten'));
 	}
 
 	public function dermaga(){
-		return view('frontend.fasilitas.dermaga');
+		$konten = Informasi::where('jenis_informasi_id',10)->first();
+		return view('frontend.fasilitas.dermaga',compact('konten'));
 	}
 
 	public function gudang(){
-		return view('frontend.fasilitas.gudang');
+		$konten = Informasi::where('jenis_informasi_id',11)->first();
+		return view('frontend.fasilitas.gudang',compact('konten'));
 	}
 
 	public function lapangan(){
-		return view('frontend.fasilitas.lapangan');
+		$konten = Informasi::where('jenis_informasi_id',12)->first();
+		return view('frontend.fasilitas.lapangan',compact('konten'));
 	}
 
 	public function daerahLabuh(){
-		return view('frontend.fasilitas.daerah-labuh');
+		$konten = Informasi::where('jenis_informasi_id',13)->first();
+		return view('frontend.fasilitas.daerah-labuh',compact('konten'));
 	}
 
 	public function breakwater(){
-		return view('frontend.fasilitas.breakwater');
+		$konten = Informasi::where('jenis_informasi_id',14)->first();
+		return view('frontend.fasilitas.breakwater',compact('konten'));
 	}
 
 }

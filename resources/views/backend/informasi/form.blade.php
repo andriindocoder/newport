@@ -44,10 +44,22 @@
                   </div>
 
                   <div class="form-group {{ $errors->has('gambar') ? 'has-error' : ''}} m-input">
-                    {!! Form::label('Gambar') !!}
-                    &nbsp;
+                    {!! Form::label('Gambar / Dokumen PDF') !!}
+                    &nbsp;<br>
+                    @if($informasi->gambar)
+                      <?php
+                          $path = $informasi->gambar;
+                          $ext = pathinfo($path, PATHINFO_EXTENSION);
+                      ?>
+                      @if($ext == 'pdf')
+                        <object type="application/pdf" data="{{ url($path) }}" width="50%" height="500" style="height: 85vh;" class="domisili">No Support</object><br><br>
+                      @else 
+                        <a href="{{ url($path) }}" target="_blank"><img src="{{ url($path) }}" width="50%"></a><br>
+                      @endif
+                    @else
+                    @endif
+  
                     {!! Form::file('gambar', null, ['class'=> 'form-control']) !!}
-
                     @if($errors->has('gambar'))
                     <span class="help-block label-danger">{{ $errors->first('gambar') }}</span>
                     @endif

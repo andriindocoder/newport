@@ -13,7 +13,17 @@
       <td>{{ $informasi->judul_informasi }}</td>
       <td>{!! substr(htmlspecialchars_decode(stripslashes($informasi->konten)),0,250) !!} ...</td>
       @if($informasi->gambar)
-        <td align="center"><img src="{{ url($informasi->gambar) }}" height="70px" /></td>
+        <?php
+            $path = $informasi->gambar;
+            $ext = pathinfo($path, PATHINFO_EXTENSION);
+        ?>
+        @if($ext == 'pdf')
+        <td align="center">
+          <a href='{{ url($path) }}' target="blank">Lihat PDF</a>
+        </td>
+          @else 
+                <td align="center"><a href="{{ url($path) }}" target="_blank"><img src="{{ url($path) }}" height="70px" /></a></td>
+        @endif
       @else
         <td align="center"> - </td>
       @endif

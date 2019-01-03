@@ -5,7 +5,7 @@
                 <label class="content-label" id="label-fasilitas">Batas DLKr/DLKp Pelabuhan Tanjung Priok dan Pelabuhan Pasar Ikan</label>
             </div>
             <div class="col-md-9" style="padding-right: 50px;" id="fasilitas">
-                Form.blade.php
+                @include('frontend.fasilitas.batas')
             </div>
             <div class="col-md-3">
                 <div class="sidebar-list">

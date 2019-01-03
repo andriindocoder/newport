@@ -151,13 +151,34 @@ class InformasiController extends BackendController
         $data['updated_id'] = Auth::user()->id;
         $data['updated_at'] = Carbon::now();
 
-        Informasi::findOrFail($id)->update($data);
+        $informasi = Informasi::findOrFail($id);
+        $oldImage = $informasi->gambar;
+        $data = $request->all();
+        if($request->hasFile('gambar')){
+            $bulan = date('m');
+            $tahun = date('Y');
+            $path = $request->file('gambar')->store('informasi/'.$tahun.'/'.$bulan);
+            $data['gambar'] = $path;
+        }
+        $informasi->update($data);
+        if($oldImage !== $informasi->gambar){
+          $this->removeImage($oldImage);
+        }
 
         return redirect("/admin/informasi")->with('message','Informasi Berhasil di update');
     }
 
     public function show(){
         
+    }
+
+    private function removeImage($image){
+      if(!empty($image)){
+          $imagePath = storage_path().'/app/'.$image;
+          $ext = substr(strrchr($image,'.'),1);
+
+        if(file_exists($imagePath)) unlink($imagePath);
+      }
     }
 
     /**

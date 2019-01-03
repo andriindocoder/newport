@@ -24,3 +24,4 @@
 		  <!-- ./row -->
 	</div>
 @endsection
+@include('backend.informasi.script')

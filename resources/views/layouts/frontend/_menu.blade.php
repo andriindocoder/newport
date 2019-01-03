@@ -14,7 +14,7 @@
                                     <li><a href="{{ route('galeri-video') }}">Galeri Video</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">fasilitas pelabuhan</a></li>
+                            <li><a href="{{ route('fasilitas.index') }}">fasilitas pelabuhan</a></li>
                             <li><a href="#">pelayanan</a>
                                 <ul>
                                     <li><a href="#">PMKU (AP,PBM,JPT)</a></li>

@@ -206,6 +206,46 @@ Route::get('/ppid/uji-coba',[
     'as'    => 'ppid.uji-coba',
 ]);
 
+Route::get('/fasilitas-pelabuhan',[
+    'uses'  => 'Frontend\FasilitasController@index',
+    'as'    => 'fasilitas.index'
+]);
+
+Route::get('/fasilitas-pelabuhan/batas-dlkr-dlkp',[
+    'uses'  => 'Frontend\FasilitasController@batas',
+    'as'    => 'fasilitas.batas',
+]);
+
+Route::get('/fasilitas-pelabuhan/rekapitulasi-fasilitas-dan-peralatan',[
+    'uses'  => 'Frontend\FasilitasController@rekapitulasi',
+    'as'    => 'fasilitas.rekapitulasi',
+]);
+
+Route::get('/fasilitas-pelabuhan/fasilitas-dermaga',[
+    'uses'  => 'Frontend\FasilitasController@dermaga',
+    'as'    => 'fasilitas.dermaga',
+]);
+
+Route::get('/fasilitas-pelabuhan/fasilitas-gudang',[
+    'uses'  => 'Frontend\FasilitasController@gudang',
+    'as'    => 'fasilitas.gudang',
+]);
+
+Route::get('/fasilitas-pelabuhan/fasilitas-lapangan-penumpukan',[
+    'uses'  => 'Frontend\FasilitasController@lapangan',
+    'as'    => 'fasilitas.lapangan',
+]);
+
+Route::get('/fasilitas-pelabuhan/daerah-labuh',[
+    'uses'  => 'Frontend\FasilitasController@daerahLabuh',
+    'as'    => 'fasilitas.daerah-labuh',
+]);
+
+Route::get('/fasilitas-pelabuhan/breakwater',[
+    'uses'  => 'Frontend\FasilitasController@breakwater',
+    'as'    => 'fasilitas.breakwater',
+]);
+
 Route::get('/registrasi',[
     'uses'  => 'Frontend\RegistrasiController@index',
     'as'    => 'registrasi' 

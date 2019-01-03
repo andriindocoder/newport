@@ -206,6 +206,11 @@ Route::get('/ppid/uji-coba',[
     'as'    => 'ppid.uji-coba',
 ]);
 
+Route::get('/ppid/formulir-permohonan-informasi',[
+    'uses'  => 'Frontend\PpidController@formulirPermohonan',
+    'as'    => 'ppid.formulir-permohonan',
+]);
+
 Route::get('/fasilitas-pelabuhan',[
     'uses'  => 'Frontend\FasilitasController@index',
     'as'    => 'fasilitas.index'

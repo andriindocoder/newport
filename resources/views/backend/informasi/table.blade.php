@@ -2,7 +2,6 @@
   <tr>
     <th style="width: 10px">No</th>
     <th>Judul Informasi</th>
-    <th>Konten</th>
     <th class="text-center">Gambar</th>
     <th class="text-center">Aksi</th>
   </tr>
@@ -11,7 +10,6 @@
   	<tr>
   	  <td>{{ $no }}.</td>
       <td>{{ $informasi->judul_informasi }}</td>
-      <td>{!! substr(htmlspecialchars_decode(stripslashes($informasi->konten)),0,250) !!} ...</td>
       @if($informasi->gambar)
         <?php
             $path = $informasi->gambar;

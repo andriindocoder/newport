@@ -11,7 +11,7 @@
                     <div class="col">
                         <div class="desc">
                             <small class="breadcrumb-list"><span><a href="#">Portal OP</a></span><span>PPID</span></small>
-                            <h2>Layanan Penyediaan Informasi</h2>
+                            <h2>Profil PPID</h2>
                         </div>
                     </div>
                 </div>

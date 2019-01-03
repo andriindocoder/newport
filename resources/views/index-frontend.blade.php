@@ -137,45 +137,6 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <label class="content-label">{!! $judulfasilitaspelabuhan ? $judulfasilitaspelabuhan->konten : '' !!}</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="img-box">
-                    <img src="{{ asset('frontend-asset/images/alurpelayaran.jpg') }}" />
-                    <div class="desc">
-                        <div class="detail">
-                            <h5>Fasilitas Pelabuhan</h5>
-                            <p>
-                                Pelabuhan Utama Tanjung Priok memiliki berbagai fasilitas yang bersifat kelas dunia  ...
-                            </p>
-                            <a href="#">selanjutnya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="img-box">
-                    <img width="100%" src="{{ asset('frontend-asset/images/bataspriok.jpg') }}" />
-                    <div class="desc">
-                        <div class="detail">
-                            <h5>Fasilitas Dermaga</h5>
-                            <p>
-                                Pelabuhan Utama Tanjung Priok memiliki berbagai dermaga yang masing-masing dilengkapi dengan fasilitas ...
-                            </p>
-                            <a href="#">selanjutnya</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="content-box bg-grey">
-    <div class="container">
-        <div class="row">
-            <div class="col">
                 <label class="content-label">{!! $berita ? $berita->konten : '' !!}</label>
             </div>
         </div>
@@ -196,7 +157,7 @@
         </div>
     </div>
 </div>
-<div class="content-box">
+<div class="content-box bg-grey">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -219,7 +180,7 @@
         </div>
     </div>
 </div>
-<div class="content-box bg-grey">
+<div class="content-box">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -242,7 +203,7 @@
         </div>
     </div>
 </div>
-<div class="content-box">
+<div class="content-box bg-grey">
     <div class="container">
         <div class="row">
             <div class="col">

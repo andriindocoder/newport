@@ -60,7 +60,16 @@ class TampilanDepanController extends Controller
     {
         $this->validate($request, ['kode_tampilan' => 'required']);
         $tampilanDepan = TampilanDepan::find($id);
-        $tampilanDepan->update($request->all());
+        $oldImage = $tampilanDepan->foto;
+        $data = $request->all();
+        if($request->hasFile('foto')){
+            $path = $request->file('foto')->store('slider');
+            $data['foto'] = $path;
+        }
+        $tampilanDepan->update($data);
+        if($oldImage !== $tampilanDepan->foto){
+          $this->removeImage($oldImage);
+        }
         Session::flash("flash_notification", [
             "level" => "warning",
             "message" => "$tampilanDepan->kode_tampilan berhasil diubah."
@@ -81,5 +90,14 @@ class TampilanDepanController extends Controller
             "message" => "$data->kode_tampilan berhasil dihapus."
         ]);
         return redirect()->route('admin.tampilan-depan.index');
+    }
+
+    private function removeImage($image){
+      if(!empty($image)){
+          $imagePath = storage_path().'/app/'.$image;
+          $ext = substr(strrchr($image,'.'),1);
+
+        if(file_exists($imagePath)) unlink($imagePath);
+      }
     }
 }

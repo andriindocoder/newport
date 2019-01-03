@@ -18,6 +18,8 @@
     font-size: 22px;
   }
 </style>
+
+<div id="splashscreen"><img src="{{ url($splashscreen->foto) }}"></div>
 <div class="content-box">
     <div class="container">
         <div class="row">

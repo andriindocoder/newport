@@ -341,7 +341,7 @@
               </li>
     
               <li class="nav-item">
-                <a href="{{ route('tampilan-depan.index') }}" class="nav-link">
+                <a href="{{ route('admin.tampilan-depan.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-tv"></i>
                   <p>Tampilan</p>
                 </a>

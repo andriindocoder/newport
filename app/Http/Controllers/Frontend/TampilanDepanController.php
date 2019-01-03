@@ -23,7 +23,9 @@ class TampilanDepanController extends Controller
         $galleryVideos = GaleriVideo::orderBy('id','DESC')->latest()->limit(3)->get();
         $kategoriVideos = KategoriVideo::get();
 
-        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos'));
+        $splashscreen = TampilanDepan::where('kode_tampilan','splashscreen')->first();
+
+        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos','splashscreen'));
     }
 
     public function galeriFoto(){

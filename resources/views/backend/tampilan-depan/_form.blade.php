@@ -27,7 +27,12 @@
 <div class="form-group {{ $errors->has('foto') ? 'has-error' : ''}} m-input">
     <br>
         {!! Form::label('Foto') !!} &nbsp;
-        {!! Form::file('foto', null, ['class'=> 'form-control']) !!}
+        @if(!$tampilanDepan->foto)
+        @else
+            <img src="{{ url($tampilanDepan->foto) }}" width="50%"><br><br>
+        @endif
+            {!! Form::file('foto', null, ['class'=> 'form-control']) !!}
+
     @if($errors->has('foto'))
             <span class="help-block">{{ $errors->first('foto') }}</span>
     @endif

@@ -5,14 +5,15 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\Ppid;
+use App\Model\Informasi;
 use App\Http\Requests\Frontend\PpidStoreRequest;
 use Carbon\Carbon;
 
 class PpidController extends Controller
 {
     public function index(){
-        $ppid = new Ppid();
-        return view('frontend.ppid.index',compact('ppid'));
+        $konten = Informasi::where('jenis_informasi_id',15)->first();
+        return view('frontend.ppid.index',compact('konten'));
     }
 
     public function store(PpidStoreRequest $request)
@@ -56,51 +57,68 @@ class PpidController extends Controller
     }
 
     public function dasarHukum(){
-        return view('frontend.ppid.dasar-hukum');
+        $konten = Informasi::where('jenis_informasi_id',16)->first();
+        return view('frontend.ppid.dasar-hukum',compact('konten'));
     }
 
     public function profil(){
-        return view('frontend.ppid.profil');
+        $konten = Informasi::where('jenis_informasi_id',15)->first();
+        return view('frontend.ppid.profil',compact('konten'));
     }
 
     public function maklumatPelayanan(){
-        return view('frontend.ppid.maklumat-pelayanan');
+        $konten = Informasi::where('jenis_informasi_id',17)->first();
+        return view('frontend.ppid.maklumat-pelayanan',compact('konten'));
     }
 
     public function standarLayanan(){
-        return view('frontend.ppid.standar-layanan');
+        $konten = Informasi::where('jenis_informasi_id',18)->first();
+        return view('frontend.ppid.standar-layanan',compact('konten'));
     }
 
     public function simpulLayanan(){
-        return view('frontend.ppid.simpul-layanan');
+        $konten = Informasi::where('jenis_informasi_id',19)->first();
+        return view('frontend.ppid.simpul-layanan',compact('konten'));
     }
 
     public function jumlahPermintaanInformasi(){
-        return view('frontend.ppid.jumlah-permintaan-informasi');
+        $konten = Informasi::where('jenis_informasi_id',20)->first();
+        return view('frontend.ppid.jumlah-permintaan-informasi',compact('konten'));
     }
 
     public function prosedurPermohonan(){
-        return view('frontend.ppid.prosedur-permohonan');
+        $konten = Informasi::where('jenis_informasi_id',21)->first();
+        return view('frontend.ppid.prosedur-permohonan',compact('konten'));
     }
 
     public function tataCaraInformasi(){
-        return view('frontend.ppid.tata-cara-informasi');
+        $konten = Informasi::where('jenis_informasi_id',22)->first();
+        return view('frontend.ppid.tata-cara-informasi',compact('konten'));
     }
 
     public function tataCaraKeberatan(){
-        return view('frontend.ppid.tata-cara-keberatan');
+        $konten = Informasi::where('jenis_informasi_id',23)->first();
+        return view('frontend.ppid.tata-cara-keberatan',compact('konten'));
     }
 
     public function hakKewajibanBadanPublik(){
-        return view('frontend.ppid.hak-kewajiban-badan-publik');
+        $konten = Informasi::where('jenis_informasi_id',24)->first();
+        return view('frontend.ppid.hak-kewajiban-badan-publik',compact('konten'));
     }
 
     public function hakKewajibanPemohon(){
-        return view('frontend.ppid.hak-kewajiban-pemohon');
+        $konten = Informasi::where('jenis_informasi_id',25)->first();
+        return view('frontend.ppid.hak-kewajiban-pemohon',compact('konten'));
     }
 
     public function ujiCoba(){
-        return view('frontend.ppid.uji-coba');
+        $konten = Informasi::where('jenis_informasi_id',26)->first();
+        return view('frontend.ppid.uji-coba',compact('konten'));
+    }
+
+    public function formulirPermohonan(){
+        $ppid = new Ppid();
+        return view('frontend.ppid.index-form',compact('ppid'));
     }
 
 }

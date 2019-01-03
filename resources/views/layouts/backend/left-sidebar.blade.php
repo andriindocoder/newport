@@ -451,9 +451,56 @@
               @role(['fasilitas'])
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-folder-open"></i>
-                  <p>Input Data Fasilitas</p>
-                </a>
+                    <i class="nav-icon fa fa-folder-open"></i>
+                    <p>
+                      Input Data Fasilitas
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Batas DLKr/DLKp</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Rekapitulasi Fasilitas</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Fasilitas Dermaga</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Fasilitas Gudang</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Lapangan Penumpukan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Daerah Labuh</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Breakwater</p>
+                      </a>
+                    </li>
+                  </ul>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">

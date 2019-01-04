@@ -33,6 +33,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
         Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
         Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
         Route::resource('jenis-informasi', 'Backend\JenisInformasiController');
+        Route::resource('jenis-laporan', 'Backend\JenisLaporanController');
         Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
         Route::resource('berita', 'Backend\BeritaController');
         Route::resource('link-terkait', 'Backend\LinkTerkaitController');
@@ -85,6 +86,7 @@ Route::get('tampilan-depan-data', ['as'=>'admin.tampilan-depan.data','uses'=>'Ba
 Route::get('jenis-usaha-data', ['as'=>'admin.jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
 Route::get('jenis-pelayanan-data', ['as'=>'admin.jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);
 Route::get('jenis-informasi-data', ['as'=>'admin.jenis-informasi.data','uses'=>'Backend\JenisInformasiController@getData']);
+Route::get('jenis-laporan-data', ['as'=>'admin.jenis-laporan.data','uses'=>'Backend\JenisLaporanController@getData']);
 
 
 /*-------------------enf of backend-------------*/

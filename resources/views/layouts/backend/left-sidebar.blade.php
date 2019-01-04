@@ -284,6 +284,14 @@
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.jenis-laporan.index') }}" class="nav-link">
+                  <i class="nav-icon fa fa-database"></i>
+                  <p>
+                    Jenis Laporan
+                  </p>
+                </a>
+              </li>
               
               
               <li class="nav-header">PENGATURAN MODUL</li>

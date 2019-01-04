@@ -368,6 +368,11 @@ Route::get('/dwelling-time-per-hari',[
 /*-------------------testing---------------------*/
 Route::get('/excel-export',[
     'uses' => 'TestingController@excelExport',
-    'as'   => 'test.excel-export',
+    'as'   => 'test.excel-export'
+]);
+
+Route::get('/excel-import',[
+    'uses'  => 'TestingController@excelImport',
+    'as'    => 'test.excel-import'
 ]);
 /*-------------------end of system---------------*/

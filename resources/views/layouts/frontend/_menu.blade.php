@@ -27,7 +27,7 @@
                                 </ul>
                             </li>
                             @role('perusahaan')
-                            <li><a href="#">pelaporan</a></li>
+                            <li><a href="{{ route('pelaporan.index') }}">pelaporan</a></li>
                             @endrole
                         </ul>
                     </nav>

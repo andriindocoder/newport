@@ -351,6 +351,14 @@ Route::group(['middleware'=>['auth']], function(){
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);
+    Route::get('/pelaporan',[
+        'uses'  => 'Frontend\PelaporanController@index',
+        'as'    => 'pelaporan.index'
+    ]);
+    Route::post('/pelaporan',[
+        'uses'  => 'Frontend\PelaporanController@store',
+        'as'    => 'pelaporan.store'
+    ]);
 });
 /*-------------------enf of frontend-------------*/
 

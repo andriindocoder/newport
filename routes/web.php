@@ -364,3 +364,10 @@ Route::get('/dwelling-time-per-hari',[
     'as' => 'dwelling-time.day'
 ]);
 /*-------------------end of system---------------*/
+
+/*-------------------testing---------------------*/
+Route::get('/excel-export',[
+    'uses' => 'TestingController@excelExport',
+    'as'   => 'test.excel-export',
+]);
+/*-------------------end of system---------------*/

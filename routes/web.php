@@ -374,3 +374,8 @@ Route::get('/dwelling-time-per-hari',[
     'as' => 'dwelling-time.day'
 ]);
 /*-------------------end of system---------------*/
+
+/*-------------------test email------------------*/
+Route::get('/test-email','Frontend\TampilanDepanController@email');
+
+/*-------------------end of test email-----------*/

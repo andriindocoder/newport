@@ -11,6 +11,7 @@ use App\Model\GaleriFoto;
 use App\Model\KategoriFoto;
 use App\Model\GaleriVideo;
 use App\Model\KategoriVideo;
+use Illuminate\Support\Facades\Mail;
 
 class TampilanDepanController extends Controller
 {
@@ -40,5 +41,18 @@ class TampilanDepanController extends Controller
         $kategoriVideos = KategoriVideo::get();
 
         return view('frontend.galeri-video.index', compact('gallerys','kategoriVideos'));
+    }
+
+    public function email(){
+        $data = ['firstname' => 'Recipient Name'];
+        $member = [
+            'email' => 'andriwicaksonost@gmail.com',
+            'name'  => 'Andri Wicaksono',
+            'subject' => 'Pendaftaran Email Portal OP Tanjung Priok'
+        ];
+
+        Mail::send('test.email', $data, function($m) use ($member){
+            $m->to($member['email'], $member['name'])->subject($member['subject']);
+        });
     }
 }

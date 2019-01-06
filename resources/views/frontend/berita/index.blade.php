@@ -1,5 +1,4 @@
 @extends('layouts.frontend.main')
-
 @section('pageTitle', 'Berita')
 
 @section('content')

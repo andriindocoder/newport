@@ -46,7 +46,7 @@
                     @else
                     <li>
                     @endif
-                        <a href="{{ route('berita.kategori', $kat->slug) }}">{{ $kat->title }}</a></li>
+                        <a href="{{ route('frontend.berita.kategori', $kat->slug) }}">{{ $kat->title }}</a></li>
                     @endforeach
                 </ul>
             </div>

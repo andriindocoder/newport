@@ -11,7 +11,7 @@
                 <div class="col">
                     <div class="desc">
                     <small class="breadcrumb-list"><span><a href="{{ url('/') }}">Beranda</a></span><span>Pendaftaran PMKU</span></small>
-                        <h2>Pendaftaran PMKU</h2>
+                        <h2>Pendaftaran PMKU (PBM/JPT)</h2>
                     </div>
                 </div>
             </div>
@@ -122,13 +122,13 @@
 
             {!! Form::open([
                 'method' => 'POST',
-                'route' => 'registrasi.store',
+                'route' => 'registrasi.pmku',
                 'id' => 'registrasi-pmku-form',
                 'files' => true,
             ]) !!}
             <div class="row">
                 <div class="col">
-                    @include('frontend.registrasi.form')
+                    @include('frontend.registrasi.form-pbm-jpt')
                 </div>
             </div>
             {!! Form::close() !!}

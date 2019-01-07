@@ -1,27 +1,25 @@
 <table class="table table-striped">
   <tr>
     <th style="width: 10px">No</th>
-    <th>Title</th>
-    <th class="text-center">Caption</th>
-    <th class="text-center">Nama File</th>
+    <th>Judul Video</th>
+    <th width="400px">Link Video</th>
     <th class="text-center">Aksi</th>
   </tr>
   <?php $no = paging_number($perPage);?>
   @foreach($galeriVideos as $galeriVideo)
   	<tr>
   	  <td>{{ $no }}.</td>
-  	  <td>{{ $galeriVideo->title }}</td>
-  	  <td align="center">{{ $galeriVideo->caption }}</td>
-  	  <td align="center">{{ $galeriVideo->namafile }}</td>
-      <td align="center" ="center">
-        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'PUT', 'route' => ['admin.galeri-video.restore', $galeriVideo->id]]) !!}
-          <button title="Restore" class="btn btn-warning btn-sm btn-block">
-              <i class="fa fa-refresh text-black"></i> Restore
-          </button>
-        {!! Form::close() !!}
-        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'DELETE', 'route' => ['admin.galeri-video.force-destroy', $galeriVideo->id]]) !!}
-          <button title="Permanent Delete" onclick="return confirm('You are about to delete data permanently. Are you sure?')" type="submit" class="btn btn-danger btn-sm btn-block">
-            <i class="fa fa-times-circle"></i> Hapus Permanen
+  	  <td>{{ $galeriVideo->judul_video }}</td>
+      <td>
+        <iframe width="350" height="180" src="{{ $galeriVideo->link_video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+      </td>
+      <td align="center">
+        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.galeri-video.destroy', $galeriVideo->id]]) !!}
+        <a href="{{ route('admin.galeri-video.edit', $galeriVideo->id) }}" class="btn btn-sm btn-warning btn-block" title="Edit">
+          <i class="fa fa-edit text-black"></i> Edit
+        </a>
+          <button onclick="return confirm('Apakah Anda yakin untuk menghapus video?')" type="submit" class="btn btn-sm btn-danger btn-block" title="Move to Trash">
+            <i class="fa fa-trash"></i> Hapus
           </button>
         {!! Form::close() !!}
       </td>

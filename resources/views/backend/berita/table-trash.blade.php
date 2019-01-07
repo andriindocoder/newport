@@ -7,7 +7,7 @@
     <th class="text-center">Aksi</th>
   </tr>
   <?php $no = paging_number($perPage);?>
-  @foreach($frontMenus as $frontMenu)
+  @foreach($posts as $post)
   	<tr>
   	  <td>{{ $no }}.</td>
   	  <td>{{ $post->title }}</td>

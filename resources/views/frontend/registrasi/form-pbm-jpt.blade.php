@@ -2,6 +2,30 @@
     <label class="contact-label"><span>Register Username dan Password Portal OP Tanjung Priok</span></label>
     <div class="row">
         <div class="col-md-6">
+            <div class="form-group {{ $errors->has('kode_perusahaan') ? 'has-error' : ''}} m-input">
+                <?php $placeholderKodePerusahaan = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->kode_perusahaan : '';?>
+                {!! Form::hidden('kode_perusahaan', $placeholderKodePerusahaan, ['class'=> 'form-control','placeholder'=>$placeholderKodePerusahaan]) !!}
+
+                @if($errors->has('kode_perusahaan'))
+                <span class="help-block badge badge-danger">{{ $errors->first('kode_perusahaan') }}</span>
+                @endif
+            </div>
+            <div class="form-group {{ $errors->has('no_pmku') ? 'has-error' : ''}} m-input">
+                <?php $placeholderNoPmku = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->no_pmku : '';?>
+                {!! Form::hidden('no_pmku', $placeholderNoPmku, ['class'=> 'form-control','placeholder'=>$placeholderNoPmku]) !!}
+
+                @if($errors->has('no_pmku'))
+                <span class="help-block badge badge-danger">{{ $errors->first('no_pmku') }}</span>
+                @endif
+            </div>
+            <div class="form-group {{ $errors->has('id') ? 'has-error' : ''}} m-input">
+                <?php $placeholderId = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->id : '';?>
+                {!! Form::hidden('id', $placeholderId, ['class'=> 'form-control','placeholder'=>$placeholderId]) !!}
+
+                @if($errors->has('id'))
+                <span class="help-block badge badge-danger">{{ $errors->first('id') }}</span>
+                @endif
+            </div>
             <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}} m-input">
                 <label>Username yang Akan Digunakan<sup>*</sup></label>
 
@@ -43,15 +67,16 @@
             </div>
             <div class="form-group {{ $errors->has('jenis_usaha_id') ? 'has-error' : ''}} m-input">
                 <label>Bidang Usaha <sup>*</sup></label>
-                {!! Form::select('jenis_usaha_id',App\Model\JenisUsaha::pluck('jenis_usaha','id'),null,['class'=>'selectpicker','title' => 'Pilih Jenis Usaha ...','id'=>'jenis-usaha-id','data-live-search'=>'true']) !!}
+                <?php $placeholderJenisUsaha = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->kode_tipe_perusahaan : '';?>
+                {!! Form::text('jenis_usaha_id', $placeholderJenisUsaha , ['class'=> 'form-control', 'placeholder' => $placeholderJenisUsaha ]) !!}
                 @if($errors->has('jenis_usaha_id'))
                 <span class="help-block badge badge-danger">{{ $errors->first('jenis_usaha_id') }}</span>
                 @endif
             </div>
             <div class="form-group {{ $errors->has('nomor_siup') ? 'has-error' : ''}} m-input">
                 <label>Nomor SIUP <sup>*</sup></label>
-
-                {!! Form::text('nomor_siup', null, ['class'=> 'form-control']) !!}
+                <?php $placeholderSiup = $perusahaan->data->ina_perusahaan ? $perusahaan->data->ina_perusahaan->nomor_siupal : '';?>
+                {!! Form::text('nomor_siup', $placeholderSiup, ['class'=> 'form-control','placeholder'=>$placeholderSiup]) !!}
 
                 @if($errors->has('nomor_siup'))
                 <span class="help-block badge badge-danger">{{ $errors->first('nomor_siup') }}</span>
@@ -62,8 +87,8 @@
             <div class="form-group {{ $errors->has('tanggal_siup') ? 'has-error' : ''}} m-input">
 
                 <label>Tanggal Terbit SIUP <sup>*</sup></label>
-                
-                <input class="form-control" id="date" name="tanggal_siup" placeholder="YYYY-MM-DD (Contoh: 2018-12-07)" type="text"/>
+                <?php $placeholderTanggal = $perusahaan->data->ina_perusahaan ? $perusahaan->data->system_response->tglIzin : 'yyyy-mm-dd';?>
+                <input class="form-control" id="date" name="tanggal_siup" placeholder="{{$placeholderTanggal}}" type="text" value="{{$placeholderTanggal}}" />
 
                 @if($errors->has('tanggal_siup'))
                 <span class="help-block badge badge-danger">{{ $errors->first('tanggal_siup') }}</span>
@@ -71,8 +96,8 @@
             </div>
             <div class="form-group {{ $errors->has('nama_perusahaan') ? 'has-error' : ''}} m-input">
                 <label>Nama Perusahaan <sup>*</sup></label>
-
-                {!! Form::text('nama_perusahaan', null, ['class'=> 'form-control']) !!}
+                <?php $placeholderNamaPerusahaan = $perusahaan->data->ina_perusahaan ? $perusahaan->data->ina_perusahaan->nama_perusahaan : '';?>
+                {!! Form::text('nama_perusahaan', $placeholderNamaPerusahaan, ['class'=> 'form-control','placeholder'=>$placeholderNamaPerusahaan]) !!}
 
                 @if($errors->has('nama_perusahaan'))
                 <span class="help-block badge badge-danger">{{ $errors->first('nama_perusahaan') }}</span>
@@ -80,8 +105,8 @@
             </div>
             <div class="form-group {{ $errors->has('npwp') ? 'has-error' : ''}} m-input">
                 <label>NPWP <sup>*</sup></label>
-
-                {!! Form::text('npwp', null, ['class'=> 'form-control']) !!}
+                <?php $placeholderNpwp = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->npwp : '';?>
+                {!! Form::text('npwp', $placeholderNpwp, ['class'=> 'form-control','placeholder'=>$placeholderNpwp]) !!}
 
                 @if($errors->has('npwp'))
                 <span class="help-block badge badge-danger">{{ $errors->first('npwp') }}</span>
@@ -160,8 +185,8 @@
             </div>
             <div class="form-group {{ $errors->has('fax') ? 'has-error' : ''}} m-input">
                 <label>Fax</label>
-
-                {!! Form::text('fax', null, ['class'=> 'form-control']) !!}
+                <?php $placeholderFax = $perusahaan->data->system_response? $perusahaan->data->system_response->nofax : '';?>
+                {!! Form::text('fax', $placeholderFax, ['class'=> 'form-control','placeholder'=>$placeholderFax]) !!}
 
                 @if($errors->has('fax'))
                 <span class="help-block badge badge-danger">{{ $errors->first('fax') }}</span>
@@ -169,8 +194,8 @@
             </div>
             <div class="form-group {{ $errors->has('hotline') ? 'has-error' : ''}} m-input">
                 <label>Hotline <sup>*</sup></label>
-
-                {!! Form::text('hotline', null, ['class'=> 'form-control']) !!}
+                <?php $placeholderHotline = $perusahaan->data->system_response? $perusahaan->data->system_response->notelpon : '';?>
+                {!! Form::text('hotline', $placeholderHotline, ['class'=> 'form-control','placeholder'=>$placeholderHotline]) !!}
 
                 @if($errors->has('hotline'))
                 <span class="help-block badge badge-danger">{{ $errors->first('hotline') }}</span>
@@ -203,8 +228,9 @@
             </div>
             <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}} m-input">
                 <label>Email Kantor Perusahaan <sup>*</sup></label>
+                <?php $placeholderEmail = $perusahaan->data->system_response? $perusahaan->data->system_response->email : '';?>
 
-                {!! Form::text('email', null, ['class'=> 'form-control']) !!}
+                {!! Form::text('email', $placeholderEmail, ['class'=> 'form-control', 'placeholder'=>$placeholderEmail]) !!}
 
                 @if($errors->has('email'))
                 <span class="help-block badge badge-danger">{{ $errors->first('email') }}</span>

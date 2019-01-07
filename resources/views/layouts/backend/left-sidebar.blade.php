@@ -169,7 +169,7 @@
     
               <li class="nav-header">PENGATURAN PROFIL</li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.profil.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-university"></i>
                   <p>Profil OP</p>
                 </a>

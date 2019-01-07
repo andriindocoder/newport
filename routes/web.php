@@ -53,6 +53,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\LinkTerkaitController@forceDestroy',
             'as' => 'link-terkait.force-destroy'
         ]);
+        Route::resource('profil', 'Backend\ProfilController');
+        Route::put('profil/restore/{id}',[
+            'uses' => 'Backend\ProfilController@restore',
+            'as' => 'profil.restore'
+        ]);
+        Route::delete('profil/force-destroy/{id}',[
+            'uses' => 'Backend\ProfilController@forceDestroy',
+            'as' => 'profil.force-destroy'
+        ]);
         Route::resource('informasi', 'Backend\InformasiController');
         Route::put('informasi/restore/{id}',[
             'uses' => 'Backend\InformasiController@restore',

@@ -124,12 +124,24 @@ class GaleriFotoController extends BackendController
      */
     public function update(GaleriFotoUpdateRequest $request, $id)
     {
-        $data = $this->handleRequest($request);
         $data = $request->all();
         $data['update_id'] = Auth::user()->id;
         $data['updated_at'] = Carbon::now();
 
-        GaleriFoto::findOrFail($id)->update($data);
+        $galeriFoto = GaleriFoto::findOrFail($id);
+        $oldImage = $galeriFoto->namafile;
+        $data = $request->all();
+        if($request->hasFile('namafile')){
+            $bulan = date('m');
+            $tahun = date('Y');
+            $path = $request->file('namafile')->store('gallery/'.$tahun.'/'.$bulan);
+            $data['namafile'] = $path;
+        }
+        
+        $galeriFoto->update($data);
+        if($oldImage !== $galeriFoto->namafile){
+          $this->removeImage($oldImage);
+        }
 
         return redirect("/admin/galeri-foto")->with('message','Galeri Foto berhasil di update');
     }
@@ -166,5 +178,14 @@ class GaleriFotoController extends BackendController
 
       return redirect('/admin/galeri-foto')->with('message', 'Galeri Foto has been restored from the trash');
 
+    }
+
+    private function removeImage($image){
+      if(!empty($image)){
+          $imagePath = storage_path().'/app/'.$image;
+          $ext = substr(strrchr($image,'.'),1);
+
+        if(file_exists($imagePath)) unlink($imagePath);
+      }
     }
 }

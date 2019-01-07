@@ -10,9 +10,10 @@
 		    <div class="row">
 		      <div class="col-lg-12">
 		        {!! Form::model($galeriFoto, [
-		            'method' 	=> 'PUT',
-		            'route' 	=> ['admin.galeri-foto.update', $galeriFoto->id],
-		            'id' 			=> 'galeri-foto-form'
+					'method' => 'PUT',
+					'route'  => ['admin.galeri-foto.update', $galeriFoto->id],
+					'id'     => 'galeri-foto-form',
+					'files'  => true,
 		        ]) !!}
 
 		        @include('backend.galeri-foto.form')

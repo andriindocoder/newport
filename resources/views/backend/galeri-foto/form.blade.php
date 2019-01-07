@@ -43,6 +43,9 @@
 
                   <div class="form-group {{ $errors->has('namafile') ? 'has-error' : ''}} m-input">
                     {!! Form::label('namafile', 'Upload Gambar') !!}<br>
+                    @if($galeriFoto->namafile)
+                      <a href="{{ url($galeriFoto->namafile) }}" target="_blank"><img src="{{ url($galeriFoto->namafile) }}" width="50%"></a><br>
+                    @endif
                     {!! Form::file('namafile') !!}
 
                     @if($errors->has('namafile'))

@@ -153,4 +153,13 @@ class LinkTerkaitController extends BackendController
       return redirect('/admin/link-terkait')->with('message', 'Link Terkait has been restored from the trash');
 
     }
+
+    private function removeImage($image){
+      if(!empty($image)){
+          $imagePath = storage_path().'/app/'.$image;
+          $ext = substr(strrchr($image,'.'),1);
+
+        if(file_exists($imagePath)) unlink($imagePath);
+      }
+    }
 }

@@ -35,7 +35,10 @@
 
                   <div class="form-group {{ $errors->has('logo_instansi') ? 'has-error' : ''}} m-input">
                     {!! Form::label('Logo Instansi') !!}
-                    &nbsp;
+                    &nbsp;<br>
+                    @if($linkTerkait->logo_instansi)
+                      <a href="{{ url($linkTerkait->logo_instansi) }}" target="_blank"><img src="{{ url($linkTerkait->logo_instansi) }}" width="10%"></a><br>
+                    @endif
                     {!! Form::file('logo_instansi', null, ['class'=> 'form-control']) !!}
 
                     @if($errors->has('logo_instansi'))

@@ -544,43 +544,43 @@
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/batas-dlkr-dlkp') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Batas DLKr/DLKp</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/rekapitulasi-fasilitas-dan-peralatan') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>Rekapitulasi Fasilitas</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/fasilitas-dermaga') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Fasilitas Dermaga</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/fasilitas-gudang') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>Fasilitas Gudang</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/lapangan-penumpukan') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Lapangan Penumpukan</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/daerah-labuh') }}" class="nav-link">
                         <i class="fa fa-circle-o text-primary nav-icon"></i>
                         <p>Daerah Labuh</p>
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link">
+                      <a href="{{ url('admin/fasilitas/breakwater') }}" class="nav-link">
                         <i class="fa fa-circle-o text-success nav-icon"></i>
                         <p>Breakwater</p>
                       </a>

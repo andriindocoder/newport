@@ -112,7 +112,19 @@ class LinkTerkaitController extends BackendController
         $data['updated_id'] = Auth::user()->id;
         $data['updated_at'] = Carbon::now();
 
-        LinkTerkait::findOrFail($id)->update($data);
+        $linkTerkait = LinkTerkait::findOrFail($id);
+        $oldImage = $linkTerkait->logo_instansi;
+        $data = $request->all();
+        if($request->hasFile('logo_instansi')){
+            $bulan = date('m');
+            $tahun = date('Y');
+            $path = $request->file('logo_instansi')->store('logo-instansi/'.$tahun.'/'.$bulan);
+            $data['logo_instansi'] = $path;
+        }
+        $linkTerkait->update($data);
+        if($oldImage !== $linkTerkait->logo_instansi){
+          $this->removeImage($oldImage);
+        }
 
         return redirect("/admin/link-terkait")->with('message','Link Terkait berhasil di update');
     }

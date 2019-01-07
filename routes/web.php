@@ -89,6 +89,12 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'as'    => 'info.informasi',
         ]);
     });
+    Route::group(['middleware'=>['role:superadmin|fasilitas']], function(){
+        Route::get('fasilitas/{data}', [
+            'uses'=>'Backend\InformasiController@index',
+            'as'    => 'info.informasi',
+        ]);
+    });
 });
 
 Route::get('kategori-berita-data', ['as'=>'admin.kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);

@@ -17,7 +17,7 @@
                             <li><a href="{{ route('fasilitas.index') }}">fasilitas pelabuhan</a></li>
                             <li><a href="#">pelayanan</a>
                                 <ul>
-                                    <li><a href="#">PMKU (AP,PBM,JPT)</a></li>
+                                    <li><a href="{{ route('registrasi') }}">PMKU</a></li>
                                     <li><a href="{{ route('pelayanan.rekomendasi') }}">Rekomendasi</a></li>
                                     <li><a href="#">Surat Izin Kerja Keruk</a></li>
                                     <li><a href="{{ route('pelayanan.pelayanan-supplier') }}">Pelayanan Supplier</a></li>

@@ -33,7 +33,7 @@
             ]) !!}
             <div class="row">
                 <div class="col">
-                    @include('frontend.registrasi.form')
+                    @include('frontend.registrasi.form-pbm-jpt')
                 </div>
             </div>
             {!! Form::close() !!}

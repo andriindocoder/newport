@@ -83,6 +83,9 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
         $data['role_id'] = $role->id;
         $data['slug'] = slugify($data['name']);
         $data['nama_instansi'] = $data['nama_perusahaan'];
+
+        $this->savePmku($data);
+
         
         $user = User::create([
             'nama_instansi' => $data['nama_instansi'],
@@ -123,4 +126,114 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
 
         return redirect()->route('login')->with('message','Pendaftaran User Berhasil, Silahkan Login');
     }
+
+    public function cekNib(Request $request){
+        $nib = $request->get('nib');
+        $tipePerusahaan = $request->get('tipe_perusahaan');
+        
+        $perusahaan = $this->cariNomorNibInaportnet($tipePerusahaan, $nib, $plb="IDJKT");
+
+        $listBadanUsaha = [
+            '1' => 'PT',
+            '2' => 'Perusahaan Perorangan',
+            '3' => 'Firma',
+            '4' => 'CV',
+            '5' => 'Koperasi',
+            '6' => 'PD',
+            '7' => 'Perum',
+            '8' => 'Persero',
+        ];
+
+        $listTempatKantor = [
+            '1' => 'Kantor Pusat',
+            '2' => 'Kantor Cabang',
+        ];
+
+        if($perusahaan->data->ina_perusahaan){
+            $notif = "Perusahaan ditemukan di Database Inaportnet. Silahkan lanjut untuk melengkapi data perusahaan.";
+        }else{
+            dd("Perusahaan tidak ditemukan di database Inaportnet. Silahkan mendaftar di inaportnet terlebih dahulu.");
+        }
+
+        return view('frontend.registrasi.non-ap',compact('perusahaan','notif','listTempatKantor','listBadanUsaha'));
+    }
+
+    private function cariNomorNibInaportnet($type, $nib, $plb="IDJKT"){
+
+        $url = "https://inaportdev.dephub.go.id/ipn_ws/public/index.php/api/simpadu/pmku/register";
+
+        $data = [
+                  "type" => $type,
+                  "nomor_izin" => $nib,
+                  "kode_pelabuhan" => $plb
+              ];
+
+        $options = array(
+          'http' => array(
+              'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+              'method'  => 'POST',
+              'content' => http_build_query($data)
+          )
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+
+        if ($result === FALSE) { dd("Tidak ditemukan"); };
+
+        return json_decode($result);
+    }
+
+    private function savePmku($pmku){
+        $url = "https://inaportdev.dephub.go.id/ipn_ws/public/index.php/api/simpadu/pmku/savePmkuOnline";
+
+      $rule = [
+                  "type" => $pmku['jenis_usaha_id'],
+                  "kode_perusahaan" => $pmku['kode_perusahaan'],
+                  "kode_pelabuhan" => "IDJKT",
+                  "is_pusat" => $pmku['tempat_kantor'],
+                  "no_npwp" => $pmku['npwp'],
+                  "akta" => url($pmku['file_akta']),
+                  "kode_wilayah" => $pmku['wilayah_id'],
+                  "alamat" => $pmku['alamat_perusahaan'],
+                  "telp" => $pmku['telepon'],
+                  "email" => $pmku['email'],
+                  "hotline" => $pmku['hotline'],
+                  "penanggung_jawab" => $pmku['penanggung_jawab'],
+                  "ktp_penanggung_jawab" => url($pmku['file_ktp']) ,
+                  "npwp_perusahaan" => url($pmku['file_npwp']),
+                  "dokumen_siup" => url($pmku['file_siup']),
+                  "struktur_organisasi_perusahaan" => url($pmku['file_struktur']),
+                  "surat_keterangan_domisili" => url($pmku['file_domisili']),
+                  "siup_kum_ham" => $pmku['nomor_siup'],
+              ];
+
+      $options = array(
+          'http' => array(
+              'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+              'method'  => 'POST',
+              'content' => http_build_query($rule)
+          )
+      );
+      $context  = stream_context_create($options);
+      $result = file_get_contents($url, false, $context);
+
+      if ($result === FALSE) { /* Handle error */ }
+
+      return json_decode($result);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

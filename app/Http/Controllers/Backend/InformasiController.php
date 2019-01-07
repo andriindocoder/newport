@@ -50,31 +50,79 @@ class InformasiController extends BackendController
                     break;
                 case 'program-dan-kegiatan':
                     $informasis = Informasi::latest()->jenisInformasi(2)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
                     break;
                 case 'data-dan-informasi' :
                     $informasis = Informasi::latest()->jenisInformasi(3)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
                     break;
                 case 'kinerja-kantor-otoritas-pelabuhan' :
                     $informasis = Informasi::latest()->jenisInformasi(4)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
                     break;
                 case 'informasi-hukum' :
                     $informasis = Informasi::latest()->jenisInformasi(5)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
                     break;
                 case 'tarif-pnbp' :
                     $informasis = Informasi::latest()->jenisInformasi(6)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
                     break;
                 case 'indeks-kepuasan-masyarakat' :
                     $informasis = Informasi::latest()->jenisInformasi(7)->active()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
+                    break;
+                case 'profil-ppid' :
+                    $informasis = Informasi::latest()->jenisInformasi(15)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'dasar-hukum' :
+                    $informasis = Informasi::latest()->jenisInformasi(16)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'maklumat-pelayanan' :
+                    $informasis = Informasi::latest()->jenisInformasi(17)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'standar-layanan' :
+                    $informasis = Informasi::latest()->jenisInformasi(18)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'simpul-layanan' :
+                    $informasis = Informasi::latest()->jenisInformasi(19)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'jumlah-permintaan-informasi' :
+                    $informasis = Informasi::latest()->jenisInformasi(20)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                case 'prosedur-permohonan' :
+                    $informasis = Informasi::latest()->jenisInformasi(21)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                  case 'tata-cara-memperoleh-informasi' :
+                    $informasis = Informasi::latest()->jenisInformasi(22)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                  case 'tata-cara-pengajuan-keberatan' :
+                    $informasis = Informasi::latest()->jenisInformasi(23)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                  case 'hak-dan-kewajiban-badan-publik' :
+                    $informasis = Informasi::latest()->jenisInformasi(24)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                  case 'hak-dan-kewajiban-pemohon-informasi' :
+                    $informasis = Informasi::latest()->jenisInformasi(25)->active()->paginate($perPage);
+                    $informasisCount = 1;
+                    break;
+                  case 'uji-coba' :
+                    $informasis = Informasi::latest()->jenisInformasi(26)->active()->paginate($perPage);
+                    $informasisCount = 1;
                     break;
                 default:
                     $informasis = Informasi::latest()->paginate($perPage);
-                    $informasisCount = Informasi::count();
+                    $informasisCount = 1;
             }
         }
 

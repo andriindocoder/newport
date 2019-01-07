@@ -84,6 +84,10 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses'=>'Backend\InformasiController@index',
             'as'    => 'info.informasi',
         ]);
+        Route::get('ppid/{data}', [
+            'uses'=>'Backend\InformasiController@index',
+            'as'    => 'info.informasi',
+        ]);
     });
 });
 

@@ -192,9 +192,86 @@
               <li class="nav-header">TAMPILAN KEGIATAN</li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fa fa-camera"></i>
-                  <p>Profil PPID</p>
-                </a>
+                    <i class="nav-icon fa fa-camera"></i>
+                    <p>
+                      Menu PPID
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/profil-ppid') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Profil PPID</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/dasar-hukum') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Dasar Hukum</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/maklumat-pelayanan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Maklumat Pelayanan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/standar-layanan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Standar Layanan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/simpul-layanan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Simpul Layanan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/jumlah-permintaan-informasi') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Jumlah Permintaan Info</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/prosedur-permohonan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Prosedur Permohonan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/tata-cara-memperoleh-informasi') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Tata Cara Memperoleh Info </p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/tata-cara-pengajuan-keberatan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Tata Cara Keberatan</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/hak-dan-kewajiban-badan-publik') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Hak dan Kewajiban Badan Publik</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/hak-dan-kewajiban-pemohon-informasi') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Hak dan Kewajiban Pemohon Informasi</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/ppid/uji-coba') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Uji Coba</p>
+                      </a>
+                    </li>
+                  </ul>
               </li>
               <li class="nav-item">
                 <a href="{{ url('admin/info/informasi-publik') }}" class="nav-link">
@@ -229,7 +306,7 @@
               <li class="nav-item">
                 <a href="{{ url('admin/info/indeks-kepuasan-masyarakat') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
-                  <p>Indeks Kepuasan Masyarakat</p>
+                  <p>Index Kepuasan Masyarakat</p>
                 </a>
               </li>         
               @endrole

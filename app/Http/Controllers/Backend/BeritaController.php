@@ -164,7 +164,7 @@ class BeritaController extends BackendController
     {
         Berita::findOrFail($id)->delete();
 
-        return redirect('/backend/berita')->with('trash-message', ['Berita sudah dihapus', $id]);
+        return redirect('/admin/berita')->with('trash-message', ['Berita sudah dihapus', $id]);
     }
 
     public function forceDestroy($id){
@@ -178,7 +178,7 @@ class BeritaController extends BackendController
         "message" => "Berita berhasil dihapus permanen."
     ]);
 
-      return redirect('/backend/blog?status=trash');
+      return redirect('/admin/berita?status=trash');
     }
 
     public function restore($id)
@@ -191,7 +191,7 @@ class BeritaController extends BackendController
         "message" => "Berita berhasil diaktifkan kembali."
     ]);
 
-      return redirect('/backend/berita');
+      return redirect('/admin/berita');
 
     }
 

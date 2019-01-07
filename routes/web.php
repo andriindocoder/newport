@@ -36,6 +36,14 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
         Route::resource('jenis-laporan', 'Backend\JenisLaporanController');
         Route::resource('tampilan-depan', 'Backend\TampilanDepanController');
         Route::resource('berita', 'Backend\BeritaController');
+        Route::put('berita/restore/{id}',[
+            'uses' => 'Backend\BeritaController@restore',
+            'as' => 'berita.restore'
+        ]);
+        Route::delete('berita/force-destroy/{id}',[
+            'uses' => 'Backend\BeritaController@forceDestroy',
+            'as' => 'berita.force-destroy'
+        ]);
         Route::resource('link-terkait', 'Backend\LinkTerkaitController');
         Route::put('link-terkait/restore/{id}',[
             'uses' => 'Backend\LinkTerkaitController@restore',

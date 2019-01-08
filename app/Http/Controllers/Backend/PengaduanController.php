@@ -10,6 +10,8 @@ use App\Model\Pengaduan;
 use App\Http\Requests;
 use Carbon\Carbon;
 use Auth;
+use App\Http\Requests\Backend\PengaduanStoreRequest;
+use App\Http\Requests\Backend\PengaduanUpdateRequest;
 
 class PengaduanController extends BackendController
 {

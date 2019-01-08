@@ -62,15 +62,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\ProfilController@forceDestroy',
             'as' => 'profil.force-destroy'
         ]);
-        Route::resource('informasi', 'Backend\InformasiController');
-        Route::put('informasi/restore/{id}',[
-            'uses' => 'Backend\InformasiController@restore',
-            'as' => 'informasi.restore'
-        ]);
-        Route::delete('informasi/force-destroy/{id}',[
-            'uses' => 'Backend\InformasiController@forceDestroy',
-            'as' => 'informasi.force-destroy'
-        ]);
         Route::resource('galeri-foto', 'Backend\GaleriFotoController');
         Route::put('galeri-foto/restore/{id}',[
             'uses' => 'Backend\GaleriFotoController@restore',
@@ -116,10 +107,19 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'as'    => 'info.informasi',
         ]);
     });
-    Route::group(['middleware'=>['role:superadmin|fasilitas']], function(){
+    Route::group(['middleware'=>['role:superadmin|fasilitas|humas']], function(){
         Route::get('fasilitas/{data}', [
             'uses'=>'Backend\InformasiController@index',
             'as'    => 'info.informasi',
+        ]);
+        Route::resource('informasi', 'Backend\InformasiController');
+        Route::put('informasi/restore/{id}',[
+            'uses' => 'Backend\InformasiController@restore',
+            'as' => 'informasi.restore'
+        ]);
+        Route::delete('informasi/force-destroy/{id}',[
+            'uses' => 'Backend\InformasiController@forceDestroy',
+            'as' => 'informasi.force-destroy'
         ]);
     });
 });

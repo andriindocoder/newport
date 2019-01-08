@@ -585,6 +585,12 @@
                         <p>Breakwater</p>
                       </a>
                     </li>
+                    <li class="nav-item">
+                      <a href="{{ url('admin/fasilitas/rencana-induk-pelabuhan') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>Rencana Induk Pelabuhan</p>
+                      </a>
+                    </li>
                   </ul>
               </li>
               <li class="nav-item">

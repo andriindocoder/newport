@@ -297,6 +297,10 @@ Route::get('/fasilitas-pelabuhan/breakwater',[
     'uses'  => 'Frontend\FasilitasController@breakwater',
     'as'    => 'fasilitas.breakwater',
 ]);
+Route::get('/fasilitas-pelabuhan/rencana-induk-pelabuhan',[
+    'uses'  => 'Frontend\FasilitasController@rencanaInduk',
+    'as'    => 'fasilitas.rencana-induk',
+]);
 
 Route::get('/registrasi',[
     'uses'  => 'Frontend\RegistrasiController@index',

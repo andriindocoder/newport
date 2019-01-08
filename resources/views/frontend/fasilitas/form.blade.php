@@ -18,6 +18,7 @@
                             <li><a href="#fasilitas-lapangan-penumpukan">Fasilitas Lapangan Penumpukan</a></li>
                             <li><a href="#daerah-labuh">Daerah Labuh</a></li>
                             <li><a href="#breakwater">Breakwater</a></li>
+                            <li><a href="#rencana-induk">Rencana Induk Pelabuhan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -71,6 +72,12 @@
                 case '#breakwater' :
                 $label.html('Breakwater');
                     $desc.load('/fasilitas-pelabuhan/breakwater');
+                        $('li').removeClass();
+                        $(this).parent().addClass('active');
+                    break;
+                case '#rencana-induk' :
+                $label.html('Rencana Induk Pelabuhan');
+                    $desc.load('/fasilitas-pelabuhan/rencana-induk-pelabuhan');
                         $('li').removeClass();
                         $(this).parent().addClass('active');
                     break;

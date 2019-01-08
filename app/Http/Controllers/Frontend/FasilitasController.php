@@ -48,4 +48,9 @@ class FasilitasController extends Controller
 		return view('frontend.fasilitas.breakwater',compact('konten'));
 	}
 
+	public function rencanaInduk(){
+		$konten = Informasi::where('jenis_informasi_id',27)->first();
+		return view('frontend.fasilitas.rencana-induk-pelabuhan',compact('konten'));
+	}
+
 }

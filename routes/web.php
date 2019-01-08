@@ -12,7 +12,7 @@
 */
 
 /*-----------------index-----------------------*/
-Auth::routes();
+Auth::routes(['verify'=>true]);
 Route::match(['get', 'post'], 'register', function(){
     return redirect('/');
 });
@@ -22,6 +22,8 @@ Route::get('/home',[
     'as'    => 'home' ,
     'middleware' => ['role:superadmin|keuangan|kepegawaian|humas|renpro|desain|tarif|lala|fasilitas|bimus']
 ]);
+
+Route::get('/verifikasi-sukses','HomeController@verifikasi');
 /*--------------------end of index-------------*/
 
 /*-------------------backend-------------------*/

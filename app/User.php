@@ -9,7 +9,7 @@ use Laratrust\Traits\LaratrustUserTrait;
 use App\Model\Berita;
 use App\Model\Pmku;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use LaratrustUserTrait;
     use Notifiable;

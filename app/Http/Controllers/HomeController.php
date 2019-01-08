@@ -25,4 +25,8 @@ class HomeController extends Controller
     {
         return view('index-backend');
     }
+
+    public function verifikasi(){
+        return view('auth.sukses');
+    }
 }

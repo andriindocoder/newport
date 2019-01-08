@@ -183,7 +183,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('admin.ppid.index') }}" class="nav-link">
                   <i class="nav-icon fa fa-bullhorn"></i>
                   <p>PPID</p>
                 </a>

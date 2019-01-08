@@ -27,8 +27,8 @@
       @endif
       <td align="center">
         @if($pengaduan->status_pengaduan == 1)
-        {!! Form::open(['method' => 'DELETE', 'route' => ['pengaduan.destroy', $pengaduan->id]]) !!}
-        <a href="{{ route('pengaduan.edit', $pengaduan->id) }}" class="btn btn-sm btn-primary btn-block" title="Edit">
+        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.pengaduan.destroy', $pengaduan->id]]) !!}
+        <a href="{{ route('admin.pengaduan.edit', $pengaduan->id) }}" class="btn btn-sm btn-primary btn-block" title="Edit">
           <i class="fa fa-comment text-black"></i> Proses
         </a>
         @else 

@@ -5,17 +5,17 @@
     <th class="text-center">Aksi</th>
   </tr>
   <?php $no = paging_number($perPage);?>
-  @foreach($pengaduans as $pengaduan)
+  @foreach($ppids as $ppid)
   	<tr>
   	  <td>{{ $no }}.</td>
-  	  <td align="center">{{ $pengaduan->nama_lengkap }}</td>
+  	  <td align="center">{{ $ppid->nama_lengkap }}</td>
       <td align="center" ="center">
-        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'PUT', 'route' => ['admin.pengaduan.restore', $pengaduan->id]]) !!}
+        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'PUT', 'route' => ['admin.ppid.restore', $ppid->id]]) !!}
           <button title="Restore" class="btn btn-warning btn-sm btn-block">
               <i class="fa fa-refresh text-black"></i> Restore
           </button>
         {!! Form::close() !!}
-        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'DELETE', 'route' => ['admin.pengaduan.force-destroy', $pengaduan->id]]) !!}
+        {!! Form::open(['style'=>'display:inline-block;', 'method' => 'DELETE', 'route' => ['admin.ppid.force-destroy', $ppid->id]]) !!}
           <button title="Permanent Delete" onclick="return confirm('You are about to delete ppid permanently. Are you sure?')" type="submit" class="btn btn-danger btn-sm btn-block">
             <i class="fa fa-times-circle"></i> Hapus Permanen
           </button>

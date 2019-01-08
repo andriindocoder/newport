@@ -89,6 +89,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\GaleriVideoController@forceDestroy',
             'as' => 'galeri-video.force-destroy'
         ]);
+        Route::resource('pengaduan', 'Backend\PengaduanController');
+        Route::put('pengaduan/restore/{id}',[
+            'uses' => 'Backend\PengaduanController@restore',
+            'as' => 'pengaduan.restore'
+        ]);
+        Route::delete('pengaduan/force-destroy/{id}',[
+            'uses' => 'Backend\PengaduanController@forceDestroy',
+            'as' => 'pengaduan.force-destroy'
+        ]);
         Route::get('info/{data}', [
             'uses'=>'Backend\InformasiController@index',
             'as'    => 'info.informasi',

@@ -34,6 +34,7 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
             '1' => 'Kantor Pusat',
             '2' => 'Kantor Cabang',
         ];
+
         
         if($request->get('agen_pelayaran') == 1){
             return view('frontend.registrasi.ap',compact('listTempatKantor','listBadanUsaha'));

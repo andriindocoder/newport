@@ -418,12 +418,12 @@
     
               @role(['superadmin','humas'])
               <li class="nav-header">PENGATURAN</li>
-              <li class="nav-item">
+{{--               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fa fa-th"></i>
                   <p>Menu</p>
                 </a>
-              </li>
+              </li> --}}
     
               <li class="nav-item">
                 <a href="{{ route('admin.tampilan-depan.index') }}" class="nav-link">

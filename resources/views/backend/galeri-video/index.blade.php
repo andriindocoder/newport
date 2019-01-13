@@ -33,16 +33,7 @@
 	              			    </span>
 	              			  </span>
 	              			</a>
-	              			<div class="float-right" style="color: blue;">
-	              				<?php $links = [];?>
-	              				@foreach($statusList as $key => $value)
-	              				    @if($value)
-	              				      <?php $selected = Request::get('status') == $key ? 'selected-status' : '' ?>
-	              				      <?php $links[] = "<a class=\"{$selected}\" href=\"?status={$key}\">" .ucwords($key) ."({$value}) </a>"?>
-	              				    @endif
-	              				@endforeach
-	              				{!! implode(' | ', $links) !!}
-	              			</div>
+
 	              		</div>
 	              	</div>
 

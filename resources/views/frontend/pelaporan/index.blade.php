@@ -48,7 +48,7 @@
                                     <div class="form-group m-input">
                                       <label>Alamat Perusahaan <sup>*</sup></label>
 					
-                                      {!! Form::textarea(null, null, ['class'=> 'form-control', 'disabled', 'placeholder'=>$perusahaan->alamat_perusahaan]) !!}
+                                      {!! Form::textarea(null, null, ['class'=> 'form-control', 'disabled', 'placeholder'=>$perusahaan->alamat_perusahaan, 'rows'=>3]) !!}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -107,10 +107,14 @@
                                       <span class="help-block badge badge-danger">{{ $errors->first('judul_laporan') }}</span>
                                       @endif
                                     </div>
+                                    <a href="{{ url('format-laporan/format_laporan_pmb.xlsx') }}" class="btn btn-success btn-sm"><i class="fa fa-download"></i>  Download Format Laporan Kegiatan PBM</a>
+                                    <a href="{{ url('format-laporan/format_laporan_kunjungan_kapal.xlsx') }}" class="btn btn-info btn-sm"><i class="fa fa-download"></i>  Download Format Laporan Kunjungan Kapal</a>
+                                    <br><br>
                                     <div class="row">
-                                    	<div class="col-md-4">
+                                    	<div class="col-md-6">
                                     		<div class="form-group {{ $errors->has('konten') ? 'has-error' : ''}} m-input">
-                                    		    <label>File Laporan <sup>*</sup></label>
+                                    		    <label>File Laporan <sup>*</sup></label><br>
+                                                <small><i> <span style="color:red">File Laporan Harus Sesuai dengan Format. Silahkan Download Format Laporan dengan klik tombol Download di atas terlebih dahulu.</span></i></small><br>
                                     		    {!! Form::file('konten',['class'=>'form-control-file']) !!}
                                     		    @if($errors->has('konten'))
                                     		    <span class="help-block badge badge-danger">{{ $errors->first('konten') }}</span>
@@ -123,7 +127,7 @@
                             
                             <small><sup>*</sup> <i>Tidak boleh kosong</i></small><br>
                             <div class="btn-box">
-                                <button type="submit" class="btn btn-blue">Send Form</button>
+                                <button type="submit" class="btn btn-blue">Kirim</button>
                                 <button type="reset" class="btn btn-org">Cancel</button>
                             </div>
                     </div>
@@ -132,6 +136,7 @@
             {!! Form::close() !!}
         </div>
     </div>
+
     <div class="info-box">
         <div class="container">
             <div class="row">

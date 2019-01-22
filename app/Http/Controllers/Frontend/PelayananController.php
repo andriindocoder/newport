@@ -90,6 +90,14 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.rekomendasi-cabang-siupkk',compact('rekomendasiCabangSiupkk','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function rekomendasiTps(){
+        $rekomendasiCabangSiupkk = new Pelayanan();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.rekomendasi-tps',compact('rekomendasiCabangSiupkk','listBadanUsaha','listTempatKantor','user'));
+    }
+
     public function store(Request $request){
         $bulan = date('m');
         $tahun = date('Y');

@@ -339,13 +339,14 @@ Route::get('/registrasi-pmku-cek-nib',[
 	'as'	=> 'registrasi.cek-nib' 
 ]);
 
+Route::get('/rekomendasi',[
+        'uses'  => 'Frontend\PelayananController@rekomendasi',
+        'as'    => 'pelayanan.rekomendasi',
+    ]);
+
 Route::get('/info/{info}','Frontend\InformasiController@index');
 
 Route::group(['middleware'=>['auth','verified']], function(){
-	Route::get('/rekomendasi',[
-		'uses' 	=> 'Frontend\PelayananController@rekomendasi',
-		'as' 	=> 'pelayanan.rekomendasi',
-    ]);
     Route::get('/docking',[
         'uses'  => 'Frontend\PelayananController@docking',
         'as'    => 'pelayanan.docking',
@@ -398,6 +399,10 @@ Route::group(['middleware'=>['auth','verified']], function(){
         'uses'  => 'Frontend\PelayananController@rekomendasiSiupPbm',
         'as'    => 'pelayanan.rekomendasi-siup-pbm',
     ]);
+    Route::get('/rekomendasi-tps',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiTps',
+        'as'    => 'pelayanan.rekomendasi-tps',
+    ]);
     Route::post('/rekomendasi-siup-pbm',[
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
@@ -405,6 +410,10 @@ Route::group(['middleware'=>['auth','verified']], function(){
     Route::get('/pelaporan',[
         'uses'  => 'Frontend\PelaporanController@index',
         'as'    => 'pelaporan.index'
+    ]);
+    Route::get('/tambah-pelaporan',[
+        'uses'  => 'Frontend\PelaporanController@create',
+        'as'    => 'pelaporan.create'
     ]);
     Route::post('/pelaporan',[
         'uses'  => 'Frontend\PelaporanController@store',

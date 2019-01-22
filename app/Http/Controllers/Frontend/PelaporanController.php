@@ -12,10 +12,20 @@ use Auth;
 class PelaporanController extends Controller
 {
 	const LAPORAN_DIKIRIM = 10;
+    protected $limit = 10;
 
     public function index(){
-    	$pelaporan = new Pelaporan();
-    	return view('frontend.pelaporan.index',compact('pelaporan'));
+        $perPage = $this->limit;
+
+        $pelaporans = Pelaporan::latest()->paginate($perPage);
+        $pelaporansCount = Pelaporan::count();
+
+    	return view('frontend.pelaporan.index',compact('perPage','pelaporans','pelaporansCount'));
+    }
+
+    public function create(){
+        $pelaporan = new Pelaporan();
+        return view('frontend.pelaporan.create',compact('pelaporan'));
     }
 
     public function store(PelaporanStoreRequest $request){

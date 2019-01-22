@@ -20,10 +20,6 @@
                                     <li><a href="{{ route('registrasi') }}">PMKU</a></li>
                                     <li><a href="{{ route('pelayanan.rekomendasi') }}">Rekomendasi</a></li>
                                     <li><a href="#">Surat Izin Kerja Keruk</a></li>
-                                    <li><a href="{{ route('pelayanan.pelayanan-supplier') }}">Pelayanan Supplier</a></li>
-                                    <li><a href="{{ route('pelayanan.bunker-darat') }}">Bunker Darat</a></li>
-                                    <li><a href="{{ route('pelayanan.docking') }}">Docking</a></li>
-                                    <li><a href="{{ route('pelayanan.fumigasi') }}">Fumigasi</a></li>
                                 </ul>
                             </li>
                             @role('perusahaan')

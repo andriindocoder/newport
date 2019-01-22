@@ -151,20 +151,20 @@ Route::get('/kategori-berita/{category}', [
 ]);
 
 Route::get('/profil/sejarah',[
-	'uses' 	=> 'Frontend\ProfilController@sejarah',
-	'as' 	=> 'profil.sejarah',
+    'uses'  => 'Frontend\ProfilController@sejarah',
+    'as'    => 'profil.sejarah',
 ]);
 Route::get('/profil/struktur',[
-	'uses' 	=> 'Frontend\ProfilController@struktur',
-	'as' 	=> 'profil.struktur',
+    'uses'  => 'Frontend\ProfilController@struktur',
+    'as'    => 'profil.struktur',
 ]);
 Route::get('/profil/visi-misi',[
-	'uses' 	=> 'Frontend\ProfilController@visimisi',
-	'as' 	=> 'profil.visimisi',
+    'uses'  => 'Frontend\ProfilController@visimisi',
+    'as'    => 'profil.visimisi',
 ]);
 Route::get('/profil/tupoksi',[
-	'uses' 	=> 'Frontend\ProfilController@tupoksi',
-	'as' 	=> 'profil.tupoksi',
+    'uses'  => 'Frontend\ProfilController@tupoksi',
+    'as'    => 'profil.tupoksi',
 ]);
 Route::resource('profil', 'Frontend\ProfilController');
 
@@ -191,18 +191,18 @@ Route::post('/ppid',[
 ]);
 
 Route::get('/ppid/form',[
-	'uses' 	=> 'Frontend\PpidController@form',
-	'as' 	=> 'ppid.form',
+    'uses'  => 'Frontend\PpidController@form',
+    'as'    => 'ppid.form',
 ]);
 
 Route::get('/ppid/dasar-hukum',[
-	'uses' 	=> 'Frontend\PpidController@dasarHukum',
-	'as' 	=> 'ppid.dasar-hukum',
+    'uses'  => 'Frontend\PpidController@dasarHukum',
+    'as'    => 'ppid.dasar-hukum',
 ]);
 
 Route::get('/ppid/profil',[
-	'uses' 	=> 'Frontend\PpidController@profil',
-	'as' 	=> 'ppid.profil',
+    'uses'  => 'Frontend\PpidController@profil',
+    'as'    => 'ppid.profil',
 ]);
 
 Route::get('/ppid/maklumat-pelayanan',[
@@ -330,23 +330,30 @@ Route::post('/registrasi-pmku-save',[
 ]);
 
 Route::post('/registrasi-pmku-cek-siupkk',[
-	'uses'  => 'Frontend\RegistrasiController@cekSiupkk',
-	'as'	=> 'registrasi.cek-siupkk' 
+    'uses'  => 'Frontend\RegistrasiController@cekSiupkk',
+    'as'    => 'registrasi.cek-siupkk' 
 ]);
 
 Route::get('/registrasi-pmku-cek-nib',[
-	'uses'  => 'Frontend\RegistrasiController@cekNib',
-	'as'	=> 'registrasi.cek-nib' 
+    'uses'  => 'Frontend\RegistrasiController@cekNib',
+    'as'    => 'registrasi.cek-nib' 
 ]);
-
-Route::get('/rekomendasi',[
-        'uses'  => 'Frontend\PelayananController@rekomendasi',
-        'as'    => 'pelayanan.rekomendasi',
-    ]);
 
 Route::get('/info/{info}','Frontend\InformasiController@index');
 
 Route::group(['middleware'=>['auth','verified']], function(){
+    Route::get('/rekomendasi',[
+        'uses'  => 'Frontend\PelayananController@rekomendasi',
+        'as'    => 'pelayanan.rekomendasi',
+    ]);
+    Route::get('/sop',[
+        'uses'  => 'Frontend\PelayananController@sop',
+        'as'    => 'pelayanan.sop',
+    ]);
+    Route::get('/docking',[
+        'uses'  => 'Frontend\PelayananController@docking',
+        'as'    => 'pelayanan.docking',
+    ]);
     Route::get('/docking',[
         'uses'  => 'Frontend\PelayananController@docking',
         'as'    => 'pelayanan.docking',
@@ -398,10 +405,6 @@ Route::group(['middleware'=>['auth','verified']], function(){
     Route::get('/rekomendasi-siup-pbm',[
         'uses'  => 'Frontend\PelayananController@rekomendasiSiupPbm',
         'as'    => 'pelayanan.rekomendasi-siup-pbm',
-    ]);
-    Route::get('/rekomendasi-tps',[
-        'uses'  => 'Frontend\PelayananController@rekomendasiTps',
-        'as'    => 'pelayanan.rekomendasi-tps',
     ]);
     Route::post('/rekomendasi-siup-pbm',[
         'uses'  => 'Frontend\PelayananController@store',

@@ -339,16 +339,17 @@ Route::get('/registrasi-pmku-cek-nib',[
     'as'    => 'registrasi.cek-nib' 
 ]);
 
+Route::get('/sop',[
+    'uses'  => 'Frontend\PelayananController@sop',
+    'as'    => 'pelayanan.sop',
+]);
+
 Route::get('/info/{info}','Frontend\InformasiController@index');
 
 Route::group(['middleware'=>['auth','verified']], function(){
     Route::get('/rekomendasi',[
         'uses'  => 'Frontend\PelayananController@rekomendasi',
         'as'    => 'pelayanan.rekomendasi',
-    ]);
-    Route::get('/sop',[
-        'uses'  => 'Frontend\PelayananController@sop',
-        'as'    => 'pelayanan.sop',
     ]);
     Route::get('/docking',[
         'uses'  => 'Frontend\PelayananController@docking',

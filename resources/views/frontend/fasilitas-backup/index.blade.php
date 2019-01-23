@@ -18,7 +18,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1">
+
+            </div>
+            <div class="col-md-11">
                 @include('frontend.fasilitas.form')
             </div>
         </div>

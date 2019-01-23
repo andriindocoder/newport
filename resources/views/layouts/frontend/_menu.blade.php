@@ -14,9 +14,21 @@
                                     <li><a href="{{ route('galeri-video') }}">Galeri Video</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{{ route('fasilitas.index') }}">fasilitas pelabuhan</a></li>
+                            <li><a href="#">fasilitas pelabuhan</a>
+                                <ul class="col-md-12">
+                                    <li><a href="{{ route('fasilitas.batas') }}">Batas DLKr/DLKp</a></li>
+                                    <li><a href="{{ route('fasilitas.rekapitulasi') }}">Rekapitulasi Fasilitas dan Peralatan</a></li>
+                                    <li><a href="{{ route('fasilitas.dermaga') }}">Fasilitas Dermaga</a></li>
+                                    <li><a href="{{ route('fasilitas.gudang') }}">Fasilitas Gudang</a></li>
+                                    <li><a href="{{ route('fasilitas.lapangan') }}">Fasilitas Lapangan Penumpukan</a></li>
+                                    <li><a href="{{ route('fasilitas.daerah-labuh') }}">Daerah Labuh</a></li>
+                                    <li><a href="{{ route('fasilitas.breakwater') }}">Breakwater</a></li>
+                                    <li><a href="{{ route('fasilitas.rencana-induk') }}">Rencana Induk Pelabuhan</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#">pelayanan</a>
                                 <ul>
+                                    <li><a href="{{ route('pelayanan.sop') }}">SOP Pelayanan</a></li>
                                     <li><a href="{{ route('registrasi') }}">PMKU</a></li>
                                     <li><a href="{{ route('pelayanan.rekomendasi') }}">Rekomendasi</a></li>
                                     <li><a href="#">Surat Izin Kerja Keruk</a></li>

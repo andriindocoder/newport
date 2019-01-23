@@ -98,6 +98,10 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.rekomendasi-tps',compact('rekomendasiCabangSiupkk','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function sop(){
+        return view('frontend.pelayanan.sop');
+    }
+
     public function store(Request $request){
         $bulan = date('m');
         $tahun = date('Y');

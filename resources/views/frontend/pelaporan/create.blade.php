@@ -107,9 +107,20 @@
                                       <span class="help-block badge badge-danger">{{ $errors->first('judul_laporan') }}</span>
                                       @endif
                                     </div>
-                                    <a href="{{ url('format-laporan/format_laporan_pmb.xlsx') }}" class="btn btn-success btn-sm"><i class="fa fa-download"></i>  Download Format Laporan Kegiatan PBM</a>
-                                    <a href="{{ url('format-laporan/format_laporan_kunjungan_kapal.xlsx') }}" class="btn btn-info btn-sm"><i class="fa fa-download"></i>  Download Format Laporan Kunjungan Kapal</a>
-                                    <br><br>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            @if(Auth::user()->pmku->jenis_usaha_id == 1)
+                                            <a href="{{ url('format-laporan/bongkar-peti-kemas.xlsx') }}" class="btn btn-success btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Bongkar Peti Kemas</a>
+                                            <a href="{{ url('format-laporan/muat-peti-kemas.xlsx') }}" class="btn btn-info btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Muat Peti Kemas</a>
+                                            <a href="{{ url('format-laporan/bongkar-multi-purpose.xlsx') }}" class="btn btn-success btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Bongkar Multi Purpose</a>
+                                            <a href="{{ url('format-laporan/muat-multi-purpose.xlsx') }}" class="btn btn-info btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Muat Multi Purpose</a>
+                                            <a href="{{ url('format-laporan/bongkar-muat-alat-berat.xlsx') }}" class="btn btn-success btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Bongkar Muat Alat Berat</a>
+                                            @else
+                                            <a href="{{ url('format-laporan/format_laporan_kunjungan_kapal.xlsx') }}" class="btn btn-info btn-sm btn-block"><i class="fa fa-download"></i>  Download Format Laporan Kunjungan Kapal</a>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <br>
                                     <div class="row">
                                     	<div class="col-md-6">
                                     		<div class="form-group {{ $errors->has('konten') ? 'has-error' : ''}} m-input">

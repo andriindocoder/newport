@@ -344,13 +344,15 @@ Route::get('/sop',[
     'as'    => 'pelayanan.sop',
 ]);
 
+Route::get('/rekomendasi',[
+    'uses'  => 'Frontend\PelayananController@rekomendasi',
+    'as'    => 'pelayanan.rekomendasi',
+]);
+
 Route::get('/info/{info}','Frontend\InformasiController@index');
 
 Route::group(['middleware'=>['auth','verified']], function(){
-    Route::get('/rekomendasi',[
-        'uses'  => 'Frontend\PelayananController@rekomendasi',
-        'as'    => 'pelayanan.rekomendasi',
-    ]);
+    
     Route::get('/docking',[
         'uses'  => 'Frontend\PelayananController@docking',
         'as'    => 'pelayanan.docking',
@@ -395,6 +397,14 @@ Route::group(['middleware'=>['auth','verified']], function(){
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);
+    Route::get('/rekomendasi-tps',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiTps',
+        'as'    => 'pelayanan.rekomendasi-tps',
+    ]);
+    Route::post('/rekomendasi-tps',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
     Route::get('/rekomendasi-cabang-siupkk',[
         'uses'  => 'Frontend\PelayananController@rekomendasiCabangSiupkk',
         'as'    => 'pelayanan.rekomendasi-cabang-siupkk',
@@ -408,6 +418,14 @@ Route::group(['middleware'=>['auth','verified']], function(){
         'as'    => 'pelayanan.rekomendasi-siup-pbm',
     ]);
     Route::post('/rekomendasi-siup-pbm',[
+        'uses'  => 'Frontend\PelayananController@store',
+        'as'    => 'pelayanan.store',
+    ]);
+    Route::get('/rekomendasi-sikk',[
+        'uses'  => 'Frontend\PelayananController@rekomendasiSikk',
+        'as'    => 'pelayanan.rekomendasi-sikk',
+    ]);
+    Route::post('/rekomendasi-sikk',[
         'uses'  => 'Frontend\PelayananController@store',
         'as'    => 'pelayanan.store',
     ]);

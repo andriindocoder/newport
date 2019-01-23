@@ -91,11 +91,11 @@ class PelayananController extends Controller
     }
 
     public function rekomendasiTps(){
-        $rekomendasiCabangSiupkk = new Pelayanan();
+        $rekomendasiTps = new Pelayanan();
         $listBadanUsaha = $this->listBadanUsaha();
         $listTempatKantor = $this->listTempatKantor();
         $user = Auth::user();
-        return view('frontend.pelayanan.rekomendasi-tps',compact('rekomendasiCabangSiupkk','listBadanUsaha','listTempatKantor','user'));
+        return view('frontend.pelayanan.rekomendasi-tps',compact('rekomendasiTps','listBadanUsaha','listTempatKantor','user'));
     }
 
     public function sop(){
@@ -114,6 +114,10 @@ class PelayananController extends Controller
         $data['pmku_id'] = $user->pmku->id;
         $jenisPelayananId = \App\Model\JenisPelayanan::where('kode_pelayanan','=',$jenisPelayanan)->first();
         $data['jenis_pelayanan_id'] = $jenisPelayananId->id;
+        if($request->hasFile('gambar')){
+            $path = $request->file('gambar')->store('pelayanan/'.$tahun.'/'.$bulan);
+            $data['gambar'] = $path;
+        }
         Pelayanan::create($data);
 
 

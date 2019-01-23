@@ -30,7 +30,7 @@
                     <div class="btn-box" align="center">
                     <a href="{{ route('pelayanan.rekomendasi-cabang-ap') }}" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px; margin-top:-30px;">Rekomendasi Pembukaan Kantor Cabang Pelayaran</a><br>
                         <a href="{{ route('pelayanan.rekomendasi-cabang-siupkk') }}" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi Cabang Keagenan Kapal</a><br>
-                        <a href="#" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi Surat Ijin Kerja Keruk</a><br>
+                        <a href="{{ route('pelayanan.rekomendasi-sikk') }}" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi Surat Ijin Kerja Keruk</a><br>
                         <a href="#" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi JPT</a><br>
                         <a href="{{ route('pelayanan.rekomendasi-siup-pbm') }}" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi PBM</a><br>
                         <a href="{{ route('pelayanan.rekomendasi-tps') }}" class="btn btn-blue btn-blocks" style="width: 500px;margin-bottom: 5px">Rekomendasi TPS</a>

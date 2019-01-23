@@ -31,7 +31,7 @@
                                     <li><a href="{{ route('pelayanan.sop') }}">SOP Pelayanan</a></li>
                                     <li><a href="{{ route('registrasi') }}">PMKU</a></li>
                                     <li><a href="{{ route('pelayanan.rekomendasi') }}">Rekomendasi</a></li>
-                                    <li><a href="#">Surat Izin Kerja Keruk</a></li>
+                                    <li><a href="{{ route('pelayanan.sikk') }}">Surat Izin Kerja Keruk</a></li>
                                 </ul>
                             </li>
                             @role('perusahaan')

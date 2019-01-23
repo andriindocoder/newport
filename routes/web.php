@@ -429,6 +429,14 @@ Route::group(['middleware'=>['auth','verified']], function(){
         'uses'  => 'Frontend\PelayananController@storeSikk',
         'as'    => 'pelayanan.storeSikk',
     ]);
+    Route::get('/sikk',[
+        'uses'  => 'Frontend\PelayananController@sikk',
+        'as'    => 'pelayanan.sikk',
+    ]);
+    Route::post('/sikk',[
+        'uses'  => 'Frontend\PelayananController@storeSikk',
+        'as'    => 'pelayanan.storeSikk',
+    ]);
     Route::get('/pelaporan',[
         'uses'  => 'Frontend\PelaporanController@index',
         'as'    => 'pelaporan.index'

@@ -99,6 +99,14 @@ class PelayananController extends Controller
         return view('frontend.pelayanan.rekomendasi-sikk',compact('rekomendasiSikk','listBadanUsaha','listTempatKantor','user'));
     }
 
+    public function sikk(){
+        $rekomendasiSikk = new PelayananSikk();
+        $listBadanUsaha = $this->listBadanUsaha();
+        $listTempatKantor = $this->listTempatKantor();
+        $user = Auth::user();
+        return view('frontend.pelayanan.sikk',compact('rekomendasiSikk','listBadanUsaha','listTempatKantor','user'));
+    }
+
     public function rekomendasiTps(){
         $rekomendasiTps = new Pelayanan();
         $listBadanUsaha = $this->listBadanUsaha();

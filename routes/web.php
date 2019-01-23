@@ -426,8 +426,8 @@ Route::group(['middleware'=>['auth','verified']], function(){
         'as'    => 'pelayanan.rekomendasi-sikk',
     ]);
     Route::post('/rekomendasi-sikk',[
-        'uses'  => 'Frontend\PelayananController@store',
-        'as'    => 'pelayanan.store',
+        'uses'  => 'Frontend\PelayananController@storeSikk',
+        'as'    => 'pelayanan.storeSikk',
     ]);
     Route::get('/pelaporan',[
         'uses'  => 'Frontend\PelaporanController@index',

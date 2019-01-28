@@ -38,7 +38,7 @@
 
                             </div>
                             <div class="col-md-6">
-                                <h6>Apakah Perusahaan Anda merupakan <strong>Agen Pelayaran(AP), Perusahaan Bongkar Muat(PBM), </strong>atau <strong>Jasa Pengurusan Transportasi(JPT) ?</strong></h6>
+                                <h6>Apakah Perusahaan Anda merupakan <strong>Agen Pelayaran(AP), Perusahaan Bongkar Muat(PBM), </strong>atau <strong>Jasa Pengurusan Transportasi(JPT) </strong>yang terdaftar di Inaportnet ? </h6>
                                 <div class="form-group m-input">
                                     {!! Form::radio('agen_pelayaran',1,true) !!} Ya
                                     <br>

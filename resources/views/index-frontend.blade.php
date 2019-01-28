@@ -130,6 +130,17 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="function-box">
+                    <span><i class="fa fa-building-o"></i></span>
+                    <div class="desc">
+                        <h5><a href="{{ url('/info/reformasi-birokrasi') }}">Reformasi Birokrasi</a></h5>
+                        <p>
+                        Informasi Reformasi Birokrasi pada Lingkungan Kantor Otoritas Pelabuhan Tanjung Priok.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

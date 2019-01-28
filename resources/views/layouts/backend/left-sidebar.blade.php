@@ -308,7 +308,13 @@
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Index Kepuasan Masyarakat</p>
                 </a>
-              </li>         
+              </li>     
+              <li class="nav-item">
+                <a href="{{ url('admin/info/reformasi-birokrasi') }}" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Reformasi Birokrasi</p>
+                </a>
+              </li>    
               @endrole
               @role(['superadmin'])
               <li class="nav-header">PELAPORAN DAN STATISTIK</li>

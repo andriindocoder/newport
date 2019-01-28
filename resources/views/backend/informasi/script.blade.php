@@ -21,5 +21,17 @@
     $('.js-selectize').selectize({
       sortField: 'text'
     });
+
+    $('select[name=jenis_informasi_id]').change(function() {
+          if (this.value == 4 || this.value == 7) {
+              $('#cke_konten').hide();
+              $("label[for='Konten']").hide();
+          }
+          else{
+              $('#cke_konten').show();
+              $("label[for='Konten']").show();
+          }
+      });
+      
   </script>
 @endsection

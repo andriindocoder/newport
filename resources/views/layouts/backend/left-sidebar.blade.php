@@ -294,7 +294,7 @@
               <li class="nav-item">
                 <a href="{{ url('admin/info/kinerja-kantor-otoritas-pelabuhan') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>
-                  <p>Kinerja</p>
+                  <p>Laporan Kinerja</p>
                 </a>
               </li> 
               <li class="nav-item">

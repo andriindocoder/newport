@@ -21,6 +21,7 @@ class InformasiController extends Controller
                 break;
             case 'kinerja-kantor-otoritas-pelabuhan':
                     $konten = Informasi::where('jenis_informasi_id',4)->first();
+                    return view('frontend.informasi.lapkin',compact('konten'));
                 break;
             case 'informasi-hukum':
                     $konten = Informasi::where('jenis_informasi_id',5)->first();
@@ -30,6 +31,7 @@ class InformasiController extends Controller
                 break;
             case 'indeks-kepuasan-masyarakat':
                     $konten = Informasi::where('jenis_informasi_id',7)->first();
+                    return view('frontend.informasi.ikm',compact('konten'));
                 break;
             case 'reformasi-birokrasi':
                     $konten = Informasi::where('jenis_informasi_id',28)->first();

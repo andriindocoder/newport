@@ -38,16 +38,61 @@
 	                    <div class="contact-form">
                                 <label class="contact-label"><span>PMKU Non Inaportnet - Pelayanan Rekomendasi Pembukaan Kantor Cabang Perusahaan Pelayaran</span></label>
                                     <div class="row">
+                                    	<div class="col-md-6">
+                                        	<div class="form-group {{ $errors->has('file_pengangkatan') ? 'has-error' : ''}} m-input">
+                                        	    <label>Upload Dokumen File Pengangkatan Kepala Cabang <sup>*</sup></label>
+                                        	    <input type="file" class="form-control-file" name="file_pengangkatan">
+                                        	    @if($errors->has('file_pengangkatan'))
+                                        	    <span class="help-block badge badge-danger">{{ $errors->first('file_pengangkatan') }}</span>
+                                        	    @endif
+                                        	</div>
+                                        	<div class="form-group {{ $errors->has('file_npwp_cabang') ? 'has-error' : ''}} m-input">
+                                        	    <label>Upload Dokumen NPWP Kantor Cabang <sup>*</sup></label>
+                                        	    <input type="file" class="form-control-file" name="file_npwp_cabang">
+                                        	    @if($errors->has('file_npwp_cabang'))
+                                        	    <span class="help-block badge badge-danger">{{ $errors->first('file_npwp_cabang') }}</span>
+                                        	    @endif
+                                        	</div>
+                                        	<div class="form-group {{ $errors->has('file_ktp_cabang') ? 'has-error' : ''}} m-input">
+                                        	    <label>Upload KTP Kepala Cabang <sup>*</sup></label>
+                                        	    <input type="file" class="form-control-file" name="file_ktp_cabang">
+                                        	    @if($errors->has('file_ktp_cabang'))
+                                        	    <span class="help-block badge badge-danger">{{ $errors->first('file_ktp_cabang') }}</span>
+                                        	    @endif
+                                        	</div>
+                                        	<div class="form-group {{ $errors->has('file_siupalkk') ? 'has-error' : ''}} m-input">
+                                        	    <label>Upload Dokumen SIUPAL/SIUPKK <sup>*</sup></label>
+                                        	    <input type="file" class="form-control-file" name="file_siupalkk">
+                                        	    @if($errors->has('file_siupalkk'))
+                                        	    <span class="help-block badge badge-danger">{{ $errors->first('file_siupalkk') }}</span>
+                                        	    @endif
+                                        	</div>
+                                        	<div class="form-group {{ $errors->has('voyage_report') ? 'has-error' : ''}} m-input">
+                                        	    <label>Upload Voyage Report <sup>*</sup></label>
+                                        	    <input type="file" class="form-control-file" name="voyage_report">
+                                        	    @if($errors->has('voyage_report'))
+                                        	    <span class="help-block badge badge-danger">{{ $errors->first('voyage_report') }}</span>
+                                        	    @endif
+                                        	</div>
+                                    	</div>
                                         <div class="col-md-12">
-                                            <div class="form-group {{ $errors->has('konten') ? 'has-error' : ''}} m-input">
-                                                    {!! Form::label('Keterangan') !!}
-                                                    {!! Form::textarea('konten', null, ['class'=> 'form-control','id'=>'konten']) !!}
-                                
-                                                    @if($errors->has('konten'))
-                                                    <span class="help-block text-danger">{{ $errors->first('konten') }}</span>
-                                                    @endif
-                                                  </div>
-                    
+										<div class="form-group {{ $errors->has('domisili') ? 'has-error' : ''}} m-input">
+                                                {!! Form::label('Domisili Kantor Cabang') !!}
+                                                {!! Form::textarea('domisili', null, ['class'=> 'form-control','id'=>'domisili']) !!}
+                            
+                                                @if($errors->has('domisili'))
+                                                <span class="help-block text-danger">{{ $errors->first('domisili') }}</span>
+                                                @endif
+                                              </div>
+
+                                        <div class="form-group {{ $errors->has('konten') ? 'has-error' : ''}} m-input">
+                                                {!! Form::label('Keterangan (Opsional)') !!}
+                                                {!! Form::textarea('konten', null, ['class'=> 'form-control','id'=>'konten']) !!}
+                            
+                                                @if($errors->has('konten'))
+                                                <span class="help-block text-danger">{{ $errors->first('konten') }}</span>
+                                                @endif
+                                              </div>
                                         </div>
 									</div>
 									{{ Form::hidden('jenis_pelayanan', 'RCAP') }}

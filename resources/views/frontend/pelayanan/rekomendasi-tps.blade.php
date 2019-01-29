@@ -26,7 +26,7 @@
                     </div>
                     @include('frontend.message')
                     
-	            {!! Form::model($rekomendasiSiupPbm, [
+	            {!! Form::model($rekomendasiTps, [
 	                'method' => 'POST',
 	                'route' => 'pelayanan.store',
 	                'id' => 'pelayanan-rekomendasi-siup-pbm-form',
@@ -47,10 +47,18 @@
                                                     <span class="help-block text-danger">{{ $errors->first('konten') }}</span>
                                                     @endif
                                                   </div>
-                    
+                                        </div>
+                                        <div class="col-md-6">
+                                        	<div class="form-group {{ $errors->has('gambar') ? 'has-error' : ''}} m-input">
+                                                <label>Upload Dokumen Bukti Penguasaan Lahan <sup>*</sup></label>
+                                                <input type="file" class="form-control-file" name="gambar">
+                                                @if($errors->has('gambar'))
+                                                <span class="help-block badge badge-danger">{{ $errors->first('gambar') }}</span>
+                                                @endif
+                                            </div>
                                         </div>
 									</div>
-									{{ Form::hidden('jenis_pelayanan', 'RSPB') }}
+									{{ Form::hidden('jenis_pelayanan', 'RTPS') }}
 									<small><sup>*</sup> <i>Tidak boleh kosong</i></small>
 									<div class="btn-box">
 										<button type="submit" class="btn btn-blue"><span>Send Form</span></button>

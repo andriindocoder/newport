@@ -74,10 +74,7 @@
         </div>
     </div>
     <div class="col-md-6">
-        <div class="form-group {{ $errors->has('file_siup') ? 'has-error' : ''}} m-input">
-            <label>Upload Dokumen SIUP <sup>*</sup></label><br>
-            <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalSIUP" data-siup= "{{ url(Auth::user() ? Auth::user()->pmku->file_siup : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Dokumen SIUP</button>
-        </div>
+
         <div class="form-group {{ $errors->has('file_domisili') ? 'has-error' : ''}} m-input">
             <label>Upload Dokumen Surat Keterangan Domisili <sup>*</sup></label><br>
             <button type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalDomisili" data-domisili= "{{ url(Auth::user() ? Auth::user()->pmku->file_domisili : 'empty.jpg') }}"><i class="fa fa-search"></i> Lihat File Surat Keterangan Domisili</button>

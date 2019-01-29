@@ -139,13 +139,7 @@
             </div>
         </div>
         <div class="col-md-6">
-            <div class="form-group {{ $errors->has('file_siup') ? 'has-error' : ''}} m-input">
-                <label>Upload Dokumen SIUP <sup>*</sup></label>
-                <input type="file" class="form-control-file" name="file_siup">
-                @if($errors->has('file_siup'))
-                <span class="help-block badge badge-danger">{{ $errors->first('file_siup') }}</span>
-                @endif
-            </div>
+
             <div class="form-group {{ $errors->has('file_domisili') ? 'has-error' : ''}} m-input">
                 <label>Upload Dokumen Surat Keterangan Domisili <sup>*</sup></label>
                 <input type="file" class="form-control-file" name="file_domisili">

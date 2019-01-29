@@ -105,27 +105,20 @@
                 <span class="help-block badge badge-danger">{{ $errors->first('file_struktur') }}</span>
                 @endif
             </div>
-            <div class="form-group {{ $errors->has('file_akta') ? 'has-error' : ''}} m-input">
-                <label>Upload Dokumen Akta SIUP KUM HAM <sup>*</sup></label>
-                <input type="file" class="form-control-file" name="file_akta">
-                @if($errors->has('file_akta'))
-                <span class="help-block badge badge-danger">{{ $errors->first('file_akta') }}</span>
-                @endif
-            </div>
         </div>
         <div class="col-md-6">
-            <div class="form-group {{ $errors->has('file_siup') ? 'has-error' : ''}} m-input">
-                <label>Upload Dokumen SIUP <sup>*</sup></label>
-                <input type="file" class="form-control-file" name="file_siup">
-                @if($errors->has('file_siup'))
-                <span class="help-block badge badge-danger">{{ $errors->first('file_siup') }}</span>
-                @endif
-            </div>
             <div class="form-group {{ $errors->has('file_domisili') ? 'has-error' : ''}} m-input">
                 <label>Upload Dokumen Surat Keterangan Domisili <sup>*</sup></label>
                 <input type="file" class="form-control-file" name="file_domisili">
                 @if($errors->has('file_domisili'))
                 <span class="help-block badge badge-danger">{{ $errors->first('file_domisili') }}</span>
+                @endif
+            </div>
+            <div class="form-group {{ $errors->has('file_akta') ? 'has-error' : ''}} m-input">
+                <label>Upload Dokumen Akta SIUP KUM HAM <sup>*</sup></label>
+                <input type="file" class="form-control-file" name="file_akta">
+                @if($errors->has('file_akta'))
+                <span class="help-block badge badge-danger">{{ $errors->first('file_akta') }}</span>
                 @endif
             </div>
         </div>

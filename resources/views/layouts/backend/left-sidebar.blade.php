@@ -296,7 +296,13 @@
                   <i class="nav-icon fa fa-camera"></i>
                   <p>Laporan Kinerja</p>
                 </a>
-              </li> 
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/info/informasi-hukum') }}" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Informasi Hukum</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="{{ url('admin/info/tarif-pnbp') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>

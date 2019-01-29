@@ -18,9 +18,7 @@
        CKEDITOR.config.allowedContent = true;
        CKEDITOR.config.height = 400;
 
-    $('.js-selectize').selectize({
-      sortField: 'text'
-    });
+    $('.js-selectize').selectize();
 
     $('select[name=jenis_informasi_id]').change(function() {
           if (this.value == 4 || this.value == 7) {

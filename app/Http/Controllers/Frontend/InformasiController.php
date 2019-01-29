@@ -29,7 +29,9 @@ class InformasiController extends Controller
                     return view('frontend.informasi.lapkin',compact('kontens','kontensCount','perPage'));
                 break;
             case 'informasi-hukum':
-                    $konten = Informasi::where('jenis_informasi_id',5)->first();
+                    $kontens = Informasi::where('jenis_informasi_id',5)->latest()->paginate($perPage);
+                    $kontensCount = Informasi::where('jenis_informasi_id',5)->count();
+                    return view('frontend.informasi.hukum',compact('kontens','kontensCount','perPage'));
                 break;
             case 'tarif-pnbp':
                     $konten = Informasi::where('jenis_informasi_id',6)->first();

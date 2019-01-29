@@ -4,25 +4,11 @@
             <div class="col-md-12">
                 <label class="content-label" id="label-fasilitas">Batas DLKr/DLKp Pelabuhan Tanjung Priok dan Pelabuhan Pasar Ikan</label>
             </div>
-            <div class="col-md-9" style="padding-right: 50px;" id="fasilitas">
+            
+            <div class="col-md-12" style="padding-right:50px" id="fasilitas">
                 @include('frontend.fasilitas.batas')
             </div>
-            <div class="col-md-3">
-                <div class="sidebar-list">
-                    <div class="sidebar-box sidebar-nav">
-                        <ul class="list">
-                            <li class="active"><a href="#batas">Batas DLKr/DLKp</a></li>
-                            <li><a href="#rekapitulasi-fasilitas">Rekapitulasi Fasilitas dan Peralatan</a></li>
-                            <li><a href="#fasilitas-dermaga">Fasilitas Dermaga</a></li>
-                            <li><a href="#fasilitas-gudang">Fasilitas Gudang</a></li>
-                            <li><a href="#fasilitas-lapangan-penumpukan">Fasilitas Lapangan Penumpukan</a></li>
-                            <li><a href="#daerah-labuh">Daerah Labuh</a></li>
-                            <li><a href="#breakwater">Breakwater</a></li>
-                            <li><a href="#rencana-induk">Rencana Induk Pelabuhan</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>

@@ -351,6 +351,8 @@ Route::get('/rekomendasi',[
 
 Route::get('/info/{info}','Frontend\InformasiController@index');
 
+Route::get('/informasi/file/{id}','Backend\InformasiController@removeFile')->name("admin.informasi.removeFile");
+
 Route::group(['middleware'=>['auth','verified']], function(){
     
     Route::get('/docking',[

@@ -297,4 +297,14 @@ class InformasiController extends BackendController
       return redirect('/admin/informasi')->with('message', 'Informasi has been restored from the trash');
 
     }
+
+    public function removeFile($id)
+    {
+        $data = Informasi::findOrFail($id);
+        $oldImage = $data->gambar;
+        $this->removeImage($oldImage);
+        $data->gambar = null;
+        $data->update();
+        return redirect('/admin/informasi')->with('trash-message', ['Attachment has been moved to the trash', $id]);
+    }
 }

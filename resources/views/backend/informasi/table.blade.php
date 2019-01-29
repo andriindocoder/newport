@@ -7,8 +7,8 @@
   </tr>
   <?php $no = paging_number($perPage);?>
   @foreach($informasis as $informasi)
-  	<tr>
-  	  <td>{{ $no }}.</td>
+    <tr>
+      <td>{{ $no }}.</td>
       <td>{{ $informasi->judul_informasi }}</td>
       @if($informasi->gambar)
         <?php
@@ -17,7 +17,14 @@
         ?>
         @if($ext == 'pdf')
         <td align="center">
-          <a href='{{ url($path) }}' target="blank">Lihat PDF</a>
+          <a href='{{ url($path) }}' class="btn btn-sm btn-info btn-block" title="View PDF" target="blank" ><i class="fa fa-eye"></i> View PDF</a>
+          
+          <!-- di tambahin tombol hapus di sini -->
+          &nbsp;
+
+          <a onclick="return confirm('Apakah Anda yakin untuk menghapus data?')" href="{{ route('admin.informasi.removeFile', $informasi->id) }}" class="btn btn-sm btn-danger btn-block" title="Move to Trash">
+            <i class="fa fa-trash"></i> Hapus PDF
+          </a>
         </td>
           @else 
                 <td align="center"><a href="{{ url($path) }}" target="_blank"><img src="{{ url($path) }}" height="70px" /></a></td>
@@ -37,7 +44,7 @@
           @endrole
         {!! Form::close() !!}
       </td>
-  	</tr>
+    </tr>
     <?php $no++;?>
   @endforeach
 </table>

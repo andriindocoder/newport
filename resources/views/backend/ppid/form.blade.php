@@ -26,8 +26,9 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-success"><i class="fa fa-paper-plane"></i>  {{ $ppid->exists ? 'Balas dan Kirim Email' : 'Save'}}</button>
-                  <a href="{{ route('ppid.index') }}" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-comments"></i>  {{ $ppid->exists ? 'Balas (Jika Syarat Belum Lengkap)' : 'Save'}}</button>
+                  <button type="submit" class="btn btn-success"><i class="fa fa-check"></i>  {{ $ppid->exists ? 'Proses Selesai' : 'Save'}}</button>
+                  <a href="{{ route('admin.ppid.index') }}" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a>
                 </div>
             </div>
             <!-- /.card -->

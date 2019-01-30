@@ -11,7 +11,7 @@
 		      <div class="col-lg-12">
 		        {!! Form::model($ppid, [
 		            'method' => 'PUT',
-		            'route' => ['ppid.update', $ppid->id],
+		            'route' => ['admin.ppid.update', $ppid->id],
 		            'id' => 'ppid-form',
 		            'files'=> TRUE,
 		        ]) !!}

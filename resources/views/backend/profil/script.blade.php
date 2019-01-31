@@ -17,7 +17,6 @@
        });
        CKEDITOR.config.allowedContent = true;
        CKEDITOR.config.height = 400;
-       CKEDITOR.config.extraPlugins = 'justify';
-       CKEDITOR.config.extraPlugins = 'colorbutton';
+       CKEDITOR.config.extraPlugins = ['justify','colorbutton'];
   </script>
 @endsection

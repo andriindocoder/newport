@@ -31,7 +31,8 @@
                     </form>
                     @endif
                     <li><a href="{{ route('registrasi') }}" class="btn btn-outline-light"><span>Daftar</span><i class="fa fa-pencil"></i></a></li>
-                    
+                    <br>
+                    <div id="google_translate_element"></div>
                 </ul>
             </div>
         </div>

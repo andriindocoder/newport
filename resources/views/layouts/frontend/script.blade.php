@@ -16,3 +16,10 @@
     </script>
     <script type="text/javascript" src="{{ asset('frontend-asset/js/script.js') }}"></script>
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=5c185d05423bba0012ec3b1c&product=inline-share-buttons"></script>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'id'}, 'google_translate_element');
+    }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

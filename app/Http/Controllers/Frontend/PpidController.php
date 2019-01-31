@@ -111,11 +111,6 @@ class PpidController extends Controller
         return view('frontend.ppid.hak-kewajiban-pemohon',compact('konten'));
     }
 
-    public function ujiCoba(){
-        $konten = Informasi::where('jenis_informasi_id',26)->first();
-        return view('frontend.ppid.uji-coba',compact('konten'));
-    }
-
     public function formulirPermohonan(){
         $ppid = new Ppid();
         return view('frontend.ppid.index-form',compact('ppid'));

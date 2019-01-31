@@ -265,12 +265,6 @@
                         <p>Hak dan Kewajiban Pemohon Informasi</p>
                       </a>
                     </li>
-                    <li class="nav-item">
-                      <a href="{{ url('admin/info-ppid/uji-coba') }}" class="nav-link">
-                        <i class="fa fa-circle-o text-success nav-icon"></i>
-                        <p>Uji Coba</p>
-                      </a>
-                    </li>
                   </ul>
               </li>
               <li class="nav-item">

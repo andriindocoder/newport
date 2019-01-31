@@ -250,11 +250,6 @@ Route::get('/ppid/hak-dan-kewajiban-pemohon-informasi',[
     'as'    => 'ppid.hak-dan-kewajiban-pemohon-informasi',
 ]);
 
-Route::get('/ppid/uji-coba',[
-    'uses'  => 'Frontend\PpidController@ujiCoba',
-    'as'    => 'ppid.uji-coba',
-]);
-
 Route::get('/ppid/formulir-permohonan-informasi',[
     'uses'  => 'Frontend\PpidController@formulirPermohonan',
     'as'    => 'ppid.formulir-permohonan',

@@ -116,10 +116,6 @@ class InformasiController extends BackendController
                     $informasis = Informasi::latest()->jenisInformasi(25)->active()->paginate($perPage);
                     $informasisCount = 1;
                     break;
-                  case 'uji-coba' :
-                    $informasis = Informasi::latest()->jenisInformasi(26)->active()->paginate($perPage);
-                    $informasisCount = 1;
-                    break;
                   case 'batas-dlkr-dlkp' :
                     $informasis = Informasi::latest()->jenisInformasi(8)->active()->paginate($perPage);
                     $informasisCount = 1;

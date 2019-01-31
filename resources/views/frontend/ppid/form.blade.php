@@ -23,7 +23,6 @@
                             <li><a href="#tata-cara-keberatan">Tata Cara Pengajuan Keberatan</a></li>
                             <li><a href="#hak-kewajiban-publik">Hak dan Kewajiban Badan Publik</a></li>
                             <li><a href="#hak-kewajiban-pemohon">Hak dan Kewajiban Pemohon Informasi</a></li>
-                            <li><a href="#uji-coba">Uji Coba</a></li>
                         </ul>
                     </div>
                 </div>
@@ -107,12 +106,6 @@
                 case '#hak-kewajiban-pemohon' :
                 $label.html('Hak dan Kewajiban Pemohon Informasi');
                     $desc.load('/ppid/hak-dan-kewajiban-pemohon-informasi');
-                        $('li').removeClass();
-                        $(this).parent().addClass('active');
-                    break;
-                case '#uji-coba' :
-                $label.html('Uji Coba');
-                    $desc.load('/ppid/uji-coba');
                         $('li').removeClass();
                         $(this).parent().addClass('active');
                     break;

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group {{ $errors->has('kode_perusahaan') ? 'has-error' : ''}} m-input">
-                <?php $placeholderKodePerusahaan = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->kode_perusahaan : '';?>
+                <?php $placeholderKodePerusahaan = $perusahaan->data? $perusahaan->data->ina_perusahaan->kode_perusahaan : '';?>
                 {!! Form::hidden('kode_perusahaan', $placeholderKodePerusahaan, ['class'=> 'form-control','placeholder'=>$placeholderKodePerusahaan]) !!}
 
                 @if($errors->has('kode_perusahaan'))
@@ -11,7 +11,7 @@
                 @endif
             </div>
             <div class="form-group {{ $errors->has('no_pmku') ? 'has-error' : ''}} m-input">
-                <?php $placeholderNoPmku = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->no_pmku : '';?>
+                <?php $placeholderNoPmku = $perusahaan->data? $perusahaan->data->ina_perusahaan->no_pmku : '';?>
                 {!! Form::hidden('no_pmku', $placeholderNoPmku, ['class'=> 'form-control','placeholder'=>$placeholderNoPmku]) !!}
 
                 @if($errors->has('no_pmku'))
@@ -19,7 +19,7 @@
                 @endif
             </div>
             <div class="form-group {{ $errors->has('id') ? 'has-error' : ''}} m-input">
-                <?php $placeholderId = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->id : '';?>
+                <?php $placeholderId = $perusahaan->data? $perusahaan->data->ina_perusahaan->id : '';?>
                 {!! Form::hidden('id', $placeholderId, ['class'=> 'form-control','placeholder'=>$placeholderId]) !!}
 
                 @if($errors->has('id'))
@@ -67,7 +67,7 @@
             </div>
             <div class="form-group {{ $errors->has('jenis_usaha_id') ? 'has-error' : ''}} m-input">
                 <label>Bidang Usaha <sup>*</sup></label>
-                <?php $placeholderJenisUsaha = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->kode_tipe_perusahaan : '';?>
+                <?php $placeholderJenisUsaha = $perusahaan->data? $perusahaan->data->ina_perusahaan->kode_tipe_perusahaan : '';?>
                 {!! Form::text('jenis_usaha_id', $placeholderJenisUsaha , ['class'=> 'form-control', 'placeholder' => $placeholderJenisUsaha ]) !!}
                 @if($errors->has('jenis_usaha_id'))
                 <span class="help-block badge badge-danger">{{ $errors->first('jenis_usaha_id') }}</span>
@@ -75,7 +75,7 @@
             </div>
             <div class="form-group {{ $errors->has('nomor_siup') ? 'has-error' : ''}} m-input">
                 <label>Nomor SIUP <sup>*</sup></label>
-                <?php $placeholderSiup = $perusahaan->data->ina_perusahaan ? $perusahaan->data->ina_perusahaan->nomor_siupal : '';?>
+                <?php $placeholderSiup = $perusahaan->data ? $perusahaan->data->ina_perusahaan->nomor_siupal : '';?>
                 {!! Form::text('nomor_siup', $placeholderSiup, ['class'=> 'form-control','placeholder'=>$placeholderSiup]) !!}
 
                 @if($errors->has('nomor_siup'))
@@ -87,7 +87,7 @@
             <div class="form-group {{ $errors->has('tanggal_siup') ? 'has-error' : ''}} m-input">
 
                 <label>Tanggal Terbit SIUP <sup>*</sup></label>
-                <?php $placeholderTanggal = $perusahaan->data->ina_perusahaan ? $perusahaan->data->system_response->tglIzin : 'yyyy-mm-dd';?>
+                <?php $placeholderTanggal = $perusahaan->data ? $perusahaan->data->system_response->tglIzin : 'yyyy-mm-dd';?>
                 <input class="form-control" id="date" name="tanggal_siup" placeholder="{{$placeholderTanggal}}" type="text" value="{{$placeholderTanggal}}" />
 
                 @if($errors->has('tanggal_siup'))
@@ -96,7 +96,7 @@
             </div>
             <div class="form-group {{ $errors->has('nama_perusahaan') ? 'has-error' : ''}} m-input">
                 <label>Nama Perusahaan <sup>*</sup></label>
-                <?php $placeholderNamaPerusahaan = $perusahaan->data->ina_perusahaan ? $perusahaan->data->ina_perusahaan->nama_perusahaan : '';?>
+                <?php $placeholderNamaPerusahaan = $perusahaan->data ? $perusahaan->data->ina_perusahaan->nama_perusahaan : '';?>
                 {!! Form::text('nama_perusahaan', $placeholderNamaPerusahaan, ['class'=> 'form-control','placeholder'=>$placeholderNamaPerusahaan]) !!}
 
                 @if($errors->has('nama_perusahaan'))
@@ -105,7 +105,7 @@
             </div>
             <div class="form-group {{ $errors->has('npwp') ? 'has-error' : ''}} m-input">
                 <label>NPWP <sup>*</sup></label>
-                <?php $placeholderNpwp = $perusahaan->data->ina_perusahaan? $perusahaan->data->ina_perusahaan->npwp : '';?>
+                <?php $placeholderNpwp = $perusahaan->data? $perusahaan->data->ina_perusahaan->npwp : '';?>
                 {!! Form::text('npwp', $placeholderNpwp, ['class'=> 'form-control','placeholder'=>$placeholderNpwp]) !!}
 
                 @if($errors->has('npwp'))
@@ -179,7 +179,7 @@
             </div>
             <div class="form-group {{ $errors->has('fax') ? 'has-error' : ''}} m-input">
                 <label>Fax</label>
-                <?php $placeholderFax = $perusahaan->data->system_response? $perusahaan->data->system_response->nofax : '';?>
+                <?php $placeholderFax = $perusahaan->data? $perusahaan->data->system_response->nofax : '';?>
                 {!! Form::text('fax', $placeholderFax, ['class'=> 'form-control','placeholder'=>$placeholderFax]) !!}
 
                 @if($errors->has('fax'))
@@ -188,7 +188,7 @@
             </div>
             <div class="form-group {{ $errors->has('hotline') ? 'has-error' : ''}} m-input">
                 <label>Hotline <sup>*</sup></label>
-                <?php $placeholderHotline = $perusahaan->data->system_response? $perusahaan->data->system_response->notelpon : '';?>
+                <?php $placeholderHotline = $perusahaan->data? $perusahaan->data->system_response->notelpon : '';?>
                 {!! Form::text('hotline', $placeholderHotline, ['class'=> 'form-control','placeholder'=>$placeholderHotline]) !!}
 
                 @if($errors->has('hotline'))
@@ -222,7 +222,7 @@
             </div>
             <div class="form-group {{ $errors->has('email') ? 'has-error' : ''}} m-input">
                 <label>Email Kantor Perusahaan <sup>*</sup></label>
-                <?php $placeholderEmail = $perusahaan->data->system_response? $perusahaan->data->system_response->email : '';?>
+                <?php $placeholderEmail = $perusahaan->data? $perusahaan->data->system_response->email : '';?>
 
                 {!! Form::text('email', $placeholderEmail, ['class'=> 'form-control', 'placeholder'=>$placeholderEmail]) !!}
 

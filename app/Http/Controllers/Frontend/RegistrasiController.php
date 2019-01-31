@@ -35,11 +35,12 @@ class RegistrasiController extends \App\Http\Controllers\Auth\RegisterController
             '2' => 'Kantor Cabang',
         ];
 
-        
+        $perusahaan = new Pmku();
+
         if($request->get('agen_pelayaran') == 1){
-            return view('frontend.registrasi.ap',compact('listTempatKantor','listBadanUsaha'));
+            return view('frontend.registrasi.ap',compact('listTempatKantor','listBadanUsaha','perusahaan'));
         }else{
-            return view('frontend.registrasi.non-ap',compact('listTempatKantor','listBadanUsaha'));  
+            return view('frontend.registrasi.non-ap',compact('listTempatKantor','listBadanUsaha','perusahaan'));  
         }
     }
 

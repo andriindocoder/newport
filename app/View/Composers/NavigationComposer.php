@@ -27,9 +27,13 @@ class NavigationComposer{
         $judulslidesatu = TampilanDepan::where('kode_tampilan','=','judulslidesatu')->first();
         $judulslidedua = TampilanDepan::where('kode_tampilan','=','judulslidedua')->first();
         $judulslidetiga = TampilanDepan::where('kode_tampilan','=','judulslidetiga')->first();
+        $judulslideempat = TampilanDepan::where('kode_tampilan','=','judulslideempat')->first();
+        $judulslidelima = TampilanDepan::where('kode_tampilan','=','judulslidelima')->first();
         $slidesatu = TampilanDepan::where('kode_tampilan','=','slidesatu')->first();
         $slidedua = TampilanDepan::where('kode_tampilan','=','slidedua')->first();
         $slidetiga = TampilanDepan::where('kode_tampilan','=','slidetiga')->first();
+        $slideempat = TampilanDepan::where('kode_tampilan','=','slideempat')->first();
+        $slidelima = TampilanDepan::where('kode_tampilan','=','slidelima')->first();
 
         $view->with('judulgrafik',$judulgrafik);
         $view->with('judulkegiatanotoritas',$judulkegiatanotoritas);
@@ -42,9 +46,13 @@ class NavigationComposer{
         $view->with('slidesatu',$slidesatu);
         $view->with('slidedua',$slidedua);
         $view->with('slidetiga',$slidetiga);
+        $view->with('slideempat',$slideempat);
+        $view->with('slidelima',$slidelima);
         $view->with('judulslidesatu',$judulslidesatu);
         $view->with('judulslidedua',$judulslidedua);
         $view->with('judulslidetiga',$judulslidetiga);
+        $view->with('judulslideempat',$judulslideempat);
+        $view->with('judulslidelima',$judulslidelima);
         $view->with('tagline',$tagline);
         $view->with('judulalamat',$judulalamat);
         $view->with('alamat',$alamat);

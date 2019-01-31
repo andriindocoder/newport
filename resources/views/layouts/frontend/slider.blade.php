@@ -42,6 +42,14 @@
                     </div>
                 </div>
             </div>
+            <div class="slide">
+                <img src="{{ url($slideempat->foto) }}" height="100%" />
+                
+            </div>
+            <div class="slide">
+                <img src="{{ url($slidelima->foto) }}" height="100%" />
+                
+            </div>
         </div>
     </div>
 </div>

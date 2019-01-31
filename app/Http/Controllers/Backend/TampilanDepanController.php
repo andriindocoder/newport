@@ -30,7 +30,8 @@ class TampilanDepanController extends Controller
     }
 
     public function create(){
-        return view('backend.tampilan-depan.create');
+        $tampilanDepan = new TampilanDepan;
+        return view('backend.tampilan-depan.create',compact('tampilanDepan'));
     }
 
     public function store(Request $request)

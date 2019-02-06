@@ -214,7 +214,7 @@
         </div>
     </div>
 </div>
-<div class="content-box">
+<div class="content-box bg-grey">
     <div class="container">
         <div class="row">
             <div class="col">
@@ -233,7 +233,7 @@
         </div>
     </div>
 </div>
-<div class="content-box bg-grey">
+<div class="content-box">
     <div class="container">
         <div class="row">
             <div class="col">

@@ -12,8 +12,8 @@ class DwellingTimeController extends Controller
 {
     public function fetchData(){
         header('Access-Control-Allow-Origin: *');
-        $begin = new Datetime('2018-01-15');
-        $end = new Datetime('2018-12-20');
+        $begin = new Datetime('2019-01-01');
+        $end = new Datetime('2019-02-07');
         $interval = DateInterval::createFromDateString('1 day');
         $period = new DatePeriod($begin, $interval, $end);
         foreach ($period as $dt) {
@@ -28,6 +28,7 @@ class DwellingTimeController extends Controller
                 $dwellingTime->terminal = $dt->terminal_id;
                 $dwellingTime->dwelling_date = $dt->dwelling_date;
                 $dwellingTime->dwelling_time = $dt->dwelling_time;
+                $dwellingTime->year = substr($dt->dwelling_date,0,4);
                 echo "Terminal " . $dwellingTime->terminal . " tanggal " .$dwellingTime->dwelling_date . " telah disimpan. <br>";
                 $dwellingTime->save();
             }

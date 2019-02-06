@@ -18,7 +18,7 @@
             </div>
             <div class="col-md-6 right">
                 <ul class="nav-top list">
-                        
+                    <li><input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2"/></li>   
                     @if(!Auth::check())
                     <li><a href="{{ route('login') }}" class="btn btn-outline-light"><span>Login</span><i class="fa fa-key"></i></a></li>
                     @else   

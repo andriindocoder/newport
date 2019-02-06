@@ -18,7 +18,9 @@ class InformasiController extends Controller
                     $konten = Informasi::where('jenis_informasi_id',1)->first();
                 break;
             case 'program-dan-kegiatan':
-                    $konten = Informasi::where('jenis_informasi_id',2)->first();
+                    $kontens = Informasi::where('jenis_informasi_id',2)->latest()->paginate($perPage);
+                    $kontensCount = Informasi::where('jenis_informasi_id',2)->count();
+                    return view('frontend.informasi.renstra',compact('kontens','kontensCount','perPage'));
                 break;
             case 'data-dan-informasi':
                     $konten = Informasi::where('jenis_informasi_id',3)->first();

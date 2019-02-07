@@ -29,7 +29,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto;"></div>
+                <div id="monthly" style="min-width: 400px; height: 400px; margin: 0 auto;"></div><br>
+                <div id="daily" style="min-width: 400px; height: 400px; margin: 0 auto;"></div>
             </div>
         </div> 
     </div>
@@ -258,7 +259,7 @@
 <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).on('ready', function() {
-    $('#container').highcharts({
+    $('#monthly').highcharts({
         title: {
             text: 'Dwelling Time 2018',
             x: -20 //center
@@ -294,23 +295,74 @@
         series: [{
             name: 'JICT',
             lineWidth: 5,
-            data: [0, 5.18, 3.31, 3.38, 4.42, 5.85, 4.25, 4.59, 4.05, 5.04, 3.32, 3.12]
+            data: [0, 5.18, 3.31, 3.38, 4.42, 5.85, 4.25, 4.59, 4.05, 5.04, 3.32, 3.26]
         }, {
             name: 'NPCT1',
             lineWidth: 5,
-            data: [0.79, 2.18, 3.71, 3.20, 0, 0, 2.95, 3.26, 3.51, 2.97, 3.67, 2.87]
+            data: [0.79, 2.18, 3.71, 3.20, 0, 0, 2.95, 3.26, 3.51, 2.97, 3.67, 3.05]
         }, {
             name: 'KOJA',
             lineWidth: 5,
-            data: [0, 4.77, 2.56, 3.27, 3.47, 5.11, 4.83, 3.61, 3.67, 5.10, 3.04, 2.79]
+            data: [0, 4.77, 2.56, 3.27, 3.47, 5.11, 4.83, 3.61, 3.67, 5.10, 3.04, 3.14]
+        },  {
+            name: 'TMAL',
+            lineWidth: 5,
+            data: [0, 0, 2.95, 3.64, 4.17, 5.56, 3.60, 3.03, 3.31, 2.65, 2.57, 2.79]
         }, {
             name: 'TER3',
             lineWidth: 5,
-            data: [0, 3.75, 5.77, 3.99, 0.89, 3.59, 3.26, 3.37, 1.97, 2.65, 2.37, 3.33]
+            data: [0, 3.75, 5.77, 3.99, 0.89, 3.59, 3.26, 3.37, 1.97, 2.65, 2.28, 4.16]
+        },]
+    });
+
+    $('#daily').highcharts({
+        title: {
+            text: 'Dwelling Time 2019',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Data Dwelling Time Per Hari Tahun 2019',
+            x: -20
+        },
+        xAxis: {
+            categories: ['01-Jan','02-Jan','03-Jan','04-Jan','05-Jan','06-Jan','07-Jan','08-Jan','09-Jan','10-Jan','11-Jan','12-Jan','13-Jan','14-Jan','15-Jan','16-Jan','17-Jan','18-Jan','19-Jan','20-Jan','21-Jan','22-Jan','23-Jan','24-Jan','25-Jan','26-Jan','27-Jan','28-Jan','29-Jan','30-Jan','31-Jan','01-Feb','02-Feb','03-Feb','04-Feb','05-Feb']
+        },
+        yAxis: {
+            title: {
+                text: 'Dwelling Time (hari)'
+            },
+            plotLines: [{
+                value: 3,
+                width: 5,
+                color: 'yellow'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        
+        series: [{
+            name: 'JICT',
+            lineWidth: 5,
+            data: [3.24, 5.21, 5.58, 4.74, 4.32, 3.86, 4.76, 4.51, 4.22, 4.27, 4.79, 3.25, 2.81, 3.86, 3.49, 3.70, 3.83, 4.61, 3.63, 3.48, 3.61, 3.50, 3.41, 3.08, 3.27, 2.49, 2.25, 3.39, 3.32, 3.42, 3.29, 2.90, 2.08, 1.99, 2.69, 2.88]
+        }, {
+            name: 'NPCT1',
+            lineWidth: 5,
+            data: [3.24, 4.79, 4.34, 4.25, 3.94, 3.58, 3.92, 3.80, 3.71, 4.13, 3.79, 3.05, 3.42, 3.54, 2.64, 3.10, 4.00, 3.04, 2.34, 1.62, 2.76, 2.85, 2.80, 3.22, 2.42, 2.38,  2.13, 2.30, 3.45, 3.68, 2.98, 2.81, 2.29, 1.21, 2.87, 3.26]
+        }, {
+            name: 'KOJA',
+            lineWidth: 5,
+            data: [4.45, 6.13, 4.84, 4.64, 3.47, 2.88, 4.67, 4.73, 3.44, 4.07, 4.78, 3.88, 2.57, 4.06, 3.48, 2.59, 3.21, 3.59, 2.52, 1.81, 3.04, 3.38, 3.51, 1.85, 2.47, 2.38, 1.58, 3.69, 3.69, 3.47, 2.96, 4.03, 2.33, 1.62, 2.75, 2.86]
         }, {
             name: 'TMAL',
             lineWidth: 5,
-            data: [0, 0, 2.95, 3.64, 4.17, 5.56, 3.60, 3.03, 3.31, 2.65, 2.57, 2.99]
+            data: [2.32, 4.11, 5.11, 3.97, 2.36, 1.26, 3.17, 3.19, 3.73, 2.91, 1.93, 3.56, 1.63, 4.15, 3.55, 3.86, 1.83, 1.41, 1.88, 2.63, 3.86, 4.69, 5.88, 1.45, 1.47, 2.34, 1.38, 2.19, 2.96, 2.97, 1.60, 1.10, 1.82, 2.58, 2.74, 2.32]
         }]
     });
   });

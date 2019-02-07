@@ -291,12 +291,36 @@
                   <p>Laporan Kinerja</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ url('admin/info/informasi-hukum') }}" class="nav-link">
-                  <i class="nav-icon fa fa-camera"></i>
-                  <p>Informasi Hukum</p>
-                </a>
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-camera"></i>
+                    <p>
+                      Informasi Hukum
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{ url('admin/info/informasi-hukum') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-primary nav-icon"></i>
+                        <p>List Produk Hukum</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url('admin/informasi/create') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-success nav-icon"></i>
+                        <p>Tambah Produk Hukum</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ route('admin.kategori-hukum.index') }}" class="nav-link">
+                        <i class="fa fa-circle-o text-warning nav-icon"></i>
+                        <p>Kategori Produk Hukum</p>
+                    </a>
+                    </li>
+                  </ul>
               </li>
+
               <li class="nav-item">
                 <a href="{{ url('admin/info/tarif-pnbp') }}" class="nav-link">
                   <i class="nav-icon fa fa-camera"></i>

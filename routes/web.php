@@ -32,6 +32,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
         Route::resource('kategori-berita', 'Backend\KategoriBeritaController');
         Route::resource('kategori-foto', 'Backend\KategoriFotoController');
         Route::resource('kategori-video', 'Backend\KategoriVideoController');
+        Route::resource('kategori-hukum', 'Backend\KategoriHukumController');
         Route::resource('jenis-usaha', 'Backend\JenisUsahaController');
         Route::resource('jenis-pelayanan', 'Backend\JenisPelayananController');
         Route::resource('jenis-informasi', 'Backend\JenisInformasiController');
@@ -129,6 +130,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
 Route::get('kategori-berita-data', ['as'=>'admin.kategori-berita.data','uses'=>'Backend\KategoriBeritaController@getData']);
 Route::get('kategori-foto-data', ['as'=>'admin.kategori-foto.data','uses'=>'Backend\KategoriFotoController@getData']);
 Route::get('kategori-video-data', ['as'=>'admin.kategori-video.data','uses'=>'Backend\KategoriVideoController@getData']);
+Route::get('kategori-hukum-data', ['as'=>'admin.kategori-hukum.data','uses'=>'Backend\KategoriHukumController@getData']);
 Route::get('tampilan-depan-data', ['as'=>'admin.tampilan-depan.data','uses'=>'Backend\TampilanDepanController@getData']);
 Route::get('jenis-usaha-data', ['as'=>'admin.jenis-usaha.data','uses'=>'Backend\JenisUsahaController@getData']);
 Route::get('jenis-pelayanan-data', ['as'=>'admin.jenis-pelayanan.data','uses'=>'Backend\JenisPelayananController@getData']);

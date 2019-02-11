@@ -17,6 +17,11 @@ Route::match(['get', 'post'], 'register', function(){
     return redirect('/');
 });
 
+Route::get('kirim-email',[
+    'uses' => 'TestController@kirim',
+    'as'    => 'kirim'
+]);
+
 Route::get('/home',[
     'uses'  => 'HomeController@index',
     'as'    => 'home' ,

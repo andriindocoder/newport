@@ -39,7 +39,7 @@
                         @foreach($kontens as $konten)
 					    <tr>
 					      <td>{{ $no }}</td>
-					      <td><a href="#">{{ $konten->judul_informasi }}</a></td>
+					      <td><a href="{{ url('info').'/program-dan-kegiatan/'.$konten->slug }}">{{ $konten->judul_informasi }}</a></td>
 					      <td>{{ $konten->year ? $konten->year->tahun :  '_'}}</td>
                           <td>{{ $konten->month ? $konten->month->nama : '-'}}</td>
 					      <td align="center">

@@ -1,6 +1,6 @@
 @extends('layouts.frontend.main')
 
-@section('pageTitle', 'Laporan Kinerja')
+@section('pageTitle', 'Rencana Strategis')
 
 @section('content')
 <section>
@@ -11,7 +11,7 @@
                 <div class="col">
                     <div class="desc">
                         <small class="breadcrumb-list"><span><a href="#">Portal OP</a></span><span>Informasi</span></small>
-                        <h2>Laporan Kinerja Kantor OP Tanjung Priok</h2>
+                        <h2>Rencana Strategis Kantor OP Tanjung Priok</h2>
                     </div>
                 </div>
             </div>
@@ -21,16 +21,16 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <label class="content-label">{{ $kinerja->judul_informasi }}</label>
+                    <label class="content-label">{{ $renstra->judul_informasi }}</label>
                 </div>
             </div>
         	@include('frontend.message')
             <div class="row">
                 <div class="col-md-12">
-					{!! htmlspecialchars_decode(stripslashes($kinerja->konten))!!}
+					{!! htmlspecialchars_decode(stripslashes($renstra->konten))!!}
                     <br>
-                    @if($kinerja->gambar)
-                    <a href="{{ url($kinerja->gambar) }}" download> <span class="btn btn-sm btn-dark"><i class="fa fa-file-pdf-o"></i> Download File</span></a>
+                    @if($renstra->gambar)
+                    <a href="{{ url($renstra->gambar) }}" download> <span class="btn btn-sm btn-dark"><i class="fa fa-file-pdf-o"></i> Download File</span></a>
                     @else
                     -
                     @endif

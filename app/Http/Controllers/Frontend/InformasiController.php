@@ -57,4 +57,16 @@ class InformasiController extends Controller
 
         return view('frontend.informasi.detail.kinerja', compact('kinerja'));
     }
+
+    public function ikm($slug){
+        $ikm = Informasi::where('slug',$slug)->first();
+
+        return view('frontend.informasi.detail.ikm', compact('ikm'));
+    }
+
+    public function renstra($slug){
+        $renstra = Informasi::where('slug',$slug)->first();
+
+        return view('frontend.informasi.detail.renstra', compact('renstra'));
+    }
 }

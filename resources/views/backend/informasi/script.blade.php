@@ -21,16 +21,16 @@
 
     $('.js-selectize').selectize();
 
-    $('select[name=jenis_informasi_id]').change(function() {
-          if (this.value == 2 || this.value == 4 || this.value == 7) {
-              $('#cke_konten').hide();
-              $("label[for='Konten']").hide();
-          }
-          else{
-              $('#cke_konten').show();
-              $("label[for='Konten']").show();
-          }
-      });
+    // $('select[name=jenis_informasi_id]').change(function() {
+    //       if (this.value == 2 || this.value == 4 || this.value == 7) {
+    //           $('#cke_konten').hide();
+    //           $("label[for='Konten']").hide();
+    //       }
+    //       else{
+    //           $('#cke_konten').show();
+    //           $("label[for='Konten']").show();
+    //       }
+    //   });
       
   </script>
 @endsection

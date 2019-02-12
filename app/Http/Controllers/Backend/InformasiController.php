@@ -195,6 +195,7 @@ class InformasiController extends BackendController
         $data['created_at'] = Carbon::now();
         $bulan = date('m');
         $tahun = date('Y');
+        $data['slug'] = slugify($data['judul_informasi']);
 
         if($request->hasFile('gambar')){
             $path = $request->file('gambar')->store('informasi/'.$tahun.'/'.$bulan);
@@ -230,10 +231,11 @@ class InformasiController extends BackendController
         $data = $request->all();
         $data['updated_id'] = Auth::user()->id;
         $data['updated_at'] = Carbon::now();
+        $data['slug'] = slugify($data['judul_informasi']);
 
         $informasi = Informasi::findOrFail($id);
         $oldImage = $informasi->gambar;
-        $data = $request->all();
+
         if($request->hasFile('gambar')){
             $bulan = date('m');
             $tahun = date('Y');

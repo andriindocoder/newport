@@ -51,4 +51,10 @@ class InformasiController extends Controller
         }
         return view('frontend.informasi.index',compact('konten','perPage'));
     }
+
+    public function kinerja($slug){
+        $kinerja = Informasi::where('slug',$slug)->first();
+
+        return view('frontend.informasi.detail.kinerja', compact('kinerja'));
+    }
 }

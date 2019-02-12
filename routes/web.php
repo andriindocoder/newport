@@ -352,6 +352,7 @@ Route::get('/rekomendasi',[
 ]);
 
 Route::get('/info/{info}','Frontend\InformasiController@index');
+Route::get('/info/kinerja-kantor-otoritas-pelabuhan/{slug}','Frontend\InformasiController@kinerja');
 
 Route::get('/informasi/file/{id}','Backend\InformasiController@removeFile')->name("admin.informasi.removeFile");
 

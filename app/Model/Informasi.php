@@ -12,7 +12,7 @@ class Informasi extends Model
     
     protected $table = 'informasi';
     
-    protected $fillable = ['jenis_informasi_id','judul_informasi','konten','gambar','update_id','create_id','delete_id','bulan','tahun'];
+    protected $fillable = ['jenis_informasi_id','judul_informasi','konten','gambar','update_id','create_id','delete_id','bulan','tahun','slug'];
 
     public function informasi(){
     	return $this->hasOne(JenisInformasi::class,'id','jenis_informasi_id');
@@ -36,5 +36,9 @@ class Informasi extends Model
 
     public function year(){
         return $this->belongsTo(Tahun::class,'tahun','id');
+    }
+
+    public function getRouteKeyName(){
+        return 'slug';
     }
 }

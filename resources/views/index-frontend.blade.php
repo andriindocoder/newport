@@ -102,9 +102,10 @@
                 <div class="function-box">
                     <span><i class="fa fa-balance-scale"></i></span>
                     <div class="desc">
-                        <h5><a href="{{ url('/info/informasi-hukum') }}">Informasi Hukum</a></h5>
+                        <h5><a href="#">Informasi Hukum</a></h5>
                         <p>
-                        Informasi Peraturan, Perundang-undangan, dan Peraturan Kepala Kantor Otoritas Tanjung Priok
+                        <a href="http://jdih.dephub.go.id" target="_blank">JDIH Kementerian Perhubungan</a><br>
+                        <a href="{{ url('/info/informasi-hukum') }}">Produk Hukum Kepala Kantor OP Tanjung Priok</a>
                         </p>
                     </div>
                 </div>

@@ -26,7 +26,7 @@
             </div>
         	@include('frontend.message')
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
 					<table class="table table-striped">
 					  <tr>
 					    <th style="width: 10px">No</th>
@@ -39,7 +39,7 @@
                         @foreach($kontens as $konten)
 					    <tr>
 					      <td>{{ $no }}</td>
-					      <td>{{ $konten->judul_informasi }}</td>
+					      <td><a href="#">{{ $konten->judul_informasi }}</a></td>
 					      <td>{{ $konten->year ? $konten->year->tahun :  '_'}}</td>
                           <td>{{ $konten->month ? $konten->month->nama : '-'}}</td>
 					      <td align="center">
@@ -55,10 +55,6 @@
                         @endforeach
 					</table>
                 </div>
-                <div class="col-md-1">
-                    <a href="http://jdih.dephub.go.id/" class="btn btn-info" target="_blank"><i class="fa fa-balance-scale"></i> Link JDIH Kemenhub</a>
-                </div> 
-                <div class="col-md-1"></div>
             </div>
         </div>
     </div>

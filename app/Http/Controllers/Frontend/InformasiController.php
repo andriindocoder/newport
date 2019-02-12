@@ -69,4 +69,10 @@ class InformasiController extends Controller
 
         return view('frontend.informasi.detail.renstra', compact('renstra'));
     }
+
+    public function hukum($slug){
+        $hukum = Informasi::where('slug',$slug)->first();
+
+        return view('frontend.informasi.detail.hukum', compact('hukum'));
+    }
 }

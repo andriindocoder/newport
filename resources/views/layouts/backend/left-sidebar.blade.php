@@ -468,6 +468,30 @@
                   <p>Link Terkait</p>
                 </a>
               </li>
+
+              <li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-facebook"></i>
+                    <p>
+                      Media Sosial
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="{{ url('admin/info/instagram') }}" class="nav-link">
+                        <i class="fa fa-instagram text-danger nav-icon"></i>
+                        <p>Instagram</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url('admin/info/facebook') }}" class="nav-link">
+                        <i class="fa fa-facebook text-primary nav-icon"></i>
+                        <p>Facebook</p>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
               @endrole
     
               @role(['superadmin'])

@@ -11,6 +11,7 @@ use App\Model\GaleriFoto;
 use App\Model\KategoriFoto;
 use App\Model\GaleriVideo;
 use App\Model\KategoriVideo;
+use App\Model\Informasi;
 
 class TampilanDepanController extends Controller
 {
@@ -23,9 +24,12 @@ class TampilanDepanController extends Controller
         $galleryVideos = GaleriVideo::orderBy('id','DESC')->latest()->limit(3)->get();
         $kategoriVideos = KategoriVideo::get();
 
+        $instagrams = Informasi::latest()->jenisInformasi(29)->active()->get();
+        $facebooks = Informasi::latest()->jenisInformasi(30)->active()->get();
+
         $splashscreen = TampilanDepan::where('kode_tampilan','splashscreen')->first();
 
-        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos','splashscreen'));
+        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos','splashscreen','instagrams','facebooks'));
     }
 
     public function galeriFoto(){

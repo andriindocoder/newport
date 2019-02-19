@@ -129,6 +129,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\InformasiController@forceDestroy',
             'as' => 'informasi.force-destroy'
         ]);
+        Route::resource('pelayanan', 'Backend\PelayananController');
+        Route::put('pelayanan/restore/{id}',[
+            'uses' => 'Backend\PelayananController@restore',
+            'as' => 'pelayanan.restore'
+        ]);
+        Route::delete('pelayanan/force-destroy/{id}',[
+            'uses' => 'Backend\PelayananController@forceDestroy',
+            'as' => 'pelayanan.force-destroy'
+        ]);
     });
 });
 

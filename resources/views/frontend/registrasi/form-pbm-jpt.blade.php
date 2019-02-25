@@ -68,7 +68,11 @@
             <div class="form-group {{ $errors->has('jenis_usaha_id') ? 'has-error' : ''}} m-input">
                 <label>Bidang Usaha <sup>*</sup></label>
                 <?php $placeholderJenisUsaha = $perusahaan->data? $perusahaan->data->ina_perusahaan->kode_tipe_perusahaan : '';?>
+                @if($perusahaan->data)
                 {!! Form::text('jenis_usaha_id', $placeholderJenisUsaha , ['class'=> 'form-control', 'placeholder' => $placeholderJenisUsaha ]) !!}
+                @else
+                {!! Form::select('jenis_usaha_id',App\Model\JenisUsaha::pluck('jenis_usaha','id'),null,['class'=>'selectpicker','title' => 'Pilih Jenis Usaha ...','id'=>'jenis-usaha-id','data-live-search'=>'true']) !!}
+                @endif
                 @if($errors->has('jenis_usaha_id'))
                 <span class="help-block badge badge-danger">{{ $errors->first('jenis_usaha_id') }}</span>
                 @endif

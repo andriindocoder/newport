@@ -24,7 +24,6 @@
                     @else   
                     <p id="hello" style="color:#ffb900">Selamat Datang, <strong>{{ Auth::user()->name }}</strong></p><li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();" class="btn btn-outline-light"><span>Logout</span><i class="fa fa-sign-out"></i></a></li>
-                    
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf

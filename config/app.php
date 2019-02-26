@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => 'Portal OP Tanjung Priok',
+    'name' => 'Portal Otoritas Pelabuhan Tanjung Priok',
 
     /*
     |--------------------------------------------------------------------------

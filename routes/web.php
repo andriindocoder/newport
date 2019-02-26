@@ -61,6 +61,15 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth'],'as'=>'admin.'], functio
             'uses' => 'Backend\LinkTerkaitController@forceDestroy',
             'as' => 'link-terkait.force-destroy'
         ]);
+        Route::resource('reformasi-birokrasi', 'Backend\ReformasiBirokrasiController');
+        Route::put('reformasi-birokrasi/restore/{id}',[
+            'uses' => 'Backend\ReformasiBirokrasiController@restore',
+            'as' => 'reformasi-birokrasi.restore'
+        ]);
+        Route::delete('reformasi-birokrasi/force-destroy/{id}',[
+            'uses' => 'Backend\ReformasiBirokrasiController@forceDestroy',
+            'as' => 'reformasi-birokrasi.force-destroy'
+        ]);
         Route::resource('profil', 'Backend\ProfilController');
         Route::put('profil/restore/{id}',[
             'uses' => 'Backend\ProfilController@restore',
@@ -195,6 +204,11 @@ Route::get('/galeri-video',[
 ]);
 
 Route::resource('pengaduan', 'Frontend\PengaduanController');
+
+Route::get('/reformasi-birokrasi',[
+    'uses'  => 'Frontend\ReformasiBirokrasi@index',
+    'as'    => 'reformasi-birokrasi'
+]);
 
 Route::get('/ppid',[
     'uses'  => 'Frontend\PpidController@index',

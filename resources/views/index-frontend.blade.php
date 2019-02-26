@@ -41,48 +41,69 @@
         </div>
         <div class="row">
             <div class="col" align="center">
-                <h4>DT - 22 Februari 2019</h4>
+                <h4>22 Februari 2019</h4>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #00002e; border:1px solid #fff; min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 0%;">
-                <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
-                    <table class="col-md-12" border="0">
-                        <tr>
-                            <td width="75%"><img src="/logo-terminal/jict.png" width="75%"></td>
-                            <td><b class="angka">3.14</b></td>
-                        </tr>
-                    </table>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row" style="background-color: rgb(43,36,114); padding: 15px;">
+                    <div class="col-lg-9" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #FFB900; border:1px solid #rgb(43,36,114); min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 11%;">
+                        <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
+                            <table class="col-md-12" border="0">
+                                <tr>
+                                    <td width="75%"><img src="/logo-terminal/average.png" width="75%"></td>
+                                    <td><b class="angkahijau">3.02</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #00002e; border:1px solid #fff; min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 0%;">
-                <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
-                    <table class="col-md-12" border="0">
-                        <tr>
-                            <td width="75%"><img src="/logo-terminal/npct1.png" width="75%"></td>
-                            <td><b class="angkamerah">4.67</b></td>
-                        </tr>
-                    </table>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="container">
+            <div class="row" style="background-color: rgb(43,36,114); padding: 15px;">
+                <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #FFB900; border:1px solid #rgb(43,36,114); min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 1%;">
+                    <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
+                        <table class="col-md-12" border="0">
+                            <tr>
+                                <td width="75%"><img src="/logo-terminal/jict.png" width="75%"></td>
+                                <td><b class="angkahijau">3.14</b></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #00002e; border:1px solid #fff; min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 0%;">
-                <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
-                    <table class="col-md-12" border="0">
-                        <tr>
-                            <td width="75%"><img src="/logo-terminal/koja.png" width="75%"></td>
-                            <td><b class="angka">3.04</b></td>
-                        </tr>
-                    </table>
+                <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #FFB900; border:1px solid #rgb(43,36,114); min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 1%;">
+                    <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
+                        <table class="col-md-12" border="0">
+                            <tr>
+                                <td width="75%"><img src="/logo-terminal/npct1.png" width="75%"></td>
+                                <td><b class="angkamerah">4.67</b></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #00002e; border:1px solid #fff; min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 0%;">
-                <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
-                    <table class="col-md-12" border="0">
-                        <tr>
-                            <td width="75%"><img src="/logo-terminal/tmal.png" width="75%"></td>
-                            <td><b class="angkahijau">1.23</b></td>
-                        </tr>
-                    </table>
+                <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #FFB900; border:1px solid #rgb(43,36,114); min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 1%;">
+                    <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
+                        <table class="col-md-12" border="0">
+                            <tr>
+                                <td width="75%"><img src="/logo-terminal/koja.png" width="75%"></td>
+                                <td><b class="angkahijau">3.04</b></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-2" style="margin: 0.5% 0.5% 0.5% 0.5%; background-color: #FFB900; border:1px solid #rgb(43,36,114); min-width: 23.5%; color: #fff; padding-bottom: 5px; height: 95px; top: 18%; left: 1%;">
+                    <div class="col-lg-12" style="background-color: #fff; margin-top: 10px; padding: 5px 5px 5px 5px;">
+                        <table class="col-md-12" border="0">
+                            <tr>
+                                <td width="75%"><img src="/logo-terminal/tmal.png" width="75%"></td>
+                                <td><b class="angkahijau">1.23</b></td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div><br>

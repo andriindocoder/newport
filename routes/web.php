@@ -206,7 +206,7 @@ Route::get('/galeri-video',[
 Route::resource('pengaduan', 'Frontend\PengaduanController');
 
 Route::get('/reformasi-birokrasi',[
-    'uses'  => 'Frontend\ReformasiBirokrasi@index',
+    'uses'  => 'Frontend\ReformasiBirokrasiController@index',
     'as'    => 'reformasi-birokrasi'
 ]);
 

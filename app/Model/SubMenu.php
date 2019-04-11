@@ -18,4 +18,8 @@ class SubMenu extends Model
     public function scopeLatest($query){
     	return $query->orderBy('ID desc');
     }
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
 }

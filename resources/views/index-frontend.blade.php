@@ -110,11 +110,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div id="daily" style="min-width: 400px; height: 400px; margin: 0 auto;"></div>
+                <div style="padding-left: 100px;">*) Keterangan: Data Dwelling Time TER3 2019 tidak lengkap. </div><br />
                 <div id="monthly" style="min-width: 400px; height: 400px; margin: 0 auto;"></div><br>
             </div>
         </div> 
     </div>
 </div>
+
 <div class="content-box bg-grey">
     <div class="container">
         <div class="row">

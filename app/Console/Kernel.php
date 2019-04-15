@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\InsertDwellingTime',
+        'App\Console\Commands\InsertDwellingTimePerDay'
     ];
 
     /**
@@ -26,6 +27,10 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->command('insert:dwelling-time')
+            ->twiceDaily(1, 13);
+        $schedule->command('insert:dwelling-time-per-day')
+            ->twiceDaily(2, 14);
     }
 
     /**

@@ -344,7 +344,7 @@
 <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).on('ready', function() {
-    fetch('http://localhost:8000/api/dt')
+    fetch('http://oppriok.dephub.go.id/api/dt')
         .then((response) => {
             return response.json();
         })

@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('dt','ApiController@dt');
+Route::get('dt-daily','ApiController@dtDaily');

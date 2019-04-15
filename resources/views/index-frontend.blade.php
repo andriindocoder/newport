@@ -342,6 +342,62 @@
 <script src="http://code.highcharts.com/modules/exporting.js" type="text/javascript"></script>
 <script type="text/javascript">
   $(document).on('ready', function() {
+    fetch('http://localhost:8000/api/dt')
+        .then((response) => {
+            return response.json();
+        })
+        .then((dt) => {
+            $('#daily').highcharts({
+                title: {
+                    text: 'Dwelling Time 2019',
+                    x: -20 //center
+                },
+                subtitle: {
+                    text: 'Data Dwelling Time Per Hari Tahun 2019',
+                    x: -20
+                },
+                xAxis: {
+                    categories: dt['labels']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Dwelling Time (hari)'
+                    },
+                    plotLines: [{
+                        value: 3,
+                        width: 5,
+                        color: 'yellow'
+                    }]
+                },
+                tooltip: {
+                    valueSuffix: ''
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'left',
+                    verticalAlign: 'middle',
+                    borderWidth: 0
+                },
+                
+                series: [{
+                    name: 'JICT',
+                    lineWidth: 5,
+                    data: dt['jict']
+                }, {
+                    name: 'NPCT1',
+                    lineWidth: 5,
+                    data: dt['npct1']
+                }, {
+                    name: 'KOJA',
+                    lineWidth: 5,
+                    data: dt['koja']
+                }, {
+                    name: 'TMAL',
+                    lineWidth: 5,
+                    data: dt['tmal']
+                }]
+            });
+        })
     $('#monthly').highcharts({
         title: {
             text: 'Dwelling Time 2018',
@@ -396,57 +452,6 @@
             lineWidth: 5,
             data: [0, 3.75, 5.77, 3.99, 0.89, 3.59, 3.26, 3.37, 1.97, 2.65, 2.28, 4.16]
         },]
-    });
-
-    $('#daily').highcharts({
-        title: {
-            text: 'Dwelling Time 2019',
-            x: -20 //center
-        },
-        subtitle: {
-            text: 'Data Dwelling Time Per Hari Tahun 2019',
-            x: -20
-        },
-        xAxis: {
-            categories: ['01-Jan','02-Jan','03-Jan','04-Jan','05-Jan','06-Jan','07-Jan','08-Jan','09-Jan','10-Jan','11-Jan','12-Jan','13-Jan','14-Jan','15-Jan','16-Jan','17-Jan','18-Jan','19-Jan','20-Jan','21-Jan','22-Jan','23-Jan','24-Jan','25-Jan','26-Jan','27-Jan','28-Jan','29-Jan','30-Jan','31-Jan','01-Feb','02-Feb','03-Feb','04-Feb','05-Feb','06-Feb','07-Feb','08-Feb','09-Feb','10-Feb','11-Feb','12-Feb','13-Feb','14-Feb','15-Feb','16-Feb','17-Feb','18-Feb','19-Feb','20-Feb','21-Feb','22-Feb','23-Feb','24-Feb','25-Feb','26-Feb','27-Feb','28-Feb','1-Mar','2-Mar']
-        },
-        yAxis: {
-            title: {
-                text: 'Dwelling Time (hari)'
-            },
-            plotLines: [{
-                value: 3,
-                width: 5,
-                color: 'yellow'
-            }]
-        },
-        tooltip: {
-            valueSuffix: ''
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'left',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        
-        series: [{
-            name: 'JICT',
-            lineWidth: 5,
-            data: [3.24, 5.21, 5.58, 4.74, 4.32, 3.86, 4.76, 4.51, 4.22, 4.27, 4.79, 3.25, 2.81, 3.86, 3.49, 3.70, 3.83, 4.61, 3.63, 3.48, 3.61, 3.50, 3.41, 3.08, 3.27, 2.49, 2.25, 3.39, 3.32, 3.42, 3.29, 2.90, 2.08, 1.99, 2.69, 2.88, 3.46, 3.58, 3.55, 3.17, 2.73, 3.57, 5.07, 4.14, 4.00, 4.04, 2.84, 2.74, 3.97, 3.32, 3.13, 3.49, 3.14, 3.60, 2.40, 2.50, 3.22, 3.26, 3.57, 2.73, 2.62]
-        }, {
-            name: 'NPCT1',
-            lineWidth: 5,
-            data: [3.24, 4.79, 4.34, 4.25, 3.94, 3.58, 3.92, 3.80, 3.71, 4.13, 3.79, 3.05, 3.42, 3.54, 2.64, 3.10, 4.00, 3.04, 2.34, 1.62, 2.76, 2.85, 2.80, 3.22, 2.42, 2.38,  2.13, 2.30, 3.45, 3.68, 2.98, 2.81, 2.29, 1.21, 2.87, 3.38, 3.48, 4.30, 3.18, 2.53, 1.90, 2.79, 2.82, 1.68, 3.51, 2.95, 2.15, 1.23, 1.93, 2.36, 2.74, 3.52, 4.67, 2.23, 1.40, 2.10, 1.86, 1.99, 2.78, 3.95, 2.05]
-        }, {
-            name: 'KOJA',
-            lineWidth: 5,
-            data: [4.45, 6.13, 4.84, 4.64, 3.47, 2.88, 4.67, 4.73, 3.44, 4.07, 4.78, 3.88, 2.57, 4.06, 3.48, 2.59, 3.21, 3.59, 2.52, 1.81, 3.04, 3.38, 3.51, 1.85, 2.47, 2.38, 1.58, 3.69, 3.69, 3.47, 2.96, 4.03, 2.33, 1.62, 2.75, 2.86, 3.66, 3.40, 4.07, 3.61, 1.45, 3.12, 3.29, 3.47, 2.98, 3.80, 3.11, 1.55, 3.80, 3.59, 5.06, 5.64, 3.04, 1.64, 0, 2.52, 3.14, 3.06, 2.68, 3.48, 2.50]
-        }, {
-            name: 'TMAL',
-            lineWidth: 5,
-            data: [2.32, 4.11, 5.11, 3.97, 2.36, 1.26, 3.17, 3.19, 3.73, 2.91, 1.93, 3.56, 1.63, 4.15, 3.55, 3.86, 1.83, 1.41, 1.88, 2.63, 3.86, 4.69, 5.88, 1.45, 1.47, 2.34, 1.38, 2.19, 2.96, 2.97, 1.60, 1.10, 1.82, 2.58, 2.74, 2.32, 3.63, 2.62, 2.08, 1.69, 0.00, 4.38, 5.26, 5.40, 0.99, 1.10, 2.03, 1.49, 2.71, 3.36, 6.17, 1.65, 1.23, 0, 0, 0, 4.65, 3.93, 1.48, 1.19, 1.65]
-        }]
     });
   });
 </script>

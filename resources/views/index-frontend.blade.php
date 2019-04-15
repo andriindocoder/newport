@@ -41,7 +41,7 @@
         </div>
         <div class="row">
             <div class="col" align="center">
-                <h4>2 Maret 2019</h4>
+                <h4>10 April 2019</h4>
             </div>
         </div>
         <div class="row">
@@ -53,7 +53,7 @@
                             <table class="col-md-12" border="0">
                                 <tr>
                                     <td width="75%"><img src="/logo-terminal/average.png" width="75%"></td>
-                                    <td><b class="angkahijau">2.20</b></td>
+                                    <td><b class="angkahijau">2.84</b></td>
                                 </tr>
                             </table>
                         </div>
@@ -70,7 +70,7 @@
                         <table class="col-md-12" border="0">
                            <tr>
                                 <td width="75%"><img src="/logo-terminal/jict.png" width="75%"></td>
-                                <td><b class="angkahijau">2.62</b></td>
+                                <td><b class="angkahijau">2.79</b></td>
                             </tr>
                         </table>
                     </div>
@@ -80,7 +80,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/npct1.png" width="75%"></td>
-                                <td><b class="angkahijau">2.05</b></td>
+                                <td><b class="angkahijau">2.97</b></td>
                             </tr>
                         </table>
                     </div>
@@ -90,7 +90,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/koja.png" width="75%"></td>
-                                <td><b class="angkahijau">2.50</b></td>
+                                <td><b class="angkahijau">2.22</b></td>
                             </tr>
                         </table>
                     </div>
@@ -100,7 +100,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/tmal.png" width="75%"></td>
-                                <td><b class="angkahijau">1.65</b></td>
+                                <td><b class="angka">3.36</b></td>
                             </tr>
                         </table>
                     </div>

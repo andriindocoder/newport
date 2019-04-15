@@ -38,7 +38,3 @@ Route::get('/dwelling-time-per-hari',[
     'uses' => 'Backend\DwellingTimeController@perDay',
     'as' => 'dwelling-time.day'
 ]);
-
-Route::get('/dt-per-day','Backend\DwellingTimeController@fetchPerDay');
-Route::get('/test-cron','Backend\DwellingTimeController@testCron');
-Route::get('/test-cron-per-day','Backend\DwellingTimeController@testFetchPerDay');

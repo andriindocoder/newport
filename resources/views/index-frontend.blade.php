@@ -30,7 +30,6 @@
       color: red;
   }
 </style>
-
 <div id="splashscreen"><img src="{{ url($splashscreen->foto) }}"></div>
 <div class="content-box">
     <div class="container">
@@ -41,7 +40,7 @@
         </div>
         <div class="row">
             <div class="col" align="center">
-                <h4>10 April 2019</h4>
+                <h4>{{ $tanggalDt }}</h4>
             </div>
         </div>
         <div class="row">
@@ -53,7 +52,7 @@
                             <table class="col-md-12" border="0">
                                 <tr>
                                     <td width="75%"><img src="/logo-terminal/average.png" width="75%"></td>
-                                    <td><b class="angkahijau">2.84</b></td>
+                                    <td><b class="{{$classAvg}}">{{ $averageDt }}</b></td>
                                 </tr>
                             </table>
                         </div>
@@ -70,7 +69,7 @@
                         <table class="col-md-12" border="0">
                            <tr>
                                 <td width="75%"><img src="/logo-terminal/jict.png" width="75%"></td>
-                                <td><b class="angkahijau">2.79</b></td>
+                                <td><b class="{{ $classJict }}">{{ $jict }}</b></td>
                             </tr>
                         </table>
                     </div>
@@ -80,7 +79,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/npct1.png" width="75%"></td>
-                                <td><b class="angkahijau">2.97</b></td>
+                                <td><b class="{{ $classNpct1 }}">{{ $npct1 }}</b></td>
                             </tr>
                         </table>
                     </div>
@@ -90,7 +89,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/koja.png" width="75%"></td>
-                                <td><b class="angkahijau">2.22</b></td>
+                                <td><b class=" {{ $classKoja }}">{{ $koja }}</b></td>
                             </tr>
                         </table>
                     </div>
@@ -100,7 +99,7 @@
                         <table class="col-md-12" border="0">
                             <tr>
                                 <td width="75%"><img src="/logo-terminal/tmal.png" width="75%"></td>
-                                <td><b class="angka">3.36</b></td>
+                                <td><b class="{{ $classTmal }}">{{ $tmal }}</b></td>
                             </tr>
                         </table>
                     </div>

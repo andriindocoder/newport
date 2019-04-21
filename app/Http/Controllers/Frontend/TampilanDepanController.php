@@ -12,6 +12,8 @@ use App\Model\KategoriFoto;
 use App\Model\GaleriVideo;
 use App\Model\KategoriVideo;
 use App\Model\Informasi;
+use Illuminate\Support\Facades\DB;
+use DateTime;
 
 class TampilanDepanController extends Controller
 {
@@ -29,7 +31,82 @@ class TampilanDepanController extends Controller
 
         $splashscreen = TampilanDepan::where('kode_tampilan','splashscreen')->first();
 
-        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos','splashscreen','instagrams','facebooks'));
+        
+        $dwelldate = DB::table('dwelling_times_per_day')->orderBy('id','desc')->first();
+        $dtdays = $this->findDt($dwelldate->dwelling_date);
+        foreach($dtdays as $dtday){
+            switch ($dtday->terminal) {
+                case 'KOJA':
+                    $koja = $dtday->dwelling_time;
+                    if($koja < 3){
+                        $classKoja = 'angkahijau';
+                    }else{
+                        $classKoja = 'angka';
+                    }
+                    break;
+                case 'TMAL':
+                    $tmal = $dtday->dwelling_time;
+                    if($tmal < 3){
+                        $classTmal = 'angkahijau';
+                    }else{
+                        $classTmal = 'angka';
+                    }
+                    break;
+                case 'NPCT1':
+                    $npct1 = $dtday->dwelling_time;
+                    if($npct1 < 3){
+                        $classNpct1 = 'angkahijau';
+                    }else{
+                        $classNpct1 = 'angka';
+                    }
+                    break;
+                case 'JICT':
+                    $jict = $dtday->dwelling_time;
+                    if($jict < 3){
+                        $classJict = 'angkahijau';
+                    }else{
+                        $classJict = 'angka';
+                    }
+                    break;
+                default:
+                    $jict = 0.00;
+                    $tmal = 0.00;
+                    $npct1 = 0.00;
+                    $koja = 0.00;
+                    break;
+            }
+        }
+
+        $tanggalDt = $this->dateTimeToDate($dtdays[0]->dwelling_date);
+        $number = ($jict+$tmal+$npct1+$koja)/4;
+        $averageDt = number_format((float)$number, 2, '.', '');
+        if($averageDt < 3){
+            $classAvg = 'angkahijau';
+        }else{
+            $classAvg = 'angka';
+        }
+
+        return view('index-frontend',compact('beritas','linkTerkaits','gallerys','kategoriFotos','galleryVideos','kategoriVideos','splashscreen','instagrams','facebooks','tanggalDt','jict','koja','tmal','npct1','averageDt','classJict','classTmal','classNpct1','classKoja','classAvg'));
+    }
+
+    protected function dateTimeToDate($datetime){
+        $dt = new DateTime($datetime);
+
+        $date = $dt->format('d M Y');
+        
+        return $date;
+    }
+
+    protected function findDt($date){
+        $dwell = DB::table('dwelling_times_per_day')->where('dwelling_date',$date)->get();
+        if($dwell->count() == 4){
+            return $dwell;
+        }else{
+            $date = new DateTime($date);
+            $date = $date->modify('-1 day');
+            $date = $date->format('Y-m-d');
+            return $this->findDt($date);
+        }
     }
 
     public function galeriFoto(){

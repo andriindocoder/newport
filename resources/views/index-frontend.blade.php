@@ -344,7 +344,7 @@
 <script type="text/javascript">
   $(document).on('ready', function() {
     // fetch('http://oppriok.dephub.go.id/api/dt')
-    fetch('http://localhost:8000/api/dt')
+    fetch('http://oppriok.dephub.go.id/api/dt')
         .then((response) => {
             return response.json();
         })

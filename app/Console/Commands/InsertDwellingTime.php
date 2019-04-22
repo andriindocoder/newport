@@ -7,6 +7,7 @@ use App\Model\DwellingTime;
 use Datetime;
 use Dateinterval;
 use DatePeriod;
+use Illuminate\Support\Facades\DB;
 
 class InsertDwellingTime extends Command
 {
@@ -41,9 +42,11 @@ class InsertDwellingTime extends Command
      */
     public function handle()
     {
+        DB::statement("SET foreign_key_checks=0");
+        DwellingTime::truncate();
         header('Access-Control-Allow-Origin: *');
         $today = new Datetime('now');
-        $begin = new Datetime(date('Y-m-d', strtotime("-29 days")));
+        $begin = new Datetime('2019-01-01');
         $end = new Datetime($today->format('Y-m-d'));
         $interval = DateInterval::createFromDateString('1 day');
         $period = new DatePeriod($begin, $interval, $end);
@@ -53,28 +56,17 @@ class InsertDwellingTime extends Command
             $response = file_get_contents($url);
             $data = json_decode($response);
             foreach($data as $dta){
-                $checkdt = DwellingTime::where('dt_id',$dta->id)->first();
-                if($checkdt){
-                    if($checkdt->port == '' || $checkdt->terminal == '' || $checkdt->dwelling_date == '' || $checkdt->dwelling_time == '' || $checkdt->year == ''){
-                        $checkdt->port = $dta->port_id;
-                        $checkdt->terminal = $dta->terminal_id;
-                        $checkdt->dwelling_date = $dta->dwelling_date;
-                        $checkdt->dwelling_time = $dta->dwelling_time;
-                        $checkdt->year = substr($dta->dwelling_date,0,4);
-                        $checkdt->save();
-                    }
-                }else{
-                    $dwellingTime = new DwellingTime();
-                    $dwellingTime->dt_id = $dta->id;
-                    $dwellingTime->port = $dta->port_id;
-                    $dwellingTime->terminal = $dta->terminal_id;
-                    $dwellingTime->dwelling_date = $dta->dwelling_date;
-                    $dwellingTime->dwelling_time = $dta->dwelling_time;
-                    $dwellingTime->year = substr($dta->dwelling_date,0,4);
-                    // echo "Terminal " . $dwellingTime->terminal . " tanggal " .$dwellingTime->dwelling_date . " telah disimpan. <br>";
-                    $dwellingTime->save();
-                }
+                $dwellingTime = new DwellingTime();
+                $dwellingTime->dt_id = $dta->id;
+                $dwellingTime->port = $dta->port_id;
+                $dwellingTime->terminal = $dta->terminal_id;
+                $dwellingTime->dwelling_date = $dta->dwelling_date;
+                $dwellingTime->dwelling_time = $dta->dwelling_time;
+                $dwellingTime->year = substr($dta->dwelling_date,0,4);
+                // echo "Terminal " . $dwellingTime->terminal . " tanggal " .$dwellingTime->dwelling_date . " telah disimpan. <br>";
+                $dwellingTime->save();
             }
         }
+        DB::statement("SET foreign_key_checks=1");
     }
 }

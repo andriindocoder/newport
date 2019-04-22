@@ -42,8 +42,10 @@ class InsertDwellingTimePerDay extends Command
      */
     public function handle()
     {
+        DB::statement("SET foreign_key_checks=0");
+        DB::table('dwelling_times_per_day')->truncate();
         $today = new Datetime('now');
-        $begin = new Datetime(date('Y-m-d', strtotime("-29 days")));
+        $begin = new Datetime('2019-01-01');
         $end = new Datetime($today->format('Y-m-d'));
         $interval = DateInterval::createFromDateString('1 day');
         $period = new DatePeriod($begin, $interval, $end);
@@ -55,33 +57,19 @@ class InsertDwellingTimePerDay extends Command
             foreach($dts as $dt){
                 $dwelling_time = $dt->dwelling_time/86400;
                 $dwelling_time = number_format((float)$dwelling_time, 2, '.', '');
-                $checkdt = DB::table('dwelling_times_per_day')->where('dt_id',$dt->dt_id)->first();
 
-                if(isset($checkdt)){
-                    DB::table('dwelling_times_per_day')
-                    ->where('dt_id',$checkdt->dt_id)
-                    ->update(
-                        [
-                            'dwelling_date' => $dt->dwelling_date,
-                            'terminal' => $dt->terminal,
-                            'dwelling_time' => $dwelling_time,
-                            'year' => $dt->year,
-                            'dt_id' => $dt->dt_id
-                        ]
-                    );
-                }else{
-                    DB::table('dwelling_times_per_day')
-                    ->insert(
-                        [
-                            'dwelling_date' => $dt->dwelling_date,
-                            'terminal' => $dt->terminal,
-                            'dwelling_time' => $dwelling_time,
-                            'year' => $dt->year,
-                            'dt_id' => $dt->dt_id
-                        ]
-                    );
-                }
+                DB::table('dwelling_times_per_day')
+                ->insert(
+                    [
+                        'dwelling_date' => $dt->dwelling_date,
+                        'terminal' => $dt->terminal,
+                        'dwelling_time' => $dwelling_time,
+                        'year' => $dt->year,
+                        'dt_id' => $dt->dt_id
+                    ]
+                );
             }
         }
+    DB::statement("SET foreign_key_checks=1");
     }
 }

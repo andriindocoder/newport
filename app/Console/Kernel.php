@@ -28,9 +28,9 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->command('insert:dwelling-time')
-            ->twiceDaily(1, 13);
+            ->twiceDaily(5, 17);
         $schedule->command('insert:dwelling-time-per-day')
-            ->twiceDaily(2, 14);
+            ->twiceDaily(6, 18);
     }
 
     /**

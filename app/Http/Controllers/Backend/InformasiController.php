@@ -157,7 +157,7 @@ class InformasiController extends BackendController
                     $informasisCount = 1;
                     break;
                   case 'facebook' :
-                    $informasis = Informasi::latest()->jenisInformasi(29)->active()->paginate($perPage);
+                    $informasis = Informasi::latest()->jenisInformasi(30)->active()->paginate($perPage);
                     $informasisCount = 1;
                     break;
                 default:

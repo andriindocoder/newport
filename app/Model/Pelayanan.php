@@ -24,8 +24,4 @@ class Pelayanan extends Model
     public function updater(){
         return $this->belongsTo(User::class,'update_id','id');
     }
-
-    public function jenisPelayanan(){
-        return $this->belongsTo(JenisPelayanan::class);
-    }
 }

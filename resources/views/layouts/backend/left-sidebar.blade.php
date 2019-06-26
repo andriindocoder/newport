@@ -334,23 +334,36 @@
                 </a>
               </li>     
               <li class="nav-item">
-                  <a href="{{ url('admin/reformasi-birokrasi') }}" class="nav-link">
-                    <i class="nav-icon fa fa-camera"></i>
-                    <p>
-                      Reformasi Birokrasi
-                    </p>
-                  </a>
-              </li>   
+                <a href="{{ url('admin/info/reformasi-birokrasi') }}" class="nav-link">
+                  <i class="nav-icon fa fa-camera"></i>
+                  <p>Reformasi Birokrasi</p>
+                </a>
+              </li>    
               @endrole
               @role(['superadmin'])
-              <li class="nav-header">PELAYANAN</li>
-              <li class="nav-item">
-                <a href="{{ route('admin.pelayanan.index') }}" class="nav-link">
-                  <i class="nav-icon fa fa-folder"></i>
+              <li class="nav-header">PELAPORAN DAN STATISTIK</li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fa fa-file-pdf-o"></i>
                   <p>
-                    Pelayanan
+                    Laporan Keuangan
+                    <i class="fa fa-angle-left right"></i>
                   </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="fa fa-circle-o text-primary nav-icon"></i>
+                      <p>List Berita</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="fa fa-circle-o text-success nav-icon"></i>
+                      <p>Tambah Berita</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
 
               <li class="nav-header">MASTER DATA</li>

@@ -86,7 +86,7 @@
                                     <div class="form-group {{ $errors->has('tipe_perusahaan') ? 'has-error' : ''}} m-input">
                                         <label>Tipe Perusahaan<sup>*</sup></label>
 
-                                        {!! Form::select('tipe_perusahaan',['PBM' => 'PBM', 'JPT' => 'JPT'],null,['class'=>'selectpicker','title' => 'Pilih tipe perusahaan ...','id'=>'perusahaan-tipe','data-live-search'=>'true']) !!}
+                                        {!! Form::select('tipe_perusahaan',['PBM' => 'PBM', 'JPT' => 'JPT', 'BB' => 'BB', 'SALVAGE' => 'SALVAGE' , 'BUP' => 'BUP', 'TK' => 'TK', 'EMKL' => 'EMKL', 'OGA' => 'OGA', 'TUKS' => 'TUKS'],null,['class'=>'selectpicker','title' => 'Pilih tipe perusahaan ...','id'=>'perusahaan-tipe','data-live-search'=>'true']) !!}
 
                                         @if($errors->has('tipe_perusahaan'))
                                         <span class="help-block badge badge-danger">{{ $errors->first('tipe_perusahaan') }}</span>

@@ -44,7 +44,9 @@ class InformasiController extends Controller
                     return view('frontend.informasi.ikm',compact('kontens','kontensCount','perPage'));
                 break;
             case 'reformasi-birokrasi':
-                    $konten = Informasi::where('jenis_informasi_id',28)->first();
+                    $kontens = Informasi::where('jenis_informasi_id',28)->latest()->paginate($perPage);
+                    $kontensCount = Informasi::where('jenis_informasi_id',28)->count();
+                    return view('frontend.informasi.reformasi-birokrasi',compact('kontens','kontensCount','perPage'));
                 break;
             default:
                 break;
@@ -62,6 +64,12 @@ class InformasiController extends Controller
         $ikm = Informasi::where('slug',$slug)->first();
 
         return view('frontend.informasi.detail.ikm', compact('ikm'));
+    }
+
+    public function reformasi($slug){
+        $reformasi = Informasi::where('slug',$slug)->first();
+
+        return view('frontend.informasi.detail.reformasi', compact('reformasi'));
     }
 
     public function renstra($slug){

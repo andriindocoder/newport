@@ -377,6 +377,7 @@ Route::get('/rekomendasi',[
 Route::get('/info/{info}','Frontend\InformasiController@index');
 Route::get('/info/kinerja-kantor-otoritas-pelabuhan/{slug}','Frontend\InformasiController@kinerja');
 Route::get('/info/indeks-kepuasan-masyarakat/{slug}','Frontend\InformasiController@ikm');
+Route::get('/info/reformasi-birokrasi/{slug}','Frontend\InformasiController@reformasi');
 Route::get('/info/program-dan-kegiatan/{slug}','Frontend\InformasiController@renstra');
 Route::get('/info/informasi-hukum/{slug}','Frontend\InformasiController@hukum');
 
